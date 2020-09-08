@@ -37,7 +37,7 @@ dash:
       color: yellow
 
 # Build settings
-theme: jekyll-dash
+remote_theme: bitbrain/jekyll-dash
 
 plugins:
   - liquid-md5
