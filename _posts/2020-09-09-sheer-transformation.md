@@ -5,7 +5,7 @@ tags: image_processing
 description: Rotate a image by x degrees using only numpy and PIL
 ---
 
--- [Gautam Agarwal](https://github.com/gautam-dev-maker)
+-- [Gautam Agrawal](https://github.com/gautam-dev-maker)
 
 <p align="center"><img width="768" height="350" src="/assets/posts/shear-transformation/image_1.png"></p>
 
