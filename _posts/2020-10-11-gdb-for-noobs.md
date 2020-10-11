@@ -9,7 +9,7 @@ description: Introduction to debugging C/C++ programs using the GNU Debugger
 
 
 ## Why use a debugger? 
-most of us tend to have bugs in our code. We could use printing commands to test our code, or we could use a debugger. Many times our code might seem to work correctly, because we didn't test it under enough scenarios. Other times we know there's a bug, but by just reading the code we don't notice it is there. Thus, we should develop a habit of launching a debugger when we get into trouble. 
+Most of us tend to have bugs in our code. We could use printing commands to test our code, or we could use a debugger. Many times our code might seem to work correctly, because we didn't test it under enough scenarios. Other times we know there's a bug, but by just reading the code we don't notice it is there. Thus, we should develop a habit of launching a debugger when we get into trouble. 
 
 ## Walkthrough
 1. for compiling your code to make it suitable for debugging using gdb:
@@ -97,8 +97,7 @@ gdb a.out
 
 Thus using GDB we learned to debug a very basic code in c++. You can also try the other commands listed on top as per your own convenience and requirements.
 
-Visit the [io page](https://dhruvag2000.github.io/gdb-for-noobs/)
-sources:
-*  [1](https://www.cs.umd.edu/~srhuang/teaching/cmsc212/gdb-tutorial-handout.pdf)
-*  [2](http://www.math.bas.bg/~nkirov/2005/netb151/debugging-with-gdb.html)
+## sources:
+*  [gdb-tutorial-handout](https://www.cs.umd.edu/~srhuang/teaching/cmsc212/gdb-tutorial-handout.pdf)
+*  [debugging-with-gdb](http://www.math.bas.bg/~nkirov/2005/netb151/debugging-with-gdb.html)
 
