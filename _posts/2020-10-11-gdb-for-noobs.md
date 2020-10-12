@@ -12,19 +12,19 @@ description: Introduction to debugging C/C++ programs using the GNU Debugger
 Most of us tend to have bugs in our code. We could use printing commands to test our code, or we could use a debugger. Many times our code might seem to work correctly, because we didn't test it under enough scenarios. Other times we know there's a bug, but by just reading the code we don't notice it is there. Thus, we should develop a habit of launching a debugger when we get into trouble. 
 
 ## Walkthrough
-1. for compiling your code to make it suitable for debugging using gdb:
+### for compiling your code to make it suitable for debugging using gdb:
 ```sh 
  g++ -g "buggy_factorial.cpp" 
 ```
-2. launching the gdb shell:
+### launching the gdb shell:
 ```sh
 gdb a.out
 ```
-3. basic commands we will be needing: 
-    * ``(gdb) run`` : runs the program.
-    * ``(gdb) break file1.c:6`` : Breakpoints can be used to stop the program run in the middle, at a designated point (we will see how its useful in the following example). 
-    * ``(gdb) break myfunc``: creates breakpoint at ``myfunc`` **remember to use myfunc without the ()**
-    * ``(gdb) step`` or ``(gdb) s`` : execute just the next line of code.
+### basic commands we will be needing: 
+    * point 1 ``(gdb) run`` : runs the program.
+    * point 2 ``(gdb) break file1.c:6`` : Breakpoints can be used to stop the program run in the middle, at a designated point (we will see how its useful in the following example). 
+    * point 3 ``(gdb) break myfunc``: creates breakpoint at ``myfunc`` **remember to use myfunc without the ()**
+    * point 4 ``(gdb) step`` or ``(gdb) s`` : execute just the next line of code.
     * ``(gdb) print (gdb) `` or ``(gdb) p (gdb) `` :  prints the value of the variable.
     * ``(gdb) watch myvar``: whenever myvar’s value is modified, the program will interrupt and print out the old and new values. 
     trivial one's below...
@@ -32,8 +32,8 @@ gdb a.out
     * ``delete`` : deletes a specified breakpoint.
     * ``info breakpoints`` : shows information about all declared breakpoints.
 
-4. explanation with example: 
-    1. First, let's just run the code.. 
+### explanation with example: 
+    * point 1 First, let's just run the code.. 
     command: 
     ```
     run
@@ -49,7 +49,7 @@ gdb a.out
     Now, as a very inexperienced programmer, one would try to print at every iteration to see where the program might have gone wrong resulting in a very ugly looking code and also adding the unnecessary headache of having to track the line number of each print statement one had used for debugging their codes. 
     Now, let's see how gdb simplifies things for us...
 
-    2. creating breakpoints: 
+    * point 2 creating breakpoints: 
     since my factorial function is most probably messing up, I will add the breakpoint to it. 
     command:
     ```
@@ -71,7 +71,7 @@ gdb a.out
     ```
     as we can see, the program stopped just as the function was called. Now, instead of needing to manually add ```print()``` statements I will see why my code is buggy by watching the variables in my console itself! 
 
-    3. watching the variable
+    * point 3 watching the variable
     Since it is likely that some variable is not working properly, let's start by watching the ``res`` variable. 
     command: 
     `` watch res ``
@@ -82,7 +82,7 @@ gdb a.out
     OK! So now I go back ad make changes in my while loop condition to
     ``while(n>=1)`` 
 
-    4. Let's see if the issue is fixed!
+    * point 4 Let's see if the issue is fixed!
     Press `q` and then `y` to exit the gdb, and again compile your new program: 
     * ```g++ -g factorial.cpp -o fact```
     * ```gdb fact``` 
