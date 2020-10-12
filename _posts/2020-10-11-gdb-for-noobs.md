@@ -110,7 +110,6 @@ Most of us tend to have bugs in our code. We could use printing commands to test
             4
             The factorial of 4 is 24[Inferior 1 (process 15039) exited normally]
             ```
-
 Thus using GDB we learned to debug a very basic code in c++. You can also try the other commands listed on top as per your own convenience and requirements.
 
 ## sources:
