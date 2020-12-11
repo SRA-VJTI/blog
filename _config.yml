@@ -6,7 +6,7 @@ description: >
   The Society of Robotics and Automation is a society for VJTI students. As the name suggests, we deal with Robotics, Machine Vision and Automation
 show_excerpts: false # set to true to show excerpts on the homepage
 
-paginate: 5
+paginate: 20
 paginate_path: "/blog/page:num/"
 
 tag_permalink_style: pretty
