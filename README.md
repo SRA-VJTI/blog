@@ -10,7 +10,7 @@ Repository maintains the SRA Blog. It is accessible here: https://blog.sravjti.i
 * It uses Github Actions to publish the generated jekyll blog to `gh-pages`, normal github pages jekyll build pipeline can't be used to generate tags, so we manually build using github actions and push to `gh-pages` branch.
 * It uses the following github action `helaili/jekyll-action@2.0.4`
 
-## Contributing 
+## Submitting new blog posts 
 
 * Fork this repo.
 * All assets like images or videos or gif should go into `/assets/posts/`, create a new subfolder for the specific post, let's say the blog title is `how to use github pages`, then create a folder like `/assets/posts/how-to-use-github-pages`.
