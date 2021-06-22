@@ -7,7 +7,7 @@ description: A brief explanation on FPGAs
 
 -- [Saurabh Gupta](https://github.com/saurabh1002)
 
--- [Shweta Kumaran](https://github.com/)
+-- [Shweta Kumaran](https://github.com/shweta2608)
 
 ![FGPA](/assets/posts/fpgas-explained-in-2-minutes/fpga.png)
 
