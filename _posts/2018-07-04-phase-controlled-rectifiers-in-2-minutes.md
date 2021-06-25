@@ -9,7 +9,7 @@ description: Working of Phase Controlled Rectifiers
 
 -- [Chirag Trasikar](https://github.com/chirag16)
 
--- [Mujammil Patel](https://github.com/)
+-- [Mujammil Patel](https://www.linkedin.com/in/mujammil-patel-87803a112)
 
 ![Rectifier](/assets/posts/phase-controlled-rectifiers-in-2-minutes/img1.jpg)
 

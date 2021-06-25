@@ -9,7 +9,7 @@ description: Working of Power MOSFETS
 
 -- [Chirag Trasikar](https://github.com/chirag16)
 
--- [Mujammil Patel](https://github.com/)
+-- [Mujammil Patel](https://www.linkedin.com/in/mujammil-patel-87803a112)
 
 ![MOSFET](/assets/posts/power-mosfets-in-2-minutes/img1.jpg)
 
