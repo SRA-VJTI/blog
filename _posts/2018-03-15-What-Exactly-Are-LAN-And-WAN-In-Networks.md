@@ -23,7 +23,7 @@ Network Definition: A network is a group of computers connected together in a wa
 
 When a family in on 1st floor needs to complain about the people on second floor they drop a message to the Watchman, he goes to the Secretary and informs about it. The secretary then takes the decision of what need to be done and passes the information back to watchman who finally delivers it to 2nd floor. It’s actually a rough overview of LAN's working. There are many details involved in actual networking. The source PC which needs to send the message  knows the address of receiver so it connects the hub to the router where the router does the work of setting up the connection between the two devices. The message which needs to be send by the Source takes the form of a packet which contains the message information with the receiver physical and network address(IP address and MAC). Thus the packet goes to the hub first then to the router where the routing is done to make sure the packet which contains our message goes to the correct destination. 
 
-[![What is LAN](https://yt-embed.herokuapp.com/embed?v=LCj2HDOd_Mk)](https://www.youtube.com/watch?v=LCj2HDOd_Mk "what is LAN")
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LCj2HDOd_Mk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 We saw what a LAN is how the data sharing takes place let’s look at WAN it’s nothing different but a larger version of LAN. WAN stands for **Wide Area Network**.
 
@@ -33,9 +33,9 @@ Telecommunications Service Providers manage large area networks that can span lo
 
 WANs use the **services of carriers** , such as telephone companies, cable companies, satellite systems and network providers. WANs use serial connections of various types to provide access to large geographic areas. The router in the LAN is the one acting as a medium to send data from one area to another over the Internet to other routers at locations which are far away. The medium between two locations can be a **Optical fiber** cable capable for fast data transfer, **Satellite** or **electromagnetic waves**. So we can say WAN sets up connection between devices located in different parts of world. 
 
-https://www.youtube.com/watch?v=VLC1Okg63cw
+<iframe width="560" height="315" src="https://www.youtube.com/embed/VLC1Okg63cw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-[![What is WAN](https://yt-embed.herokuapp.com/embed?v=VLC1Okg63cw)](https://www.youtube.com/watch?v=VLC1Okg63cw "what is WAN")
+
 
 
 LAN does work of inter connectivity in a network and WAN does the intra connection work. 

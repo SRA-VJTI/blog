@@ -38,8 +38,7 @@ A VLC light source could comprise of a fluorescent or light emitting diode (LED)
 
 You can find video of its working  below. (Do watch it…)
 
-[![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=25_dIc_4JG0)](https://www.youtube.com/watch?v=25_dIc_4JG0 "Everything Is AWESOME")
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/25_dIc_4JG0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 # What’s the difference between Li-Fi and Wi-Fi?
 
