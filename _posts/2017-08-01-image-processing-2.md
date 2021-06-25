@@ -17,11 +17,12 @@ The OpenCV lib is used by many big companies (including Google and Microsoft:) )
 
 If you know c++, the best place to get started in the official website. See the installation procedure for Windows (visual studio) and Linux below.    
 
-<iframe width="480" height="270" src="https://www.youtube.com/embed/cgo0UitHfp8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![OpenCv installation on Windows](https://yt-embed.herokuapp.com/embed?v=StTqXEQ2l-Y)](https://youtu.be/cgo0UitHfp8 "OpenCv installation on Windows")
+
 
 For ubuntu 14.04 refer the vid. below…
 
-<iframe width="480" height="270" src="https://www.youtube.com/embed/DYTfwThePBw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![OpenCv installtion on Ubuntu 14.04](https://yt-embed.herokuapp.com/embed?v=StTqXEQ2l-Y)](https://youtu.be/DYTfwThePBw "OpenCv installtion on Ubuntu 14.04")
 
 On the official website browse to the tutorials page and get started. A tip for learning fast…  
 *Step1. Read one tutorial fully and understand all the components used and syntax  
