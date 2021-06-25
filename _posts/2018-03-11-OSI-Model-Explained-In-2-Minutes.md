@@ -5,7 +5,7 @@ tags: networking
 description: This blog is an introduction to OSI Model
 ---
 
--- [Shubham Patil](Shubham Patil's github id)
+-- [Shubham Patil](https://www.linkedin.com/in/shubham-pravin-patil/?originalSubdomain=in)
 
 ![](/assets/posts/OSI-Model-Explained-In-2-Minutes/osi-model-fb.jpg)
 

@@ -5,7 +5,7 @@ tags: networking
 description: This blog is an introduction to LAN and WAN.
 ---
 
--- [Yash Hule](Yash Hule's git id)
+-- [Yash Hule](https://www.linkedin.com/in/yash-hule-33784612b/)
 
 ![](/assets/posts/What-Exactly-Are-LAN-And-WAN-In-Networks/work.jpeg)
 

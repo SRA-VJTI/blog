@@ -5,7 +5,7 @@ tags: networking
 description: Understanding GSM Technology
 ---
 
--- [Yash Hule](Yash Hule gitprofile daalna hai)
+-- [Yash Hule](https://www.linkedin.com/in/yash-hule-33784612b/)
 
 ![](/assets/posts/GSM-Explained-In-2-Minutes-!!/logotipo_GSM.png)
 

@@ -5,7 +5,7 @@ tags: networking
 description: This blog is an introduction to optical fibres
 ---
 
--- [Yash Hule](yash hule's github id)
+-- [Yash Hule](https://www.linkedin.com/in/yash-hule-33784612b/)
 
 ![](/assets/posts/Optical-Fibres-Explained-In-2-Minutes/2017-12-09-Optical-Fibres-Explained-In-2-Minutes.jpg)
 

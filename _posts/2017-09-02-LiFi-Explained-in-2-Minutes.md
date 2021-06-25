@@ -5,7 +5,7 @@ tags: networking
 description: Understanding the working of LiFi
 ---
 
--- [Rajneesh Katkam](Rajneesh katkam)
+-- [Rajneesh Katkam](https://www.linkedin.com/in/rajneesh-katkam-460204115/)
 
 ![](/assets/posts/LiFi-Explained-in-2-Minutes/Lifi-image.jpg)
 

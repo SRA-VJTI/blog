@@ -5,7 +5,7 @@ tags: networking
 description: Basics Of NFC
 ---
 
--- [Rohit Bhaskar ](Rohit Bhaskar gitprofile daalna hai)
+-- [Rohit Bhaskar ](https://www.linkedin.com/in/rohitb1vs10/)
 
 ![](/assets/posts/NFC-Explained-In-2-Minutes/images.webp)
 
