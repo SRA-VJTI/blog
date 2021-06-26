@@ -2,13 +2,15 @@
 layout: post
 title: Haar Cascades Explained in 2 minutes!
 tags: image_processing
-description: Hello everyone! in my debut post on the SRA blog, I'll be giving you a simplified intuition about Haar-like features, and subsequently, about Haar Cascades, a technique that is applied in Computer Vision for detecting objects in images.
+description: Introduction to Haar Cascades.
 ---
 
--- [Apoorva Gokhale]()
+-- [Apoorva Gokhale](https://github.com/apoorva-21)
 
 
 <p align="center"><img src="/assets/posts/haar-cascades/haar_on_faces.jpg"></p>
+
+Hello everyone! in my debut post on the SRA blog, I'll be giving you a simplified intuition about Haar-like features, and subsequently, about Haar Cascades, a technique that is applied in Computer Vision for detecting objects in images.  
 
 Object detection is one of the most common tasks in Computer Vision. And it’s not always necessary that the object you want to track is going to be delightfully coloured in a different colour than its surroundings, lighting variations, yada, yada.. Chuck that, you may even not have a 3-channel image, just 2-D grayscale matrices. 
 
