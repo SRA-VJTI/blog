@@ -219,3 +219,4 @@ sim.simxFinish(clientID)
 * [A video tutorial via a small project by Nikolai](https://youtu.be/SQont-mTnfM)</br>
 * [The official API documentation and Functions List provided by CoppeliaSim](https://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm)</br>
 * Learn more about streaming modes [here](https://www.coppeliarobotics.com/helpFiles/en/remoteApiConstants.htm#operationModes)
+* For learning CoppeliaSim from scratch, go [here](https://www.youtube.com/watch?v=PwGY8PxQOXY&list=PLjzuoBhdtaXOoqkJUqhYQletLLnJP8vjZ).
