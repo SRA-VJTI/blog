@@ -5,9 +5,7 @@ tags: computer_vision
 description: An introduction to adversarial attacks on ML systems 
 ---
 
--- [Omkar Sargar](https://github.com/OSSome01)
-
--- [Saurav Telge](https://github.com/SauravTelge)
+-- [Omkar Sargar](https://github.com/OSSome01) & [Saurav Telge](https://github.com/SauravTelge)
 
 
 {: style="text-align: justify"}
