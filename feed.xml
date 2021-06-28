@@ -1,0 +1,1101 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.7">Jekyll</generator><link href="blog.sravjti.in/feed.xml" rel="self" type="application/atom+xml" /><link href="blog.sravjti.in/" rel="alternate" type="text/html" /><updated>2021-06-28T19:11:10+00:00</updated><id>blog.sravjti.in/feed.xml</id><title type="html">sra-vjti</title><subtitle>The Society of Robotics and Automation is a society for VJTI students. As the name suggests, we deal with Robotics, Machine Vision and Automation
+</subtitle><author><name>sra-vjti</name></author><entry><title type="html">Adversarial Attacks</title><link href="blog.sravjti.in/2021/06/27/adversarial-attacks.html" rel="alternate" type="text/html" title="Adversarial Attacks" /><published>2021-06-27T00:00:00+00:00</published><updated>2021-06-27T00:00:00+00:00</updated><id>blog.sravjti.in/2021/06/27/adversarial-attacks</id><content type="html" xml:base="blog.sravjti.in/2021/06/27/adversarial-attacks.html">&lt;p&gt;– &lt;a href=&quot;https://github.com/OSSome01&quot;&gt;Omkar Sargar&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://github.com/SauravTelge&quot;&gt;Saurav Telge&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Imagine you just bought a Tesla Model S, the all-tech car with the preeminent ‘Auto-Pilot’ feature, and took it out on a long drive along the countryside. It’s you, your Tesla, and no one around. You opt to take a chill pill and leave it all on the car to handle the steering. You switch on the Auto-pilot feature and lean back while sipping your favorite coffee or tea (or green tea, the “health-conscious” option), totally relying on the car to carry you to your destination. It was all smooth sailing when suddenly the car goes haywire increasing its speed beyond the permissible limit of 30 kmph. By the time you become aware of the situation and take back control, a traffic cop pulls you over and issues an overspeeding ticket. You are bewildered by everything that just happened and think of it as some manufacturing defect that the car has and take it on yourself to sue Tesla for the mishap.&lt;/p&gt;
+
+&lt;p&gt;But was it really a manufacturing defect? The answer is no. When the Tesla engineers analyzed the whole path that the car took they found the culprit. It was a speed limit sign board indicating the drivers to limit their car’s speed to 30 kmph. But the car’s AI model misinterpreted the signboard to limit its speed below 80 kmph thus crossing the 30 kmph threshold.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img width=&quot;600&quot; height=&quot;350&quot; src=&quot;/assets/posts/adversarial-attacks/speed_limit.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So whom to blame, was it the AI model that couldn’t read the signboard accurately or the lack of proper model training by the highly qualified Engineers at Tesla? So the answer once again is no one. It was an adversarial attack purposefully planned by some nerd to trick the AI model of Tesla cars. Adversarial attacks basically force the neural network model to classify or predict the outcome of a particular thing which is totally incorrect. This is achieved by various means, one of which is by adding noise to the image. For example, If we take an image of a duck, add noise at specific positions and then pass it through the neural networks model, it will classify the image as that of a Horse, as depicted in the illustration below. Another situation can be when the AI voice model yields a completely different sentence due to the noise added to the original voice note passed to it. To understand this better, let us dive deeper into these attacks.&lt;/p&gt;
+
+&lt;p&gt;Primarily, attacks against AI models are categorized along three axes — influence on the classifier, the security violation, and their specificity — which can be further sub-categorized as “white box” or “black box.” In white-box attacks, the attacker has access to the model’s parameters such as weights and biases, while in black-box attacks, the attacker has no access to these parameters.&lt;/p&gt;
+
+&lt;p&gt;An attack can influence the classifier — i.e., the model — by disrupting the model as it makes predictions, while a security violation involves supplying malicious data that gets classified as legitimate. A targeted attack attempts to allow a specific intrusion or disruption, or alternatively to create general mayhem.&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img width=&quot;600&quot; height=&quot;350&quot; src=&quot;/assets/posts/adversarial-attacks/duck.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Evasion attacks are the most prevalent type of attack, where data are modified to evade detection or to be classified as legitimate. Evasion doesn’t involve influence over the data used to train a model, but it is comparable to the way spammers and hackers obfuscate the content of spam emails and malware. An example of evasion is image-based spam in which spam content is embedded within an attached image to evade analysis by anti-spam models. Another example is spoofing attacks against AI-powered biometric verification systems.&lt;/p&gt;
+
+&lt;p&gt;Poisoning, another attack type, is “adversarial contamination” of data. Machine learning systems are often retrained using data collected while they’re in operation, and an attacker can poison this data by injecting malicious samples that subsequently disrupt the retraining process. An adversary might input data during the training phase that’s falsely labeled as harmless when it’s actually malicious.&lt;/p&gt;
+
+&lt;p&gt;Meanwhile, model stealing, also called model extraction, involves an adversary probing a “black box” machine learning system in order to either reconstruct the model or extract the data that it was trained on. This can cause issues when either the training data or the model itself is sensitive and confidential. For example, model stealing could be used to extract a proprietary stock-trading model, which the adversary could then use for their financial gain.&lt;/p&gt;
+
+&lt;p&gt;These are the different attacks possible for fooling the neural networks, thus forcing us to think of ways to evade or protect from these blunders. So far, researchers and AI experts have been able to figure out a few approaches to minimize the attacks but that is beyond the scope of this article. Hence, the aforementioned question remains: are we safe in the hands of these self-driving cars?&lt;/p&gt;</content><author><name>sra-vjti</name></author><category term="computer_vision" /><summary type="html">– Omkar Sargar &amp;amp; Saurav Telge</summary></entry><entry><title type="html">Using PythonAPI in CoppeliaSim</title><link href="blog.sravjti.in/2021/06/26/using-python-api-in-coppeliasim.html" rel="alternate" type="text/html" title="Using PythonAPI in CoppeliaSim" /><published>2021-06-26T00:00:00+00:00</published><updated>2021-06-26T00:00:00+00:00</updated><id>blog.sravjti.in/2021/06/26/using-python-api-in-coppeliasim</id><content type="html" xml:base="blog.sravjti.in/2021/06/26/using-python-api-in-coppeliasim.html">&lt;p&gt;– &lt;a href=&quot;https://github.com/hashmis79&quot;&gt;Saad Hashmi&lt;/a&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;We can do many simulation tasks in CoppeliaSim, but the biggest turndown is that we will have to learn a whole new language called Lua. To overcome this CoppeliaSim provides us with an API with can connect CoppeliaSim to many languages including Python, C, C++. In this blog, we will be focusing on Setting up the Python API and some of its basic functions.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We will be covering the basic functions of Python API and their use in simulation&amp;lt;/br&amp;gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;#setting-up-the-files&quot;&gt;Setting Up the Files&lt;/a&gt;&amp;lt;/br&amp;gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#establishing-communication&quot;&gt;Establishing Communication with V-Rep&lt;/a&gt;&amp;lt;/br&amp;gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#retrieving-object-handles-in-python&quot;&gt;Retrieving Object Handles in python&lt;/a&gt;&amp;lt;/br&amp;gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#setting-actuator-velocities&quot;&gt;Setting Actuator Velocities&lt;/a&gt;&amp;lt;/br&amp;gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#retrieving-image-data&quot;&gt;Retrieving Image data from Vrep to python&lt;/a&gt;&amp;lt;/br&amp;gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;#putting-it-all-together&quot;&gt;Putting it all together&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;setting-up-the-files&quot;&gt;Setting Up the Files&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;For Setting up the API, we should add the necessary files to our working directory that are needed for the API which can be found in the CoppeliaSim installation Folder&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;1) Navigate to &lt;code class=&quot;highlighter-rouge&quot;&gt;CoppeliaRobotics\CoppeliaSimEdu\programming\remoteApiBindings\python\python&lt;/code&gt; and copy all the .py files into the working directory&amp;lt;/br&amp;gt;
+2) Navigate to &lt;code class=&quot;highlighter-rouge&quot;&gt;CoppeliaRobotics\CoppeliaSimEdu\programming\remoteApiBindings\lib\lib&lt;/code&gt;&amp;lt;/br&amp;gt;
+  Depending on the System you are on, you can select the folder (Windows, Ubuntu 16/18, MacOS)&amp;lt;/br&amp;gt;
+  copy the .dll, .so, or the .dylib file respectively to your working directory.&lt;/p&gt;
+
+&lt;p&gt;3) The next thing we want to do is that we have to create a threaded script in any component of the scene where you want to implement API.&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;/assets/posts/using-python-api-in-coppeliasim/PythonAPI_Adding_Script.gif&quot; height=&quot;512&quot; /&gt;
+&lt;/p&gt;
+&lt;p&gt;4) In the Script we should add the following statement in the sysCall_threadmain() function&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;simRemoteApi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;19990&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Note: 19999 is the port that will be used for API communications, this can be defined by you.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you are all set for using the PythonAPI in CoppeliaSim.&lt;/p&gt;
+&lt;h2 id=&quot;establishing-communication&quot;&gt;Establishing Communication&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;For Establishing Communication we need to follow the following steps :&amp;lt;/br&amp;gt;
+1) import the &lt;code class=&quot;highlighter-rouge&quot;&gt;sim&lt;/code&gt; library in the code&amp;lt;/br&amp;gt;
+2) Add the below statements to the code&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxFinish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;clientID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxStart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'127.0.0.1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;19990&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;Note: The port being used in the statement should match the port number specified while setting up.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;For Testing the establishment of communication you have to run the following code after starting the simulation in CoppeliaSim :
+```python
+import sim
+import sys&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;sim.simxFinish(-1)&lt;/p&gt;
+
+&lt;p&gt;clientID=sim.simxStart(‘127.0.0.1’,19990,True,True,5000,5)&lt;/p&gt;
+
+&lt;p&gt;if clientID != -1:
+    print(“Connected to the remote API server”)
+else:
+    print(“Connection not successful”)
+    sys.exit(“Could not connect”)&lt;/p&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;**Note: You have to run the Simulation before you run the Code or else the Connection would not be established**
+&amp;lt;p align=&quot;center&quot;&amp;gt;
+  &amp;lt;img src=&quot;/assets/posts/using-python-api-in-coppeliasim/PythonAPI_StartAPI.gif&quot; height =&quot;512&quot;/&amp;gt;
+&amp;lt;/p&amp;gt;
+
+## Retrieving Object Handles in python
+* Object handles can be considered as a key or an ID which a component possesses. It is used to provide commands to a component(For eg. joint Velocity to a motor). PythonAPI also has an inbuilt function for that:
+
+```python
+sim.simxGetObjectHandle()
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table align=&quot;center&quot;&gt;
+    &lt;tr&gt;
+     &lt;td align=&quot;left&quot;&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/td&gt;
+     &lt;td align=&quot;left&quot;&gt;&lt;b&gt;clientID&lt;/b&gt;: the client ID  &lt;br /&gt; &lt;b&gt;objectName&lt;/b&gt;: name of the object. &lt;br /&gt;&lt;b&gt;operationMode&lt;/b&gt;: a remote API function operation mode. Recommended operation mode for this function is &lt;code&gt;sim.simx_opmode_blocking&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td align=&quot;left&quot;&gt;&lt;b&gt;Return Values&lt;/b&gt;&lt;/td&gt;
+        &lt;td align=&quot;left&quot;&gt;&lt;b&gt;returnCode&lt;/b&gt;: a remote API function return code &amp;lt;/br&amp;gt; &lt;b&gt;handle&lt;/b&gt;: the Object handle&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;An Example of using this Function is :&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;error_code&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;motor_handle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxGetObjectHandle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clientID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Object Name in CoppeliaSim&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simx_opmode_oneshot_wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;setting-actuator-velocities&quot;&gt;Setting Actuator Velocities&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Setting actuator velocities is a really simple task. The following function can be used for it:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxSetJointTargetVelocity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table align=&quot;center&quot;&gt;
+    &lt;tr&gt;
+     &lt;td align=&quot;left&quot;&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/td&gt;
+     &lt;td align=&quot;left&quot;&gt;&lt;b&gt;clientID&lt;/b&gt;: the client ID  &lt;br /&gt; &lt;b&gt;jointHandle&lt;/b&gt;: handle of the joint &lt;br /&gt;&lt;b&gt;targetVelocity&lt;/b&gt;: target velocity of the joint (linear or angular velocity depending on the joint-type)&lt;br /&gt;&lt;b&gt;operationMode&lt;/b&gt;: a remote API function operation mode. Recommended operation mode for this function is &lt;code&gt;sim.simx_opmode_oneshot&lt;/code&gt; or &lt;code&gt;sim.simx_opmode_streaming&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td align=&quot;left&quot;&gt;&lt;b&gt;Return Values&lt;/b&gt;&lt;/td&gt;
+        &lt;td align=&quot;left&quot;&gt;&lt;b&gt;returnCode&lt;/b&gt;: a remote API function return code &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;An Example of using this Function is :&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;error_Code&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxSetJointTargetVelocity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clientID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;motor_handle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simx_opmode_streaming&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;retrieving-image-data&quot;&gt;Retrieving Image data&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;We can also retrieve image data from CoppeliaSim using the following Function:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxGetVisionSensorImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table align=&quot;center&quot;&gt;
+    &lt;tr&gt;
+     &lt;td align=&quot;left&quot;&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/td&gt;
+     &lt;td align=&quot;left&quot;&gt;&lt;b&gt;clientID&lt;/b&gt;: the client ID  &lt;br /&gt; &lt;b&gt;sensorHandle&lt;/b&gt;: handle of the vision sensor &lt;br /&gt;&lt;b&gt;options&lt;/b&gt;: image options, bit-coded:bit0 set: each image pixel is a byte (greyscale image), otherwise each image pixel is a rgb byte-triplet&lt;br /&gt;&lt;b&gt;operationMode&lt;/b&gt;: a remote API function operation mode. Recommended operation mode for this function is &lt;code&gt;sim.simx_opmode_streaming&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td align=&quot;left&quot;&gt;&lt;b&gt;Return Values&lt;/b&gt;&lt;/td&gt;
+        &lt;td align=&quot;left&quot;&gt;&lt;b&gt;returnCode&lt;/b&gt;: a remote API function return code &lt;br /&gt; &lt;b&gt;resolution&lt;/b&gt;: the resolution of the image (x,y)&lt;br /&gt;&lt;b&gt;image&lt;/b&gt;: the image data&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;The image array returned by the function is a 1D Array. So for the image to be displayable we first resize the image and convert it to RGB formate using &lt;code class=&quot;highlighter-rouge&quot;&gt;NumPy&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;An Example of using this Function is :&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;errorCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resolution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxGetVisionSensorImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clientID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cam_handle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vrep&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simx_opmode_streaming&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dtype&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uint8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resize&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resolution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resolution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;stopping-simulation&quot;&gt;Stopping Simulation&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;We can use the below function for stopping the simulation :&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxStopSimulation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;table align=&quot;center&quot;&gt;
+    &lt;tr&gt;
+     &lt;td align=&quot;left&quot;&gt;&lt;b&gt;Parameters&lt;/b&gt;&lt;/td&gt;
+     &lt;td align=&quot;left&quot;&gt;&lt;b&gt;clientID&lt;/b&gt;: the client ID  &lt;br /&gt; &lt;b&gt;operationMode&lt;/b&gt;: a remote API function operation mode. Recommended operation mode for this function is &lt;code&gt;sim.simx_opmode_oneshot&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td align=&quot;left&quot;&gt;&lt;b&gt;Return Values&lt;/b&gt;&lt;/td&gt;
+        &lt;td align=&quot;left&quot;&gt;&lt;b&gt;returnCode&lt;/b&gt;: a remote API function return code &lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;p&gt;An Example of using this Function is :&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxStopSimulation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clientID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simx_opmode_oneshot_wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;putting-it-all-together&quot;&gt;Putting it all together&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;After learning all of the above functions. We will write a simple code for an environment containing a Vision sensor, a Pioneer_p3dx (under Mobile Robots), and a plant.
+The below code establishes a connection with the simulation and commands the joint motors. It also retrieves the image from the vision sensor and displays after resizing it.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sim&lt;/span&gt; 
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;cv2&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxFinish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;clientID&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxStart&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'127.0.0.1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;19990&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clientID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;!=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Connected to Remote API Server&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Connection failed&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;exit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Could not reconnect'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;errorcode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left_motor_handle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxGetObjectHandle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clientID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Pioneer_p3dx_leftMotor'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simx_opmode_oneshot_wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;errorcode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right_motor_handle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxGetObjectHandle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clientID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Pioneer_p3dx_rightMotor'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simx_opmode_oneshot_wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Given Target Velocities to the Joints&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;errorcode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cam_handle&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxGetObjectHandle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clientID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Cam'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simx_opmode_oneshot_wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;try&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxSetJointTargetVelocity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clientID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;left_motor_handle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simx_opmode_streaming&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxSetJointTargetVelocity&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clientID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;right_motor_handle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simx_opmode_streaming&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;errorCode&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resolution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxGetVisionSensorImage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clientID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cam_handle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simx_opmode_streaming&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dtype&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dtype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'uint8'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reshape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resolution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;resolution&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cv2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;imshow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Image&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;cv2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;waitKey&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;except&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;KeyboardInterrupt&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;#Checks if ctrl+c is pressed 
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxStopSimulation&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clientID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simx_opmode_oneshot_wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Stopping Simulation&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;pass&lt;/span&gt;
+    
+&lt;span class=&quot;n&quot;&gt;sim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;simxFinish&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clientID&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;h2 id=&quot;output-&quot;&gt;Output :&lt;/h2&gt;
+&lt;p align=&quot;center&quot;&gt;
+  &lt;img src=&quot;/assets/posts/using-python-api-in-coppeliasim/PythonAPI_Final_Code.gif&quot; height=&quot;512&quot; /&gt;
+&lt;/p&gt;
+
+&lt;h2 id=&quot;finding-the-rest-of-the-functions&quot;&gt;Finding the rest of the Functions&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;You can find the rest of the equivalent functions from the &lt;a href=&quot;https://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm&quot;&gt;PythonAPI Functions list&lt;/a&gt;. You just have to search the Lua function’s name and you will find the Python equivalent function and its description.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;references-used&quot;&gt;References Used&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://youtu.be/SQont-mTnfM&quot;&gt;A video tutorial via a small project by Nikolai&lt;/a&gt;&amp;lt;/br&amp;gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm&quot;&gt;The official API documentation and Functions List provided by CoppeliaSim&lt;/a&gt;&amp;lt;/br&amp;gt;&lt;/li&gt;
+  &lt;li&gt;Learn more about streaming modes &lt;a href=&quot;https://www.coppeliarobotics.com/helpFiles/en/remoteApiConstants.htm#operationModes&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;For learning CoppeliaSim from scratch, go &lt;a href=&quot;https://www.youtube.com/watch?v=PwGY8PxQOXY&amp;amp;list=PLjzuoBhdtaXOoqkJUqhYQletLLnJP8vjZ&quot;&gt;here&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>sra-vjti</name></author><category term="simulation" /><category term="Python" /><category term="API" /><summary type="html">– Saad Hashmi We can do many simulation tasks in CoppeliaSim, but the biggest turndown is that we will have to learn a whole new language called Lua. To overcome this CoppeliaSim provides us with an API with can connect CoppeliaSim to many languages including Python, C, C++. In this blog, we will be focusing on Setting up the Python API and some of its basic functions.</summary></entry><entry><title type="html">Guide to using singularity to run ROS Melodic</title><link href="blog.sravjti.in/2020/12/11/singularity-ros-melodic.html" rel="alternate" type="text/html" title="Guide to using singularity to run ROS Melodic" /><published>2020-12-11T00:00:00+00:00</published><updated>2020-12-11T00:00:00+00:00</updated><id>blog.sravjti.in/2020/12/11/singularity-ros-melodic</id><content type="html" xml:base="blog.sravjti.in/2020/12/11/singularity-ros-melodic.html">&lt;p&gt;– &lt;a href=&quot;https://github.com/SAtacker&quot;&gt;Shreyas Atre&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;a-noobs-guide-by-a-noob-to-install-ros-on-singularity&quot;&gt;A Noobs guide by a Noob to install ros on singularity&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In here only ros-melodic is shown , but it could be done the same way for noetic or ros2 by editing &lt;code class=&quot;highlighter-rouge&quot;&gt;osrf/ros:&amp;lt;tag_name&amp;gt;&lt;/code&gt; &lt;a href=&quot;https://hub.docker.com/r/osrf/ros/tags&quot;&gt;tag names&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;As of Dec 10th,2020 Singularity is not supported on Windows&lt;/li&gt;
+  &lt;li&gt;These guidlines are tested for Ubuntu 18.04 , 20.10 (Groovy G)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;installing-go&quot;&gt;Installing GO&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You coud just install go from the official guide but since you are here, you need it from here :smirk:&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Install the dependencies using apt&lt;/p&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get update &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;apt-get &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-y&lt;/span&gt; build-essential libseccomp-dev pkg-config squashfs-tools cryptsetup
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Visit &lt;a href=&quot;https://golang.org/dl/&quot;&gt;Go downloads&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Copy the latest stable release link for linux , until today 15.6 is the latest one
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;The /usr/local hierarchy is for use by the system administrator when installing software locally.&lt;/li&gt;
+  &lt;li&gt;Locally installed software must be placed within /usr/local rather than /usr unless it is being installed to replace or upgrade software in /usr. &lt;a href=&quot;https://unix.stackexchange.com/questions/4186/what-is-usr-local-bin&quot;&gt;Ref&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Thus extract it in /usr/local using &lt;a href=&quot;https://www.cyberciti.biz/faq/linux-unix-extracting-specific-files/&quot;&gt;tar&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo tar&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-C&lt;/span&gt; /usr/local &lt;span class=&quot;nt&quot;&gt;-xzf&lt;/span&gt; go1.15.6.linux-amd64.tar.gz
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Now we need to set the environment variables for go&lt;/li&gt;
+  &lt;li&gt;I set them directly in .bashrc but you can do it in &lt;a href=&quot;https://unix.stackexchange.com/questions/3052/is-there-a-bashrc-equivalent-file-read-by-all-shells&quot;&gt;alternative&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export PATH=$PATH:/usr/local/go/bin'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; ~/go_projects
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export GOPATH=&quot;$HOME/go_projects&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+&lt;span class=&quot;nb&quot;&gt;echo&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'export GOBIN=&quot;$GOPATH/bin&quot;'&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; ~/.bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Now resource
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; ./bashrc
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now check the installation
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;go version
+go &lt;span class=&quot;nb&quot;&gt;env&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Output would be &lt;code class=&quot;highlighter-rouge&quot;&gt;go version go1.15.6 linux/amd64&lt;/code&gt; and
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;GOBIN=&quot;/home/satacker/go_projects/bin&quot;
+GOCACHE=&quot;/home/satacker/.cache/go-build&quot;
+GOENV=&quot;/home/satacker/.config/go/env&quot;
+...{and so on}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;installing-singularity&quot;&gt;Installing Singularity&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;It is optional to install golangci-lint as per the &lt;a href=&quot;https://github.com/hpcng/singularity/blob/master/INSTALL.md&quot;&gt;singularity installation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl &lt;span class=&quot;nt&quot;&gt;-sfL&lt;/span&gt; https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-b&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;go &lt;span class=&quot;nb&quot;&gt;env &lt;/span&gt;GOPATH&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/bin v1.21.0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Now installing Singularity&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;mkdir&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;go &lt;span class=&quot;nb&quot;&gt;env &lt;/span&gt;GOPATH&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/src/github.com/sylabs
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;si&quot;&gt;$(&lt;/span&gt;go &lt;span class=&quot;nb&quot;&gt;env &lt;/span&gt;GOPATH&lt;span class=&quot;si&quot;&gt;)&lt;/span&gt;/src/github.com/sylabs
+git clone https://github.com/sylabs/singularity.git
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;singularity
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;As of today v3.6.4 is a stable one&lt;/li&gt;
+  &lt;li&gt;Now inside &lt;code class=&quot;highlighter-rouge&quot;&gt;singularity&lt;/code&gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git checkout v3.6.4
+./mconfig
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ./builddir
+make
+&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;make &lt;span class=&quot;nb&quot;&gt;install&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To verify the installation
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;singularity version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;installing-ros-melodic-from-osrf-image&quot;&gt;&lt;a href=&quot;https://robotism.me/blog/creating-ROS-melodic-container-with-singularity-3.5/&quot;&gt;Installing ros melodic from osrf image&lt;/a&gt;&lt;/h3&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ~ &lt;span class=&quot;o&quot;&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;singularity build &lt;span class=&quot;nt&quot;&gt;--sandbox&lt;/span&gt; melodic/ docker://osrf/ros:melodic-desktop-full
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;Now the container image is ready&lt;/li&gt;
+  &lt;li&gt;To execute scripts in the container
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;singularity shell &lt;span class=&quot;nt&quot;&gt;--writable&lt;/span&gt; melodic/
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;This will open a Shell in Singurity image with the current directory mounted by default&lt;/li&gt;
+  &lt;li&gt;Try &lt;code class=&quot;highlighter-rouge&quot;&gt;apt update &amp;amp;&amp;amp; apt upgrade&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;running-roscore&quot;&gt;Running roscore&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;satacker@ubuntu:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;singularity shell &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; melodic/
+&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; password &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;satacker: 
+Singularity&amp;gt; &lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /opt/ros/melodic/setup.bash 
+Singularity&amp;gt; roscore
+... logging to /root/.ros/log/b03e5adc-3b89-11eb-b60b-dcf505b1c27d/roslaunch-ubuntu-13488.log
+Checking log directory &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;disk usage. This may take a &lt;span class=&quot;k&quot;&gt;while&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt;
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is &amp;lt;1GB.
+
+started roslaunch server http://ubuntu:40581/
+ros_comm version 1.14.10
+
+
+SUMMARY
+&lt;span class=&quot;o&quot;&gt;========&lt;/span&gt;
+
+PARAMETERS
+ &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; /rosdistro: melodic
+ &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; /rosversion: 1.14.10
+
+NODES
+
+auto-starting new master
+process[master]: started with pid &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;13498]
+&lt;span class=&quot;nv&quot;&gt;ROS_MASTER_URI&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;http://ubuntu:11311/
+
+setting /run_id to b03e5adc-3b89-11eb-b60b-dcf505b1c27d
+process[rosout-1]: started with pid &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;13509]
+started core service &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;/rosout]
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;running-gazebo&quot;&gt;Running Gazebo&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If you get any errors please see &lt;a href=&quot;#known-issues&quot;&gt;Known Issues&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/using-singularity-ros-melodic/gazebo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;host-to-container&quot;&gt;Host to Container&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;When Singularity ‘swaps’ the host operating system for the one inside your container, the host file systems becomes inaccessible. But you may want to read and write files on the host system from within the container. To enable this functionality, Singularity will bind directories back in via two primary methods: system-defined bind points and conditional user-defined bind points.&lt;/li&gt;
+  &lt;li&gt;Before&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;satacker@ubuntu:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;singularity shell &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; melodic/
+Singularity&amp;gt; &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /home/
+Singularity&amp;gt; &lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;Singularity&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;After&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;satacker@ubuntu:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;sudo &lt;/span&gt;singularity shell &lt;span class=&quot;nt&quot;&gt;-B&lt;/span&gt; /home/satacker/:/home/ &lt;span class=&quot;nt&quot;&gt;-w&lt;/span&gt; melodic/
+Singularity&amp;gt; &lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; /home/
+Singularity&amp;gt; &lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;Desktop    Downloads  Pictures	Templates  anaconda3	melodic  wget-log
+Documents  Music      Public	Videos	   go_projects	snap
+Singularity&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;In the above command &lt;code class=&quot;highlighter-rouge&quot;&gt;-B&lt;/code&gt; is the option selected and &lt;code class=&quot;highlighter-rouge&quot;&gt;/home/satacker/&lt;/code&gt; on the host is now binded with &lt;code class=&quot;highlighter-rouge&quot;&gt;/home/&lt;/code&gt; on the container&lt;/li&gt;
+  &lt;li&gt;Beware  Mount options (opts) may be specified as ro (read-only) or rw (read/write, which is the default)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Singularity&amp;gt; &lt;span class=&quot;nb&quot;&gt;touch &lt;/span&gt;test.test
+Singularity&amp;gt; &lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;Desktop    Downloads  Pictures	Templates  anaconda3	melodic  test.test
+Documents  Music      Public	Videos	   go_projects	snap	 wget-log
+Singularity&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;satacker@ubuntu:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;ls
+&lt;/span&gt;anaconda3  Documents  go_projects  Music     Public  Templates  Videos
+Desktop    Downloads  melodic      Pictures  snap    test.test  wget-log
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;multiple-instances-of-same-image&quot;&gt;Multiple Instances of same image&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;satacker@ubuntu:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;singularity instance start melodic/ instance_1
+INFO:    instance started successfully
+satacker@ubuntu:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;singularity instance start melodic/ instance_2
+INFO:    instance started successfully
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;stopping-instances&quot;&gt;Stopping Instances&lt;/h3&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;satacker@ubuntu:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;singularity instance list
+INSTANCE NAME    PID     IP    IMAGE
+instance_1       6705          /home/satacker/melodic
+instance_2       6994          /home/satacker/melodic
+satacker@ubuntu:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;singularity instance stop instance_1
+INFO:    Stopping instance_1 instance of /home/satacker/melodic &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;6705&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+satacker@ubuntu:~&lt;span class=&quot;nv&quot;&gt;$ &lt;/span&gt;singularity instance stop instance_2
+INFO:    Stopping instance_2 instance of /home/satacker/melodic &lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;PID&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;6994&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;running-turtlesim&quot;&gt;Running Turtlesim&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/using-singularity-ros-melodic/turtlesime_key.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/posts/using-singularity-ros-melodic/turtlesim_key_2.png&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;/assets/posts/using-singularity-ros-melodic/turtlesim_key_3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;using-terminator&quot;&gt;Using Terminator&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/using-singularity-ros-melodic/terminator_multiple.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;known-issues&quot;&gt;Known issues&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;While running the gui apps the windowing system may give &lt;code class=&quot;highlighter-rouge&quot;&gt;No protocol specified&lt;/code&gt; and &lt;code class=&quot;highlighter-rouge&quot;&gt;xcb_connection_has_error() returned true&lt;/code&gt;
+The possible workaround (also the easiest) for this is to allow the anyone on the localhost to connect to your dislpay using &lt;code class=&quot;highlighter-rouge&quot;&gt;xhost +local:&lt;/code&gt; - &lt;a href=&quot;https://unix.stackexchange.com/questions/85782/error-no-protocol-specified-when-running-from-remote-machine-via-ssh&quot;&gt;ref&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;libGL error: No matching fbConfigs or visuals found libGL error: failed to load driver: swrast&lt;/code&gt; The possible workaround is to install nvidia or other graphic drivers &lt;a href=&quot;https://askubuntu.com/questions/541343/problems-with-libgl-fbconfigs-swrast-through-each-update&quot;&gt;ref&lt;/a&gt; and then a reboot&lt;/li&gt;
+  &lt;li&gt;While running terminator &lt;code class=&quot;highlighter-rouge&quot;&gt;dbus.exceptions.DBusException: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message&lt;/code&gt; D-Bus is a software bus, inter-process communication, and remote procedure call mechanism that allows communication between multiple processes running concurrently on the same machine. simply use &lt;code class=&quot;highlighter-rouge&quot;&gt;terminator -u&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>sra-vjti</name></author><category term="ros_singularity" /><summary type="html">– Shreyas Atre</summary></entry><entry><title type="html">GDB For Noobs</title><link href="blog.sravjti.in/2020/10/11/gdb-for-noobs.html" rel="alternate" type="text/html" title="GDB For Noobs" /><published>2020-10-11T00:00:00+00:00</published><updated>2020-10-11T00:00:00+00:00</updated><id>blog.sravjti.in/2020/10/11/gdb-for-noobs</id><content type="html" xml:base="blog.sravjti.in/2020/10/11/gdb-for-noobs.html">&lt;p&gt;– &lt;a href=&quot;https://github.com/DhruvaG2000&quot;&gt;Dhruva Gole&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;why-use-a-debugger&quot;&gt;Why use a debugger?&lt;/h2&gt;
+
+&lt;p&gt;Most of us tend to have bugs in our code. We could use printing commands to test our code, or we could use a debugger. Many times our code might seem to work correctly, because we didn’t test it under enough scenarios. Other times we know there’s a bug, but by just reading the code we don’t notice it is there. Thus, we should develop a habit of launching a debugger when we get into trouble.&lt;/p&gt;
+
+&lt;h2 id=&quot;walkthrough&quot;&gt;Walkthrough&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;for compiling your code to make it suitable for debugging using gdb:&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  g++ &lt;span class=&quot;nt&quot;&gt;-g&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;buggy_factorial.cpp&quot;&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;launching the gdb shell:&lt;/p&gt;
+
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  gdb a.out
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;basic commands we will be needing:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;(gdb) run&lt;/code&gt; : runs the program.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;(gdb) break file1.c:6&lt;/code&gt; : Breakpoints can be used to stop the program run in the middle, at a designated point (we will see how its useful in the following example).&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;(gdb) break myfunc&lt;/code&gt;: creates breakpoint at &lt;code class=&quot;highlighter-rouge&quot;&gt;myfunc&lt;/code&gt; &lt;strong&gt;remember to use myfunc without the ()&lt;/strong&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;(gdb) step&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;(gdb) s&lt;/code&gt; : execute just the next line of code.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;(gdb) print (gdb)&lt;/code&gt; or &lt;code class=&quot;highlighter-rouge&quot;&gt;(gdb) p (gdb)&lt;/code&gt; :  prints the value of the variable.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;(gdb) watch myvar&lt;/code&gt;: whenever myvar’s value is modified, the program will interrupt and print out the old and new values. 
+  trivial one’s below…&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;finish&lt;/code&gt; : runs until the current function is finished.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;delete&lt;/code&gt; : deletes a specified breakpoint.&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;info breakpoints&lt;/code&gt; : shows information about all declared breakpoints.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;explanation with example:&lt;/p&gt;
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;First, let’s just run the code.. 
+  command:&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  run
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+        &lt;p&gt;output:&lt;/p&gt;
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Starting program: /home/dhruva/Documents/studies/maths/gdb-for-noobs/a.out 
+  enter any number: 
+  4
+  The factorial of 4 is 1[Inferior 1 (process 14193) exited normally]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+
+        &lt;p&gt;oops! Clearly the answer is wrong!!
+  Now, as a very inexperienced programmer, one would try to print at every iteration to see where the program might have gone wrong resulting in a very ugly looking code and also adding the unnecessary headache of having to track the line number of each print statement one had used for debugging their codes. 
+  Now, let’s see how gdb simplifies things for us…&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;creating breakpoints: 
+  Since my factorial function is most probably messing up, I will add the breakpoint to it. 
+  command:&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  break factorial
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+
+        &lt;p&gt;output:&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Breakpoint 1 at 0x555555554993: file buggy_factorial.cpp, line 5.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+
+        &lt;p&gt;now lets run it again… using &lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt; 
+  output:&lt;/p&gt;
+
+        &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Starting program: /home/dhruva/Documents/studies/maths/gdb-for-noobs/a.out 
+  enter any number: 
+  4
+
+  Breakpoint 1, factorial (n=4) at buggy_factorial.cpp:5
+  5	  double res=1;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+
+        &lt;p&gt;as we can see, the program stopped just as the function was called. Now, instead of needing to manually add &lt;code class=&quot;highlighter-rouge&quot;&gt;print()&lt;/code&gt; statements I will see why my code is buggy by watching the variables in my console itself!&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;watching the variable
+  Since it is likely that some variable is not working properly, let’s start by watching the &lt;code class=&quot;highlighter-rouge&quot;&gt;res&lt;/code&gt; variable. 
+  command: 
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;watch res&lt;/code&gt;
+  now the gdb console works in such a way that hitting enter will automatically take you to the next step where you expect to see some change in your variable as the while loop modifies it in each iteration…
+  hmm… something strange, the res variable isn’t updating! 
+  Well, so now that I observe that &lt;code class=&quot;highlighter-rouge&quot;&gt;res&lt;/code&gt; isn’t updating, the only reason I think is it must not be entering the while loop for some reason!&lt;/p&gt;
+
+        &lt;p&gt;OK! So now I go back ad make changes in my while loop condition to
+  &lt;code class=&quot;highlighter-rouge&quot;&gt;while(n&amp;gt;=1)&lt;/code&gt;&lt;/p&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Let’s see if the issue is fixed!
+  Press &lt;code class=&quot;highlighter-rouge&quot;&gt;q&lt;/code&gt; and then &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt; to exit the gdb, and again compile your new program:&lt;/p&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;g++ -g factorial.cpp -o fact&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;gdb fact&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;run&lt;/code&gt;&lt;/li&gt;
+          &lt;li&gt;
+            &lt;p&gt;output:&lt;/p&gt;
+
+            &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  Starting program: /home/dhruva/Documents/studies/maths/gdb-for-noobs/fact 
+  enter any number: 
+  4
+  The factorial of 4 is 24[Inferior 1 (process 15039) exited normally]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;            &lt;/div&gt;
+            &lt;p&gt;Thus using GDB we learned to debug a very basic code in c++. You can also try the other commands listed on top as per your own convenience and requirements.&lt;/p&gt;
+          &lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;sources&quot;&gt;sources:&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.cs.umd.edu/~srhuang/teaching/cmsc212/gdb-tutorial-handout.pdf&quot;&gt;gdb-tutorial-handout&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.math.bas.bg/~nkirov/2005/netb151/debugging-with-gdb.html&quot;&gt;debugging-with-gdb&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>sra-vjti</name></author><category term="gdb" /><summary type="html">– Dhruva Gole</summary></entry><entry><title type="html">Using Jekyll to generate static sites and hosting them on Github Pages [Part 2]</title><link href="blog.sravjti.in/2020/09/14/using-jekyll-with-github-pages-2.html" rel="alternate" type="text/html" title="Using Jekyll to generate static sites and hosting them on Github Pages [Part 2]" /><published>2020-09-14T00:00:00+00:00</published><updated>2020-09-14T00:00:00+00:00</updated><id>blog.sravjti.in/2020/09/14/using-jekyll-with-github-pages-2</id><content type="html" xml:base="blog.sravjti.in/2020/09/14/using-jekyll-with-github-pages-2.html">&lt;p&gt;– &lt;a href=&quot;https://github.com/VedantParanjape&quot;&gt;Vedant Paranjape&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;advanced-usage&quot;&gt;Advanced usage&lt;/h1&gt;
+
+&lt;p&gt;If you go to your repository you will see a new file, named &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;, we didn’t add this, then how was it added ??? Hahah, I hacked your github account, xD.&lt;/p&gt;
+
+&lt;p&gt;Chill, just joking, obviously I didn’t. Remember earlier, when you set the theme from repository settings, because of that &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt; was added to the repository.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-_configyml&quot;&gt;What is _config.yml&lt;/h2&gt;
+
+&lt;p&gt;It is a configuration file used by jekyll to generate your webpage, it contains various settings like site source, site name, author, etc.&lt;/p&gt;
+
+&lt;p&gt;You can read more about it here: &lt;a href=&quot;https://jekyllrb.com/docs/configuration/&quot;&gt;https://jekyllrb.com/docs/configuration/&lt;/a&gt;. I will only cover the basic case.&lt;/p&gt;
+
+&lt;h2 id=&quot;creating-a-_configyml&quot;&gt;Creating a _config.yml&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Add the following lines to the already existing &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;Jekyll tutorial&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;index.md&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;description&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;This is an amazing site I created while learning jekyll.&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Now save the file, and check your website after some time, you’ll see the website title, and description change as follows.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/using-jekyll-with-github-pages-part-2/title_description.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;viewing-the-site-locally&quot;&gt;Viewing the site locally&lt;/h2&gt;
+
+&lt;p&gt;Make sure to install jekyll before hand, from: &lt;a href=&quot;https://jekyllrb.com/docs/installation/&quot;&gt;https://jekyllrb.com/docs/installation/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;To run the site locally, we need a file called, Gemfile, create a new file called &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;, and copy the following to it.&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;source 'https://rubygems.org'&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;gem 'github-pages', group&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;:jekyll_plugins&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Run the following command to install the gems &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle install&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run the following command to start the server &lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Open &lt;code class=&quot;highlighter-rouge&quot;&gt;127.0.0.1:4000&lt;/code&gt; to view the site locally.&lt;/li&gt;
+  &lt;li&gt;You can see, a new folder is created, &lt;code class=&quot;highlighter-rouge&quot;&gt;_site&lt;/code&gt;, if you look into it, it has all the html files, these have been generated by jekyll and are being shown.&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>sra-vjti</name></author><category term="jekyll" /><summary type="html">– Vedant Paranjape</summary></entry><entry><title type="html">Using Jekyll to generate static sites and hosting them on Github Pages [Part 1]</title><link href="blog.sravjti.in/2020/09/14/using-jekyll-with-github-pages-1.html" rel="alternate" type="text/html" title="Using Jekyll to generate static sites and hosting them on Github Pages [Part 1]" /><published>2020-09-14T00:00:00+00:00</published><updated>2020-09-14T00:00:00+00:00</updated><id>blog.sravjti.in/2020/09/14/using-jekyll-with-github-pages-1</id><content type="html" xml:base="blog.sravjti.in/2020/09/14/using-jekyll-with-github-pages-1.html">&lt;p&gt;– &lt;a href=&quot;https://github.com/VedantParanjape&quot;&gt;Vedant Paranjape&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;introduction-to-jekyll&quot;&gt;Introduction to Jekyll&lt;/h1&gt;
+
+&lt;h2 id=&quot;what-is-jekyll&quot;&gt;What is Jekyll&lt;/h2&gt;
+
+&lt;p&gt;Jekyll is a simple, blog-aware, static site generator perfect for personal, project, or organization sites. Think of it like a file-based CMS, without all the complexity. Jekyll takes your content, renders Markdown and Liquid templates, and spits out a complete, static website ready to be served by Apache, Nginx or another web server. Jekyll is the engine behind GitHub Pages, which you can use to host sites right from your GitHub repositories.&lt;/p&gt;
+
+&lt;p&gt;Jekyll does what you tell it to do — no more, no less. It doesn’t try to outsmart users by making bold assumptions, nor does it burden them with needless complexity and configuration. Put simply, Jekyll gets out of your way and allows you to concentrate on what truly matters: your content.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-are-dynamic-websites&quot;&gt;What are dynamic websites&lt;/h2&gt;
+
+&lt;p&gt;Dynamic websites pull information from a database to fill in the content on a webpage. When you search for some movie on Google.com, the search results page you are shown didn’t already exist as a full HTML page; instead, Google.com has a template for search results page that includes things all results pages share, but it queries the database to insert the results of that search you initiated into that template and thus shows the result on your screen.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-are-static-websites&quot;&gt;What are static websites&lt;/h2&gt;
+
+&lt;p&gt;Static websites do not use a database to store information. All the info that is to be displayed on the webpage is already contained inside the html file, be it javascript or css. The HTML pages that make up a static site can be completely written by hand, or you can offload some of this work using something like Jekyll.&lt;/p&gt;
+
+&lt;h2 id=&quot;github-pages&quot;&gt;Github Pages&lt;/h2&gt;
+
+&lt;p&gt;GitHub Pages is a place to store the files that run a website and host that website for people to visit. It can only be used to host static websites. Using it we can publish static websites through github, the domain name for the page is as follows &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;github_username&amp;gt;.github.io&lt;/code&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;getting-started&quot;&gt;Getting started&lt;/h1&gt;
+
+&lt;h2 id=&quot;using-html-files&quot;&gt;Using html files&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Create a new repository with any name, say jekyll-site&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/using-jekyll-with-github-pages-part-1/create_repo.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Add a new file named, &lt;code class=&quot;highlighter-rouge&quot;&gt;index.html&lt;/code&gt; to the repository.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&amp;gt;&lt;/span&gt;
+hello world from jekyll
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/using-jekyll-with-github-pages-part-1/add_file.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Commit changes and push it to the repository.&lt;/li&gt;
+  &lt;li&gt;Go to repository settings, and scroll down, you will see a Github Pages section, in that in source, dropdown and select branch as master, and then press save. Now wait for some time, you will see something like &lt;code class=&quot;highlighter-rouge&quot;&gt;Your site is published at &amp;lt;link to your site&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/using-jekyll-with-github-pages-part-1/go_to_github_pages.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/using-jekyll-with-github-pages-part-1/published.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Press the link, and see the expected output as follows.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/using-jekyll-with-github-pages-part-1/site.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Remember one thing, if there are multiple .html files, index.html file is the one which is shown as the first page.&lt;/li&gt;
+  &lt;li&gt;So, this is how you use github pages to host your own html pages, but again we are using html and css to build a site, which actually hasn’t solved our problem, So, now we show how to do the same using markdown files.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;using-markdown-files&quot;&gt;Using markdown files&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Rename index.html to index.md&lt;/li&gt;
+  &lt;li&gt;Edit index.md and add the following to it&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-markdown highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;gh&quot;&gt;# Helloworld&lt;/span&gt;
+&lt;span class=&quot;gu&quot;&gt;## Hello world using jekyll&lt;/span&gt;
+
+&lt;span class=&quot;sb&quot;&gt;`this is code fencing`&lt;/span&gt;
+
+&lt;span class=&quot;ge&quot;&gt;*Text in Italic*&lt;/span&gt;
+
+&lt;span class=&quot;gs&quot;&gt;**Text in Bold**&lt;/span&gt;
+
+Normal Text
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Now commit the changes and push it to repository.&lt;/li&gt;
+  &lt;li&gt;Go out and check your mobile for a minute, as it takes few minutes to reflect changes.&lt;/li&gt;
+  &lt;li&gt;Now open the site and see the expected output as follows.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/using-jekyll-with-github-pages-part-1/site_with_markdown.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion-1&quot;&gt;Conclusion&lt;/h1&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Site will be rendered into html files using jekyll, even if our file is in markdown.&lt;/li&gt;
+  &lt;li&gt;So, Jekyll translates the markdown file into html files, thus reducing our work, and since markdown is very easy to use and maintain, and doesn’t have wierd tags like html, it is very human readable and maintainable.&lt;/li&gt;
+  &lt;li&gt;Now, say you want to add such a page to some project you did, so you can’t add these .md files in your github pages, there is a functionality to overcome this, we can store all our github pages files in a sub folder called &lt;code class=&quot;highlighter-rouge&quot;&gt;/docs&lt;/code&gt;, and this will be rendered as earlier, to do this, go to repository settings, and scroll down, you will see a Github Pages section, in that in source, dropdown and select file as /docs, and then press save.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/using-jekyll-with-github-pages-part-1/settings_select_docs_as_root_folder.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Try this yourself, by creating a docs folder and moving the &lt;code class=&quot;highlighter-rouge&quot;&gt;index.md&lt;/code&gt; to /docs, then commit and push the changes.&lt;/li&gt;
+  &lt;li&gt;You can also try to theme your page, click on &lt;code class=&quot;highlighter-rouge&quot;&gt;choose a theme&lt;/code&gt; below source section, and select the theme of your choice, wait for sometime, and check the website again. For example here, I have used the &lt;code class=&quot;highlighter-rouge&quot;&gt;slate-theme&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/using-jekyll-with-github-pages-part-1/page_with_theme.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;</content><author><name>sra-vjti</name></author><category term="jekyll" /><summary type="html">– Vedant Paranjape</summary></entry><entry><title type="html">Rotating Image By Any Angle (Shear Transformation) Using Only NumPy</title><link href="blog.sravjti.in/2020/09/09/sheer-transformation.html" rel="alternate" type="text/html" title="Rotating Image By Any Angle (Shear Transformation) Using Only NumPy" /><published>2020-09-09T00:00:00+00:00</published><updated>2020-09-09T00:00:00+00:00</updated><id>blog.sravjti.in/2020/09/09/sheer-transformation</id><content type="html" xml:base="blog.sravjti.in/2020/09/09/sheer-transformation.html">&lt;p&gt;– &lt;a href=&quot;https://github.com/gautam-dev-maker&quot;&gt;Gautam Agrawal&lt;/a&gt;&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img width=&quot;768&quot; height=&quot;350&quot; src=&quot;/assets/posts/shear-transformation/image_1.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;These days, we are spoiled with high end libraries. When It comes to Image Processing and advanced libraries such as OpenCV Rotating Image may sound like a very easy task using inbuilt functions.I am not telling you to code everything from scratch, However, an understanding about how things work will make you a better programmer. So let’s get started.&lt;/p&gt;
+
+&lt;h2 id=&quot;bitmaps&quot;&gt;Bitmaps&lt;/h2&gt;
+
+&lt;p&gt;A typical computer image these days uses 24 bits to represent the color of each pixel. Eight bits are used to store the intensity of the &lt;strong&gt;red&lt;/strong&gt; part of a pixel (&lt;strong&gt;00000000&lt;/strong&gt; through &lt;strong&gt;11111111&lt;/strong&gt;), giving 256 distinct values. Eight bits are used to store the &lt;strong&gt;green&lt;/strong&gt; component, and eight bits are used to store the &lt;strong&gt;blue&lt;/strong&gt; component.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img width=&quot;600&quot; height=&quot;250&quot; src=&quot;/assets/posts/shear-transformation/image_2.png&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Each pixel has a coordinate pair (x,y) describing its position on two orthogonal axes from defined origin O. It is around this origin we are going to rotate this image.What we need to do is take the RGB values at every (x,y) location, rotate it as needed, and then write these values in the new location, considering (x,y) with respect to the origin we assumed.The new location is obtained by using the transformation matrix.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img width=&quot;600&quot; height=&quot;150&quot; src=&quot;/assets/posts/shear-transformation/image_3.png&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;When image will be rotated ,the dimension of the frame containing it will change so to find the new dimensions we use this formula,&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;new_width=|old_width×cosθ|+|old_height×sinθ|
+
+new_height=|old_height×cosθ|+ |old_row×sinθ|
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;now let’s code it&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PIL&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;math&lt;/span&gt;
+
+
+&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;test.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;# Load the image
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Enter the angle :- &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;# Ask the user to enter the angle of rotation
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Define the most occuring variables
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;radians&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                            &lt;span class=&quot;c1&quot;&gt;#converting degrees to radians
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cosine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;                                &lt;span class=&quot;c1&quot;&gt;#define the height of the image
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;                                 &lt;span class=&quot;c1&quot;&gt;#define the width of the image
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Define the height and width of the new image that is to be formed
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_height&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cosine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;new_width&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cosine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# define another image variable of dimensions of new_height and new _column filled with zeros
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Find the centre of the image about which we have to rotate the image
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original_centre_height&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;#with respect to the original image
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original_centre_width&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;#with respect to the original image
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Find the centre of the new image that will be obtained
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_centre_height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;#with respect to the new image
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_centre_width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;          &lt;span class=&quot;c1&quot;&gt;#with respect to the new image
+&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;#co-ordinates of pixel with respect to the centre of original image
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original_centre_height&lt;/span&gt;                   
+        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original_centre_width&lt;/span&gt;                      
+
+        &lt;span class=&quot;c1&quot;&gt;#co-ordinate of pixel with respect to the rotated image
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cosine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cosine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;s&quot;&gt;'''since image will be rotated the centre will change too, 
+        so to adust to that we will need to change new_x and new_y with
+        respect to the new centre'''&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_centre_height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_centre_width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt;
+
+        &lt;span class=&quot;c1&quot;&gt;# adding if check to prevent any errors in the processing
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_width&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_height&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,:]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,:]&lt;/span&gt;                          &lt;span class=&quot;c1&quot;&gt;#writing the pixels to the new destination in the output image
+&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;pil_img&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fromarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;astype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uint8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# converting array to image
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pil_img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;rotated_image.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                                                 &lt;span class=&quot;c1&quot;&gt;# saving the image
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img width=&quot;768&quot; height=&quot;350&quot; src=&quot;/assets/posts/shear-transformation/image_4.png&quot; /&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot;&gt;Image obtained by matrix rotation&lt;/p&gt;
+
+&lt;h2 id=&quot;aliasing&quot;&gt;Aliasing&lt;/h2&gt;
+
+&lt;p&gt;So our resultant image is rotated by 15 degrees ,so it really worked,but what are those black dots?This is a problem called aliasing.Multiplying by sines and cosines on the integer coordinates of the source image gives real number results, and these have to be rounded back to integers again to be plotted. Sometimes this number rounding means the same destination location is addressed more than once, and sometimes certain pixels are missed completely. When the pixels are missed, the background shows through. This is why there are holes.The aliasing problem gets worse when angles are closesr to the diagonals. Here are a few examples of images at different rotations:&lt;/p&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img width=&quot;1080&quot; height=&quot;1080&quot; src=&quot;/assets/posts/shear-transformation/image_5.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;What can we do about this? There are a variety of solutions. One of them is to oversample the source image. We can pretend that each of the original source pixels is really a grid of &lt;em&gt;n x n&lt;/em&gt; smaller pixels (all of the same color), and calculate the destination coordinates of each of these subpixels and plot these&lt;/p&gt;
+
+&lt;p&gt;A more refined way is called &lt;em&gt;Area Mapping&lt;/em&gt;. For this, you invert the problem, and for each &lt;em&gt;destination&lt;/em&gt; pixel, you find which &lt;em&gt;four&lt;/em&gt; partial source pixels that it was created from. The color for the destination is calculated by the area-weighted average of the four source pixels (The source pixels that contribute more to the destination pixel have a greater influence on its color). This algorithm not only ensures that there are no gaps in the destination, but also appropriately averages the colors (ensuring both a smoother image and also keeping the average brightness of the rotated image constant).&lt;/p&gt;
+
+&lt;p&gt;However, there is a more elegant method, and this is the method that was used many years ago when computing power (and memory) were at a premium and every processor cycle worth its weight in gold. It is called the &lt;em&gt;three shear rotation&lt;/em&gt; method.&lt;/p&gt;
+
+&lt;h2 id=&quot;three-shears&quot;&gt;Three shears&lt;/h2&gt;
+
+&lt;p&gt;These method works by expanding 2D rotation matrix into three different matrices.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;img width=&quot;600&quot; height=&quot;150&quot; src=&quot;/assets/posts/shear-transformation/image_6.png&quot; /&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;There are some interesting properties of this matrix:-&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;The three matrices are all shear matrices&lt;/li&gt;
+  &lt;li&gt;The first and the last matrices are the same&lt;/li&gt;
+  &lt;li&gt;The determinant of each matrix is same (each stage is conformal and keeps the area the same).&lt;/li&gt;
+  &lt;li&gt;As the shear happens in just one plane at time, and each stage is conformal in area, no aliasing gaps appear in any stage.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;note&lt;/strong&gt;: Shear matrix shown above rotates in clockwise direction so we need to take angle in negative values to assess for that.&lt;/p&gt;
+
+&lt;p&gt;So let’s code the shear transformation&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;numpy&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;PIL&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;math&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;shear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'''
+    |1  -tan(𝜃/2) |  |1        0|  |1  -tan(𝜃/2) | 
+    |0      1     |  |sin(𝜃)   1|  |0      1     |
+
+    '''&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# shear 1
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;tangent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tan&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tangent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;#shear 2
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;#since there is no change in new_x according to the shear matrix
+&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;#shear 3
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tangent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;              &lt;span class=&quot;c1&quot;&gt;#since there is no change in new_y according to the shear matrix
+&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;open&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;test.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;             &lt;span class=&quot;c1&quot;&gt;# Load the image
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=-&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;Enter the angle :- &quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;                &lt;span class=&quot;c1&quot;&gt;# Ask the user to enter the angle of rotation
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Define the most occuring variables
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;radians&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                               &lt;span class=&quot;c1&quot;&gt;#converting degrees to radians
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cosine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;sine&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;                                   &lt;span class=&quot;c1&quot;&gt;#define the height of the image
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;                                    &lt;span class=&quot;c1&quot;&gt;#define the width of the image
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Define the height and width of the new image that is to be formed
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_height&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cosine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;new_width&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cosine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;abs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# define another image variable of dimensions of new_height and new _column filled with zeros
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;image_copy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;copy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+
+
+&lt;span class=&quot;c1&quot;&gt;# Find the centre of the image about which we have to rotate the image
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original_centre_height&lt;/span&gt;   &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;#with respect to the original image
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original_centre_width&lt;/span&gt;    &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;#with respect to the original image
+&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;# Find the centre of the new image that will be obtained
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_centre_height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;        &lt;span class=&quot;c1&quot;&gt;#with respect to the new image
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_centre_width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;          &lt;span class=&quot;c1&quot;&gt;#with respect to the new image
+&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;j&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;range&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;c1&quot;&gt;#co-ordinates of pixel with respect to the centre of original image
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original_centre_height&lt;/span&gt;                   
+        &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shape&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;original_centre_width&lt;/span&gt; 
+
+        &lt;span class=&quot;c1&quot;&gt;#Applying shear Transformation                     
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;shear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;angle&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;s&quot;&gt;'''since image will be rotated the centre will change too, 
+            so to adust to that we will need to change new_x and new_y with respect to the new centre'''&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_centre_height&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_centre_width&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt;
+
+
+        &lt;span class=&quot;c1&quot;&gt;# adding if check to prevent any errors in the processing
+&lt;/span&gt;        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_width&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_height&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;new_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,:]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;j&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,:]&lt;/span&gt;                          &lt;span class=&quot;c1&quot;&gt;#writing the pixels to the new destination in the output image
+&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;pil_img&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Image&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fromarray&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;astype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;uint8&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;                       &lt;span class=&quot;c1&quot;&gt;# converting array to image
+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pil_img&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;save&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;rotated_image.png&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;                                                 &lt;span class=&quot;c1&quot;&gt;# saving the image]
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p align=&quot;center&quot;&gt;&lt;img width=&quot;1400&quot; height=&quot;400&quot; src=&quot;/assets/posts/shear-transformation/image_7.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the first shear operation, raster columns are simply shifted up and down relative to each other. The shearing is symmetric around the center of the image. It’s analogous to shearing a deck of playing cards.&lt;/p&gt;
+
+&lt;p&gt;The second shear operation does a similar thing on the previous image, but this time does the shearing left to right.&lt;/p&gt;
+
+&lt;p&gt;The final shear is the same as the first operation; this time applied to the intermediate image.&lt;/p&gt;
+
+&lt;p&gt;No gaps! How elegant is that? We just rotated an image an arbitrary amount (smoothly) using three shear operations!&lt;/p&gt;
+
+&lt;p&gt;In times-past, when floating point and trig calculations were expensive, these properties were very important. Because only one plane was being modified at once, no additional memory was needed as the code could simple walk down the raster line making the changes it needed. Pretty cool.&lt;/p&gt;</content><author><name>sra-vjti</name></author><category term="image_processing" /><summary type="html">– Gautam Agrawal</summary></entry><entry><title type="html">Static and Dynamic Memory Allocation…?</title><link href="blog.sravjti.in/2018/07/31/static-dynamic-mem.html" rel="alternate" type="text/html" title="Static and Dynamic Memory Allocation…?" /><published>2018-07-31T00:00:00+00:00</published><updated>2018-07-31T00:00:00+00:00</updated><id>blog.sravjti.in/2018/07/31/static-dynamic-mem</id><content type="html" xml:base="blog.sravjti.in/2018/07/31/static-dynamic-mem.html">&lt;p&gt;– &lt;a href=&quot;https://github.com/rohitbhaskar&quot;&gt;Rohit Bhaskar&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;– &lt;a href=&quot;https://github.com/chirag16&quot;&gt;Chirag Trasikar&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Now, what does memory allocation mean?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Memory allocation is the process by which any process or program is allocated a certain portion of virtual or physical memory space. (Virtual memory space is nothing but the temporary memory generated in the RAM by moving files from it). If you did not understand this, just know that every process needs to use memory, and giving the process the memory it needs is called memory allocation! That’s all!&lt;/p&gt;
+
+&lt;p&gt;Now to get to the main point of the post…&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;What does Static and Dynamic memory allocation mean then?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(I hope you read the &lt;a href=&quot;/2018/03/19/diff-Interpreting-compiling.html&quot;&gt;previous post&lt;/a&gt; of compilers and interpreters. The knowledge of what compiling means will be used here. Go back and read up if you need to)&lt;/p&gt;
+
+&lt;p&gt;Static memory allocation basically means that the memory is allocated during compilation itself. This means that the as soon as the compilation is over, certain space of memory will be fixed for its usage. But in Dynamic memory allocation, the space for the program is given ‘dynamically’, or set during run time. This means that the amount of memory that a program requires will not be set before hand but instead the memory will be allocated step by step depending on the program needs.&lt;/p&gt;
+
+&lt;p&gt;The advantage of Dynamic memory (obviously) is that it ends up using lesser portions of Memory that Static allocation. But it is slower in execution as memory has to be allocated at every step based on the requirements. Check the video below to understand it better.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/CSVRA4_xOkw&quot; title=&quot;YouTube video player&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;This post didn’t go into the details of the two types, but instead gave you an overview of what the terms mean and how you can go about learning more about it.&lt;/p&gt;
+
+&lt;p&gt;Hope you liked it! happy reading!&lt;/p&gt;</content><author><name>sra-vjti</name></author><category term="compilers" /><category term="interpreters" /><category term="memory" /><summary type="html">– Rohit Bhaskar</summary></entry><entry><title type="html">Phase Control Rectifiers Explained in 2 Minutes</title><link href="blog.sravjti.in/2018/07/04/phase-controlled-rectifiers-in-2-minutes.html" rel="alternate" type="text/html" title="Phase Control Rectifiers Explained in 2 Minutes" /><published>2018-07-04T00:00:00+00:00</published><updated>2018-07-04T00:00:00+00:00</updated><id>blog.sravjti.in/2018/07/04/phase-controlled-rectifiers-in-2-minutes</id><content type="html" xml:base="blog.sravjti.in/2018/07/04/phase-controlled-rectifiers-in-2-minutes.html">&lt;p&gt;– &lt;a href=&quot;https://github.com/apoorva-21&quot;&gt;Apoorva Gokhale&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;– &lt;a href=&quot;https://github.com/chirag16&quot;&gt;Chirag Trasikar&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;– &lt;a href=&quot;https://www.linkedin.com/in/mujammil-patel-87803a112&quot;&gt;Mujammil Patel&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/phase-controlled-rectifiers-in-2-minutes/img1.jpg&quot; alt=&quot;Rectifier&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Some years back AC to DC power alteration was attained using mercury arc rectifiers and motor generator sets. The common, normal diode rectifiers were not used because neither are they are able to handle high power, nor do they give us control over the output voltage. The modern AC to DC power converters are intended to handle high current and high power. So, the trend has shifted to using thyristors in place of diode rectifiers. Presently, most of the AC to DC power converters are thyristor-ized with the help of Phase Control Rectifiers.&lt;/p&gt;
+
+&lt;p&gt;The term PCR or Phase controlled rectifier is one type of a rectifier circuit in which the diodes are replaced by Thyristors or SCRs (Silicon Controlled Rectifiers). Unlike a diode, a thyristor is a gate-control electronic switch which can be turn on by gate pulse and can be turn off when thyristor is reverse-biased. Hence, output of a PCR can be control by controlling firing pulse (gate pulse).
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/phase-controlled-rectifiers-in-2-minutes/img2.jpg&quot; alt=&quot;Rectifier&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now then, lets get to how it works. Most of us may not be aware of what a thyristor is. We can &lt;strong&gt;consider a thyristor to be a switch&lt;/strong&gt; and, for simplicity, believe that it can be turn on and off like normal one. Now you have some switches which you can control. To extract the DC from the AC you have to &lt;strong&gt;wisely turn some switches on and some off&lt;/strong&gt; for a particular period of time.
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Taking the example of the three phase PCR which shown in the diagram at the start of this post, we can see three thyristors (the one with the symbol like diode with a dash) in series with each phase wire . Now &lt;strong&gt;when the phase Y is positive and its voltage is greater than the other two phases&lt;/strong&gt; we turn on the thyristor in series with the phase Y and turn off the others, causing &lt;strong&gt;current to start flowing from upwards to downwards through the DC load&lt;/strong&gt;. After some time, when phase R is positive and its voltage is greater than other two, we turn on the thyristor which is in series with phase R and turn the others off. Current still flows from upwards to downwards through the DC load. This process goes on, and the result is : Hence we have extracted DC voltage from AC successfully! (lab journal conclusions :P)
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Now, coming to how the &lt;strong&gt;output DC voltage&lt;/strong&gt; is varied. The &lt;strong&gt;firing delay&lt;/strong&gt;, which is the time after which the respective thyristors turn on and off when the phase with the greatest positive voltage changes (as shown in the graph) is made use of here. The firing delay is varied, hence changing the Mean DC Level that is supplied by our circuit.&lt;/p&gt;
+
+&lt;h2 id=&quot;advantages-of-pcr&quot;&gt;Advantages of PCR:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Output voltage can be control using firing pulse delay.&lt;/li&gt;
+  &lt;li&gt;As thyristors are capable of handling around 100A and 1200 ~ 1500V PCR can be operated over a large range of voltage and current.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;applications-of-pcr&quot;&gt;Applications of PCR:&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;DC motor control in steel mills&lt;/li&gt;
+  &lt;li&gt;Battery chargers&lt;/li&gt;
+  &lt;li&gt;High voltage DC transmission&lt;/li&gt;
+  &lt;li&gt;AC traction control using DC motors&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;
+For the inquisitive, who want to find out more about thyristors and PCRs, here’s a few useful links:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.electronics-tutorials.ws/power/thyristor.html&quot;&gt;Thyristors and Single Phase PCRs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.pantechsolutions.net/powerelectronics-tutorials/introduction-of-three-phase-half-full-wave-converter&quot;&gt;Three Phase PCRs&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;So that’s it for today folks, hope you enjoyed learning about PCRs as much as I did..!&lt;/p&gt;</content><author><name>sra-vjti</name></author><category term="electronics" /><category term="rectifiers" /><category term="electrical" /><summary type="html">– Apoorva Gokhale</summary></entry><entry><title type="html">FPGAs Explained - In 2 Minutes!</title><link href="blog.sravjti.in/2018/06/20/fpgas-in-2-minutes.html" rel="alternate" type="text/html" title="FPGAs Explained - In 2 Minutes!" /><published>2018-06-20T00:00:00+00:00</published><updated>2018-06-20T00:00:00+00:00</updated><id>blog.sravjti.in/2018/06/20/fpgas-in-2-minutes</id><content type="html" xml:base="blog.sravjti.in/2018/06/20/fpgas-in-2-minutes.html">&lt;p&gt;– &lt;a href=&quot;https://github.com/saurabh1002&quot;&gt;Saurabh Gupta&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;– &lt;a href=&quot;https://github.com/shweta2608&quot;&gt;Shweta Kumaran&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/posts/fpgas-explained-in-2-minutes/fpga.png&quot; alt=&quot;FGPA&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-fpga&quot;&gt;What is FPGA?&lt;/h2&gt;
+
+&lt;p&gt;To begin with, FPGA stands for FIELD PROGRAMMABLE GATE ARRAY. it is an Integrated Circuit that can be programmed after manufacture depending upon the application. In a simpler language they are just another semiconductor device that contain programmable logic components(just thousands of logic gates and memory blocks or almost any element) and interconnections . Assume a board contains an FPGA as part of the circuit, it may be programmed during the manufacturing process but can later be re-programmed to reflect any changes depending on the user. Thus it is field programmable, giving rise to its name.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-does-fpga-work&quot;&gt;How does FPGA work?&lt;/h2&gt;
+
+&lt;p&gt;An FPGA by itself does nothing !! Consider it to be a bunch of logic gates and wires, sufficient in amount to make any logic device ranging from a binary adder to a full-fledged CPU Arithmetic Logic Unit. But making a logic device not just requires some IC’s and wires for interconnection. We need to design a logic circuit out of these basic gates to satisfy the needs of our device.&lt;/p&gt;
+
+&lt;p&gt;We all know about microcontrollers or microprocessors. Throughout their lifetime, they can perform only a limited number of tasks for which they are designed at the Silicon level. They can only be manipulated at the Software level. For example a microcontroller pin meant for analog input cannot generate a PWM output and vice versa, they are physically restricted within the IC Design.&lt;/p&gt;
+
+&lt;p&gt;In contrast to them, FPGA as it’s full form suggests is a reprogrammable device in the sense that the underlying digital design of the device can be reprogrammed as per the user requirements. Yes, you can literally make any I/O pin perform any function, may it be an analog input or a PWM output. You can manipulate an FPGA at the digital hardware level.&lt;/p&gt;
+
+&lt;p&gt;The FPGA consists of ‘Configurable Logic Block’ (CLB) i.e. an array of digital designs and are surrounded by programmable ‘Input/ Output Blocks’. There are routing channels that interconnect the different blocks. Additionally, there are multiple Clock signals and Memory blocks within the FPGA.&lt;/p&gt;
+
+&lt;p&gt;Good news for the C/C++ haters. FPGAs need a Hardware Description Language (HDL) to code them and believe me people who love digital hardware design will enjoy coding in HDL. No pointers, classes and other complex stuff to deal with. However, it does require great knowledge in digital circuit design and core electronic concepts.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“There ain’t no such thing as a free lunch.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Hardware Description Languages, as one might assume from the name, are used to describe the layout of a circuit or hardware application. Similar to the relationship of HTML and CSS to web development, Verilog/VHDL have a similar relationship to FPGAs. HDLs can be used to design and describe the layout of digital systems from simple flip-flop memory units to complex communications protocols. The two most popular HDL’s are Verilog and VHDL. We will discuss about them in detail in a separate blog post. Refer to the links provided at the end of this post for a self-start into HDLs.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-go-for-fpgas&quot;&gt;Why go for FPGAs?&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Parallelism&lt;/strong&gt; : A microcontroller CPU works by dividing it’s computation time between various tasks at hand to make their execution virtually concurrent i.e. parallel execution of various tasks.On the other hand, an FPGA equipped with its hardware layer configurability performs parallel task execution in reality. It is not virtual parallelism, but for real!
+Scope for making mistakes : When a new IC is designed and fabricated on a Silicon chip there is no room for error by the designers. With an FPGA, the designers can test their designs prior to the fabrication process and optimize the same for better results before actual fabrication starts. This is only due to the hardware reprogrammability of FPGAs. One of the very interesting things about FPGAs is that while you are designing the hardware, you can design the hardware to be a processor that you then can write software for! In fact, companies that design digital circuits, like Intel or nVidia, often use FPGAs to prototype their chips before creating them.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-not-then&quot;&gt;Why not, then?&lt;/h2&gt;
+&lt;p&gt;There are naturally some disadvantages. FPGAs are slower than equivalent ASICs (Application Specific Integrated Circuit) or other equivalent ICs.Also, programming them is not as simple as C programming used in processor based hardware. Additionally they are VERY, VERY EXPENSIVE.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-to-design-one&quot;&gt;How to design one?&lt;/h2&gt;
+&lt;p&gt;The FPGA design process is started by using a Hardware Description Language (HDL) definition or a schematic design. Common HDLs are VHDL (Very High Speed Integrated Circuit Hardware Description Language) and Verilog. Once this has been completed the next task in the FPGA design process is to produce a netlist for the particular FPGA family being used. The netlist can then be fitted to the actual FPGA architecture using a process called place-and-route. Finally the design is committed to the FPGA and it can be used in the electronic circuit board for which it is intended.&lt;/p&gt;
+
+&lt;p&gt;Pretty long post, yeah? It’s actually the result of merging contributions from two authors, that has kept y’all reading for so long.&lt;/p&gt;
+
+&lt;p&gt;Yet, there were a lot of assumptions and simplifications made in the explanation to make it lucid enough for beginners. Those who still have the patience to ‘solder’ on, and are interested in diving deep into this topic can surf through the glut of information about FPGAs on Google and the languid ones can just click on the links provided below to get started: (superfluous use of GRE vocab here :p)&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://embeddedmicro.com/blogs/tutorials/what-is-an-fpga&quot;&gt;More on FPGAs&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.nandland.com/articles/what-is-an-fpga-what-is-an-asic.html&quot;&gt;About ASIC&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.nandland.com/articles/what-software-programmers-need-to-understand.html&quot;&gt;To s/w programmers about h/w design&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.google.com/url?sa=t&amp;amp;rct=j&amp;amp;q=&amp;amp;esrc=s&amp;amp;source=web&amp;amp;cd=1&amp;amp;ved=2ahUKEwimppi0gL_cAhXDfysKHW1_BsgQFjAAegQIABAC&amp;amp;url=https%3A%2F%2Fwww.springer.com%2Fcda%2Fcontent%2Fdocument%2Fcda_downloaddocument%2F9781461435938-c2.pdf%3FSGWID%3D0-0-45-1333135-p174308376&amp;amp;usg=AOvVaw2MsuE2n6diN6g2X09oMcGT&quot;&gt;FPGA Architectures: An Overview - Springer&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.cse.iitb.ac.in/~cs330/FPGA-Arch.ppt&quot;&gt;CSE IIT-B’s PPT on FPGA Architectures&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://esd.cs.ucr.edu/labs/tutorial/&quot;&gt;VHDL Tutorial&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://nptel.ac.in/courses/Webcourse-contents/IIT%20Kharagpur/Embedded%20systems/Pdf/Lesson-20.pdf&quot;&gt;EE IIT-K’s PPT on FPGAs&lt;/a&gt;&lt;/p&gt;</content><author><name>sra-vjti</name></author><category term="electronics" /><category term="fpga" /><category term="embedded-system" /><summary type="html">– Saurabh Gupta</summary></entry></feed>

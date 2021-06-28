@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Guide to using singularity to run ROS Melodic | sra-vjti</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Guide to using singularity to run ROS Melodic" />
+<meta name="author" content="sra-vjti" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A guide to install singularity and use ROS melodic and all GUI components with it" />
+<meta property="og:description" content="A guide to install singularity and use ROS melodic and all GUI components with it" />
+<link rel="canonical" href="blog.sravjti.in/2020/12/11/singularity-ros-melodic.html" />
+<meta property="og:url" content="blog.sravjti.in/2020/12/11/singularity-ros-melodic.html" />
+<meta property="og:site_name" content="sra-vjti" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-12-11T00:00:00+00:00" />
+<script type="application/ld+json">
+{"description":"A guide to install singularity and use ROS melodic and all GUI components with it","url":"blog.sravjti.in/2020/12/11/singularity-ros-melodic.html","headline":"Guide to using singularity to run ROS Melodic","dateModified":"2020-12-11T00:00:00+00:00","datePublished":"2020-12-11T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"blog.sravjti.in/2020/12/11/singularity-ros-melodic.html"},"author":{"@type":"Person","name":"sra-vjti"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png" /><link type="application/atom+xml" rel="alternate" href="blog.sravjti.in/feed.xml" title="sra-vjti" /></head>
+<body><div class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">sra-vjti<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <span class="social_links">
+        <a class="color-pink-hover" href="https://www.instagram.com/sra_vjti/"><i class="fab fa-instagram"></i></a><a class="color-blue-hover" href="https://www.linkedin.com/company/society-of-robotics-and-automation-vjti/"><i class="fab fa-linkedin"></i></a><a class="color-cyan-hover" href="https://www.facebook.com/pg/sra.vjti/posts/"><i class="fab fa-facebook"></i></a><a class="color-red-hover" href="https://www.youtube.com/channel/UC-g67CbV2Iu30n7TvipRiCA/featured"><i class="fab fa-youtube"></i></a><a class="color-yellow-hover" href="https://github.com/sra-vjti"><i class="fab fa-github-square"></i></a>
+    </span>
+  </div>
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+  <div class="author-box">
+    
+    
+        <img src="
+            https://github.com/sra-vjti.png
+        " class="author-avatar" alt="Avatar" />
+    
+The Society of Robotics and Automation is a society for VJTI students. As the name suggests, we deal with Robotics, Machine Vision and Automation
+
+</div>
+
+
+<div class="post">
+  <h1 class="post-title">Guide to using singularity to run ROS Melodic</h1>
+  
+  <div class="post-tags">
+      
+      <a class="tag" href="/tag/ros_singularity/">ros_singularity</a>
+      
+  </div>
+  
+  <div class="post-date">Published on 11 Dec 2020</div>
+  
+  <div class="post-description">A guide to install singularity and use ROS melodic and all GUI components with it</div>
+  
+  <p>– <a href="https://github.com/SAtacker">Shreyas Atre</a></p>
+
+<h2 id="a-noobs-guide-by-a-noob-to-install-ros-on-singularity">A Noobs guide by a Noob to install ros on singularity</h2>
+
+<ul>
+  <li>In here only ros-melodic is shown , but it could be done the same way for noetic or ros2 by editing <code class="highlighter-rouge">osrf/ros:&lt;tag_name&gt;</code> <a href="https://hub.docker.com/r/osrf/ros/tags">tag names</a></li>
+  <li>As of Dec 10th,2020 Singularity is not supported on Windows</li>
+  <li>These guidlines are tested for Ubuntu 18.04 , 20.10 (Groovy G)</li>
+</ul>
+
+<h3 id="installing-go">Installing GO</h3>
+
+<ul>
+  <li>You coud just install go from the official guide but since you are here, you need it from here :smirk:</li>
+</ul>
+
+<p>Install the dependencies using apt</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get <span class="nb">install</span> <span class="nt">-y</span> build-essential libseccomp-dev pkg-config squashfs-tools cryptsetup
+</code></pre></div></div>
+<ul>
+  <li>Visit <a href="https://golang.org/dl/">Go downloads</a></li>
+  <li>Copy the latest stable release link for linux , until today 15.6 is the latest one
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>wget https://golang.org/dl/go1.15.6.linux-amd64.tar.gz
+</code></pre></div>    </div>
+  </li>
+  <li>The /usr/local hierarchy is for use by the system administrator when installing software locally.</li>
+  <li>Locally installed software must be placed within /usr/local rather than /usr unless it is being installed to replace or upgrade software in /usr. <a href="https://unix.stackexchange.com/questions/4186/what-is-usr-local-bin">Ref</a></li>
+  <li>Thus extract it in /usr/local using <a href="https://www.cyberciti.biz/faq/linux-unix-extracting-specific-files/">tar</a></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo tar</span> <span class="nt">-C</span> /usr/local <span class="nt">-xzf</span> go1.15.6.linux-amd64.tar.gz
+</code></pre></div></div>
+
+<ul>
+  <li>Now we need to set the environment variables for go</li>
+  <li>I set them directly in .bashrc but you can do it in <a href="https://unix.stackexchange.com/questions/3052/is-there-a-bashrc-equivalent-file-read-by-all-shells">alternative</a></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> <span class="s1">'export PATH=$PATH:/usr/local/go/bin'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">mkdir</span> ~/go_projects
+<span class="nb">echo</span> <span class="s1">'export GOPATH="$HOME/go_projects"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+<span class="nb">echo</span> <span class="s1">'export GOBIN="$GOPATH/bin"'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
+</code></pre></div></div>
+<ul>
+  <li>Now resource
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> ./bashrc
+</code></pre></div>    </div>
+  </li>
+  <li>Now check the installation
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>go version
+go <span class="nb">env</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Output would be <code class="highlighter-rouge">go version go1.15.6 linux/amd64</code> and
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GOBIN="/home/satacker/go_projects/bin"
+GOCACHE="/home/satacker/.cache/go-build"
+GOENV="/home/satacker/.config/go/env"
+...{and so on}
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="installing-singularity">Installing Singularity</h3>
+
+<ul>
+  <li>It is optional to install golangci-lint as per the <a href="https://github.com/hpcng/singularity/blob/master/INSTALL.md">singularity installation</a></li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-sfL</span> https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh <span class="nt">-s</span> <span class="nt">--</span> <span class="nt">-b</span> <span class="si">$(</span>go <span class="nb">env </span>GOPATH<span class="si">)</span>/bin v1.21.0
+</code></pre></div></div>
+
+<ul>
+  <li>Now installing Singularity</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> <span class="si">$(</span>go <span class="nb">env </span>GOPATH<span class="si">)</span>/src/github.com/sylabs
+<span class="nb">cd</span> <span class="si">$(</span>go <span class="nb">env </span>GOPATH<span class="si">)</span>/src/github.com/sylabs
+git clone https://github.com/sylabs/singularity.git
+<span class="nb">cd </span>singularity
+</code></pre></div></div>
+
+<ul>
+  <li>As of today v3.6.4 is a stable one</li>
+  <li>Now inside <code class="highlighter-rouge">singularity</code>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout v3.6.4
+./mconfig
+<span class="nb">cd</span> ./builddir
+make
+<span class="nb">sudo </span>make <span class="nb">install</span>
+</code></pre></div>    </div>
+  </li>
+  <li>To verify the installation
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>singularity version
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="installing-ros-melodic-from-osrf-image"><a href="https://robotism.me/blog/creating-ROS-melodic-container-with-singularity-3.5/">Installing ros melodic from osrf image</a></h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~ <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>singularity build <span class="nt">--sandbox</span> melodic/ docker://osrf/ros:melodic-desktop-full
+</code></pre></div></div>
+<ul>
+  <li>Now the container image is ready</li>
+  <li>To execute scripts in the container
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>singularity shell <span class="nt">--writable</span> melodic/
+</code></pre></div>    </div>
+  </li>
+  <li>This will open a Shell in Singurity image with the current directory mounted by default</li>
+  <li>Try <code class="highlighter-rouge">apt update &amp;&amp; apt upgrade</code></li>
+</ul>
+
+<h3 id="running-roscore">Running roscore</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>satacker@ubuntu:~<span class="nv">$ </span><span class="nb">sudo </span>singularity shell <span class="nt">-w</span> melodic/
+<span class="o">[</span><span class="nb">sudo</span><span class="o">]</span> password <span class="k">for </span>satacker: 
+Singularity&gt; <span class="nb">source</span> /opt/ros/melodic/setup.bash 
+Singularity&gt; roscore
+... logging to /root/.ros/log/b03e5adc-3b89-11eb-b60b-dcf505b1c27d/roslaunch-ubuntu-13488.log
+Checking log directory <span class="k">for </span>disk usage. This may take a <span class="k">while</span><span class="nb">.</span>
+Press Ctrl-C to interrupt
+Done checking log file disk usage. Usage is &lt;1GB.
+
+started roslaunch server http://ubuntu:40581/
+ros_comm version 1.14.10
+
+
+SUMMARY
+<span class="o">========</span>
+
+PARAMETERS
+ <span class="k">*</span> /rosdistro: melodic
+ <span class="k">*</span> /rosversion: 1.14.10
+
+NODES
+
+auto-starting new master
+process[master]: started with pid <span class="o">[</span>13498]
+<span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://ubuntu:11311/
+
+setting /run_id to b03e5adc-3b89-11eb-b60b-dcf505b1c27d
+process[rosout-1]: started with pid <span class="o">[</span>13509]
+started core service <span class="o">[</span>/rosout]
+
+</code></pre></div></div>
+
+<h3 id="running-gazebo">Running Gazebo</h3>
+
+<ul>
+  <li>If you get any errors please see <a href="#known-issues">Known Issues</a></li>
+</ul>
+
+<p><img src="/assets/posts/using-singularity-ros-melodic/gazebo.png" alt="" /></p>
+
+<h3 id="host-to-container">Host to Container</h3>
+
+<ul>
+  <li>When Singularity ‘swaps’ the host operating system for the one inside your container, the host file systems becomes inaccessible. But you may want to read and write files on the host system from within the container. To enable this functionality, Singularity will bind directories back in via two primary methods: system-defined bind points and conditional user-defined bind points.</li>
+  <li>Before</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>satacker@ubuntu:~<span class="nv">$ </span><span class="nb">sudo </span>singularity shell <span class="nt">-w</span> melodic/
+Singularity&gt; <span class="nb">cd</span> /home/
+Singularity&gt; <span class="nb">ls
+</span>Singularity&gt; 
+</code></pre></div></div>
+
+<ul>
+  <li>After</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>satacker@ubuntu:~<span class="nv">$ </span><span class="nb">sudo </span>singularity shell <span class="nt">-B</span> /home/satacker/:/home/ <span class="nt">-w</span> melodic/
+Singularity&gt; <span class="nb">cd</span> /home/
+Singularity&gt; <span class="nb">ls
+</span>Desktop    Downloads  Pictures	Templates  anaconda3	melodic  wget-log
+Documents  Music      Public	Videos	   go_projects	snap
+Singularity&gt; 
+</code></pre></div></div>
+
+<ul>
+  <li>In the above command <code class="highlighter-rouge">-B</code> is the option selected and <code class="highlighter-rouge">/home/satacker/</code> on the host is now binded with <code class="highlighter-rouge">/home/</code> on the container</li>
+  <li>Beware  Mount options (opts) may be specified as ro (read-only) or rw (read/write, which is the default)</li>
+</ul>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Singularity&gt; <span class="nb">touch </span>test.test
+Singularity&gt; <span class="nb">ls
+</span>Desktop    Downloads  Pictures	Templates  anaconda3	melodic  test.test
+Documents  Music      Public	Videos	   go_projects	snap	 wget-log
+Singularity&gt; 
+</code></pre></div></div>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>satacker@ubuntu:~<span class="nv">$ </span><span class="nb">ls
+</span>anaconda3  Documents  go_projects  Music     Public  Templates  Videos
+Desktop    Downloads  melodic      Pictures  snap    test.test  wget-log
+</code></pre></div></div>
+
+<h3 id="multiple-instances-of-same-image">Multiple Instances of same image</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>satacker@ubuntu:~<span class="nv">$ </span>singularity instance start melodic/ instance_1
+INFO:    instance started successfully
+satacker@ubuntu:~<span class="nv">$ </span>singularity instance start melodic/ instance_2
+INFO:    instance started successfully
+</code></pre></div></div>
+
+<h3 id="stopping-instances">Stopping Instances</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>satacker@ubuntu:~<span class="nv">$ </span>singularity instance list
+INSTANCE NAME    PID     IP    IMAGE
+instance_1       6705          /home/satacker/melodic
+instance_2       6994          /home/satacker/melodic
+satacker@ubuntu:~<span class="nv">$ </span>singularity instance stop instance_1
+INFO:    Stopping instance_1 instance of /home/satacker/melodic <span class="o">(</span><span class="nv">PID</span><span class="o">=</span>6705<span class="o">)</span>
+satacker@ubuntu:~<span class="nv">$ </span>singularity instance stop instance_2
+INFO:    Stopping instance_2 instance of /home/satacker/melodic <span class="o">(</span><span class="nv">PID</span><span class="o">=</span>6994<span class="o">)</span>
+</code></pre></div></div>
+
+<h3 id="running-turtlesim">Running Turtlesim</h3>
+
+<p><img src="/assets/posts/using-singularity-ros-melodic/turtlesime_key.png" alt="" />
+<img src="/assets/posts/using-singularity-ros-melodic/turtlesim_key_2.png" alt="" />
+<img src="/assets/posts/using-singularity-ros-melodic/turtlesim_key_3.png" alt="" /></p>
+
+<h3 id="using-terminator">Using Terminator</h3>
+
+<p><img src="/assets/posts/using-singularity-ros-melodic/terminator_multiple.png" alt="" /></p>
+
+<h2 id="known-issues">Known issues</h2>
+
+<ul>
+  <li>While running the gui apps the windowing system may give <code class="highlighter-rouge">No protocol specified</code> and <code class="highlighter-rouge">xcb_connection_has_error() returned true</code>
+The possible workaround (also the easiest) for this is to allow the anyone on the localhost to connect to your dislpay using <code class="highlighter-rouge">xhost +local:</code> - <a href="https://unix.stackexchange.com/questions/85782/error-no-protocol-specified-when-running-from-remote-machine-via-ssh">ref</a></li>
+  <li><code class="highlighter-rouge">libGL error: No matching fbConfigs or visuals found libGL error: failed to load driver: swrast</code> The possible workaround is to install nvidia or other graphic drivers <a href="https://askubuntu.com/questions/541343/problems-with-libgl-fbconfigs-swrast-through-each-update">ref</a> and then a reboot</li>
+  <li>While running terminator <code class="highlighter-rouge">dbus.exceptions.DBusException: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message</code> D-Bus is a software bus, inter-process communication, and remote procedure call mechanism that allows communication between multiple processes running concurrently on the same machine. simply use <code class="highlighter-rouge">terminator -u</code></li>
+</ul>
+
+
+</div>
+
+
+
+
+
+<div class="related">
+  <h2>related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2021/06/27/adversarial-attacks.html">
+            Adversarial Attacks
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2021/06/26/using-python-api-in-coppeliasim.html">
+            Using PythonAPI in CoppeliaSim
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2020/10/11/gdb-for-noobs.html">
+            GDB For Noobs
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+  
+  <h2>all tags</h2>
+  <div class="tag-cloud"><a href="/tag/api/" class="set-1">API</a> <a href="/tag/python/" class="set-1">Python</a> <a href="/tag/assembly/" class="set-1">assembly</a> <a href="/tag/compilers/" class="set-3">compilers</a> <a href="/tag/computer_vision/" class="set-1">computer_vision</a> <a href="/tag/electrical/" class="set-2">electrical</a> <a href="/tag/electronics/" class="set-5">electronics</a> <a href="/tag/embedded-system/" class="set-1">embedded-system</a> <a href="/tag/fpga/" class="set-1">fpga</a> <a href="/tag/gdb/" class="set-1">gdb</a> <a href="/tag/image_processing/" class="set-1">image_processing</a> <a href="/tag/interpreters/" class="set-2">interpreters</a> <a href="/tag/jekyll/" class="set-1">jekyll</a> <a href="/tag/memory/" class="set-1">memory</a> <a href="/tag/mobile-technology/" class="set-1">mobile-technology</a> <a href="/tag/mosfet/" class="set-1">mosfet</a> <a href="/tag/rectifiers/" class="set-1">rectifiers</a> <a href="/tag/relays/" class="set-1">relays</a> <a href="/tag/ros_singularity/" class="set-1">ros_singularity</a> <a href="/tag/semiconductors/" class="set-1">semiconductors</a> <a href="/tag/simulation/" class="set-1">simulation</a> <a href="/tag/transistors/" class="set-1">transistors</a></div>
+  
+
+
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits"><a href="https://github.com/bitbrain/jekyll-dash">dash</a> theme for Jekyll by <a href="https://github.com/bitbrain">bitbrain</a> made with <i class="fas fa-heart"></i><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>

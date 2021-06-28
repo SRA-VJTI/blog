@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Phase Control Rectifiers Explained in 2 Minutes | sra-vjti</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Phase Control Rectifiers Explained in 2 Minutes" />
+<meta name="author" content="sra-vjti" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Working of Phase Controlled Rectifiers" />
+<meta property="og:description" content="Working of Phase Controlled Rectifiers" />
+<link rel="canonical" href="blog.sravjti.in/2018/07/04/phase-controlled-rectifiers-in-2-minutes.html" />
+<meta property="og:url" content="blog.sravjti.in/2018/07/04/phase-controlled-rectifiers-in-2-minutes.html" />
+<meta property="og:site_name" content="sra-vjti" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-07-04T00:00:00+00:00" />
+<script type="application/ld+json">
+{"description":"Working of Phase Controlled Rectifiers","url":"blog.sravjti.in/2018/07/04/phase-controlled-rectifiers-in-2-minutes.html","headline":"Phase Control Rectifiers Explained in 2 Minutes","dateModified":"2018-07-04T00:00:00+00:00","datePublished":"2018-07-04T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"blog.sravjti.in/2018/07/04/phase-controlled-rectifiers-in-2-minutes.html"},"author":{"@type":"Person","name":"sra-vjti"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png" /><link type="application/atom+xml" rel="alternate" href="blog.sravjti.in/feed.xml" title="sra-vjti" /></head>
+<body><div class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">sra-vjti<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <span class="social_links">
+        <a class="color-pink-hover" href="https://www.instagram.com/sra_vjti/"><i class="fab fa-instagram"></i></a><a class="color-blue-hover" href="https://www.linkedin.com/company/society-of-robotics-and-automation-vjti/"><i class="fab fa-linkedin"></i></a><a class="color-cyan-hover" href="https://www.facebook.com/pg/sra.vjti/posts/"><i class="fab fa-facebook"></i></a><a class="color-red-hover" href="https://www.youtube.com/channel/UC-g67CbV2Iu30n7TvipRiCA/featured"><i class="fab fa-youtube"></i></a><a class="color-yellow-hover" href="https://github.com/sra-vjti"><i class="fab fa-github-square"></i></a>
+    </span>
+  </div>
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+  <div class="author-box">
+    
+    
+        <img src="
+            https://github.com/sra-vjti.png
+        " class="author-avatar" alt="Avatar" />
+    
+The Society of Robotics and Automation is a society for VJTI students. As the name suggests, we deal with Robotics, Machine Vision and Automation
+
+</div>
+
+
+<div class="post">
+  <h1 class="post-title">Phase Control Rectifiers Explained in 2 Minutes</h1>
+  
+  <div class="post-tags">
+      
+      <a class="tag" href="/tag/electronics/">electronics</a>
+      
+      <a class="tag" href="/tag/rectifiers/">rectifiers</a>
+      
+      <a class="tag" href="/tag/electrical/">electrical</a>
+      
+  </div>
+  
+  <div class="post-date">Published on 04 Jul 2018</div>
+  
+  <div class="post-description">Working of Phase Controlled Rectifiers</div>
+  
+  <p>– <a href="https://github.com/apoorva-21">Apoorva Gokhale</a></p>
+
+<p>– <a href="https://github.com/chirag16">Chirag Trasikar</a></p>
+
+<p>– <a href="https://www.linkedin.com/in/mujammil-patel-87803a112">Mujammil Patel</a></p>
+
+<p><img src="/assets/posts/phase-controlled-rectifiers-in-2-minutes/img1.jpg" alt="Rectifier" /></p>
+
+<p>Some years back AC to DC power alteration was attained using mercury arc rectifiers and motor generator sets. The common, normal diode rectifiers were not used because neither are they are able to handle high power, nor do they give us control over the output voltage. The modern AC to DC power converters are intended to handle high current and high power. So, the trend has shifted to using thyristors in place of diode rectifiers. Presently, most of the AC to DC power converters are thyristor-ized with the help of Phase Control Rectifiers.</p>
+
+<p>The term PCR or Phase controlled rectifier is one type of a rectifier circuit in which the diodes are replaced by Thyristors or SCRs (Silicon Controlled Rectifiers). Unlike a diode, a thyristor is a gate-control electronic switch which can be turn on by gate pulse and can be turn off when thyristor is reverse-biased. Hence, output of a PCR can be control by controlling firing pulse (gate pulse).
+<br /></p>
+
+<p><img src="/assets/posts/phase-controlled-rectifiers-in-2-minutes/img2.jpg" alt="Rectifier" /></p>
+
+<p>Now then, lets get to how it works. Most of us may not be aware of what a thyristor is. We can <strong>consider a thyristor to be a switch</strong> and, for simplicity, believe that it can be turn on and off like normal one. Now you have some switches which you can control. To extract the DC from the AC you have to <strong>wisely turn some switches on and some off</strong> for a particular period of time.
+<br /></p>
+
+<p>Taking the example of the three phase PCR which shown in the diagram at the start of this post, we can see three thyristors (the one with the symbol like diode with a dash) in series with each phase wire . Now <strong>when the phase Y is positive and its voltage is greater than the other two phases</strong> we turn on the thyristor in series with the phase Y and turn off the others, causing <strong>current to start flowing from upwards to downwards through the DC load</strong>. After some time, when phase R is positive and its voltage is greater than other two, we turn on the thyristor which is in series with phase R and turn the others off. Current still flows from upwards to downwards through the DC load. This process goes on, and the result is : Hence we have extracted DC voltage from AC successfully! (lab journal conclusions :P)
+<br /></p>
+
+<p>Now, coming to how the <strong>output DC voltage</strong> is varied. The <strong>firing delay</strong>, which is the time after which the respective thyristors turn on and off when the phase with the greatest positive voltage changes (as shown in the graph) is made use of here. The firing delay is varied, hence changing the Mean DC Level that is supplied by our circuit.</p>
+
+<h2 id="advantages-of-pcr">Advantages of PCR:</h2>
+
+<ul>
+  <li>Output voltage can be control using firing pulse delay.</li>
+  <li>As thyristors are capable of handling around 100A and 1200 ~ 1500V PCR can be operated over a large range of voltage and current.</li>
+</ul>
+
+<h2 id="applications-of-pcr">Applications of PCR:</h2>
+
+<ul>
+  <li>DC motor control in steel mills</li>
+  <li>Battery chargers</li>
+  <li>High voltage DC transmission</li>
+  <li>AC traction control using DC motors</li>
+</ul>
+
+<p><br />
+For the inquisitive, who want to find out more about thyristors and PCRs, here’s a few useful links:</p>
+
+<ul>
+  <li><a href="https://www.electronics-tutorials.ws/power/thyristor.html">Thyristors and Single Phase PCRs</a></li>
+  <li><a href="https://www.pantechsolutions.net/powerelectronics-tutorials/introduction-of-three-phase-half-full-wave-converter">Three Phase PCRs</a></li>
+</ul>
+
+<p><br /></p>
+
+<p>So that’s it for today folks, hope you enjoyed learning about PCRs as much as I did..!</p>
+
+</div>
+
+
+
+
+
+<div class="related">
+  <h2>related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2021/06/27/adversarial-attacks.html">
+            Adversarial Attacks
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2021/06/26/using-python-api-in-coppeliasim.html">
+            Using PythonAPI in CoppeliaSim
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2020/12/11/singularity-ros-melodic.html">
+            Guide to using singularity to run ROS Melodic
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+  
+  <h2>all tags</h2>
+  <div class="tag-cloud"><a href="/tag/api/" class="set-1">API</a> <a href="/tag/python/" class="set-1">Python</a> <a href="/tag/assembly/" class="set-1">assembly</a> <a href="/tag/compilers/" class="set-3">compilers</a> <a href="/tag/computer_vision/" class="set-1">computer_vision</a> <a href="/tag/electrical/" class="set-2">electrical</a> <a href="/tag/electronics/" class="set-5">electronics</a> <a href="/tag/embedded-system/" class="set-1">embedded-system</a> <a href="/tag/fpga/" class="set-1">fpga</a> <a href="/tag/gdb/" class="set-1">gdb</a> <a href="/tag/image_processing/" class="set-1">image_processing</a> <a href="/tag/interpreters/" class="set-2">interpreters</a> <a href="/tag/jekyll/" class="set-1">jekyll</a> <a href="/tag/memory/" class="set-1">memory</a> <a href="/tag/mobile-technology/" class="set-1">mobile-technology</a> <a href="/tag/mosfet/" class="set-1">mosfet</a> <a href="/tag/rectifiers/" class="set-1">rectifiers</a> <a href="/tag/relays/" class="set-1">relays</a> <a href="/tag/ros_singularity/" class="set-1">ros_singularity</a> <a href="/tag/semiconductors/" class="set-1">semiconductors</a> <a href="/tag/simulation/" class="set-1">simulation</a> <a href="/tag/transistors/" class="set-1">transistors</a></div>
+  
+
+
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits"><a href="https://github.com/bitbrain/jekyll-dash">dash</a> theme for Jekyll by <a href="https://github.com/bitbrain">bitbrain</a> made with <i class="fas fa-heart"></i><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>

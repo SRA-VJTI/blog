@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>What Is Machine Language (Or Machine Code)? | sra-vjti</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="What Is Machine Language (Or Machine Code)?" />
+<meta name="author" content="sra-vjti" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="What memory allocation is, static and dynamic memory allocation &amp; why is it imp?" />
+<meta property="og:description" content="What memory allocation is, static and dynamic memory allocation &amp; why is it imp?" />
+<link rel="canonical" href="blog.sravjti.in/2017/07/31/static-dynamic-mem.html" />
+<meta property="og:url" content="blog.sravjti.in/2017/07/31/static-dynamic-mem.html" />
+<meta property="og:site_name" content="sra-vjti" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-07-31T00:00:00+00:00" />
+<script type="application/ld+json">
+{"description":"What memory allocation is, static and dynamic memory allocation &amp; why is it imp?","url":"blog.sravjti.in/2017/07/31/static-dynamic-mem.html","headline":"What Is Machine Language (Or Machine Code)?","dateModified":"2017-07-31T00:00:00+00:00","datePublished":"2017-07-31T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"blog.sravjti.in/2017/07/31/static-dynamic-mem.html"},"author":{"@type":"Person","name":"sra-vjti"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png" /><link type="application/atom+xml" rel="alternate" href="blog.sravjti.in/feed.xml" title="sra-vjti" /></head>
+<body><div class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">sra-vjti<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <span class="social_links">
+        <a class="color-pink-hover" href="https://www.instagram.com/sra_vjti/"><i class="fab fa-instagram"></i></a><a class="color-blue-hover" href="https://www.linkedin.com/company/society-of-robotics-and-automation-vjti/"><i class="fab fa-linkedin"></i></a><a class="color-cyan-hover" href="https://www.facebook.com/pg/sra.vjti/posts/"><i class="fab fa-facebook"></i></a><a class="color-red-hover" href="https://www.youtube.com/channel/UC-g67CbV2Iu30n7TvipRiCA/featured"><i class="fab fa-youtube"></i></a><a class="color-yellow-hover" href="https://github.com/sra-vjti"><i class="fab fa-github-square"></i></a>
+    </span>
+  </div>
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+  <div class="author-box">
+    
+    
+        <img src="
+            https://github.com/sra-vjti.png
+        " class="author-avatar" alt="Avatar" />
+    
+The Society of Robotics and Automation is a society for VJTI students. As the name suggests, we deal with Robotics, Machine Vision and Automation
+
+</div>
+
+
+<div class="post">
+  <h1 class="post-title">What Is Machine Language (Or Machine Code)?</h1>
+  
+  <div class="post-tags">
+      
+      <a class="tag" href="/tag/compilers/">compilers</a>
+      
+      <a class="tag" href="/tag/assembly/">assembly</a>
+      
+  </div>
+  
+  <div class="post-date">Published on 31 Jul 2017</div>
+  
+  <div class="post-description">What memory allocation is, static and dynamic memory allocation & why is it imp?</div>
+  
+  <p>– <a href="https://github.com/rohitbhaskar">Rohit Bhaskar</a></p>
+
+<p>– <a href="https://github.com/chirag16">Chirag Trasikar</a></p>
+
+<p><img src="https://engineeringprojectideas.files.wordpress.com/2015/06/datamining.jpg?w=810" alt="binaries image" /></p>
+
+<p>A lot of computer nerds (Sorry! Engineers!!) know about something called machine language or machine code…maybe even a few electronics engineers…but for most it’s still just a jargon they have heard of, but never bothered googling 🙂</p>
+
+<p>By definition, Machine code or machine language is a set of instructions executed directly by a computer’s central processing unit (CPU). These instructions can be anything like (warning! The next few lines are specifically for engineering students who have worked with 8085 or 8086 microprocessors) load, a jump, or an ALU operation on a unit of data in a CPU register or memory. Every program directly executed by a CPU is made up of a series of such instructions.
+Now! For normal people…machine language is the only language that is understood by your computer. Each and every language or instruction that is given to a processor is always passed on it terms of machine language.</p>
+
+<p><img src="https://engineeringprojectideas.files.wordpress.com/2015/06/binaries.jpg?w=300&amp;h=206" alt="matrix like cool image" /></p>
+
+<p>So you must be wondering what machine language consists of right? Well, they consist entire of numbers and mostly binary and is almost impossible for humans to use. It has been said that machine code is so unreadable that the United States Copyright Office cannot identify whether a particular encoded program is an original work of authorship. That’s why an assembly level language is used by programmers! (We will get to assembly language some other time :p)
+So what happens to all that huge codes that people write, that does everything from showing you the little things on your display to actually running your main processes? Each and every thing is converted to either machine language or assembly language for the processor to understand the instruction and execute it.</p>
+
+<p><img src="https://engineeringprojectideas.files.wordpress.com/2015/06/level-of-programming-language.png?w=300&amp;h=236" alt="pyramid" /></p>
+
+<p>The next question that might arise is whether this language is used by all processors?? Well, the answer is no. Every processor or processor family has its own machine code instruction set. Instructions are patterns of bits that by physical design correspond to different commands to the machine. Thus, the instruction set is specific to a class of processors using (much) the same architecture.
+For more details you can refer <a href="https://en.wikipedia.org/wiki/Machine_code">Wikipedia</a></p>
+
+</div>
+
+
+
+
+
+<div class="related">
+  <h2>related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2021/06/27/adversarial-attacks.html">
+            Adversarial Attacks
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2021/06/26/using-python-api-in-coppeliasim.html">
+            Using PythonAPI in CoppeliaSim
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2020/12/11/singularity-ros-melodic.html">
+            Guide to using singularity to run ROS Melodic
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+  
+  <h2>all tags</h2>
+  <div class="tag-cloud"><a href="/tag/api/" class="set-1">API</a> <a href="/tag/python/" class="set-1">Python</a> <a href="/tag/assembly/" class="set-1">assembly</a> <a href="/tag/compilers/" class="set-3">compilers</a> <a href="/tag/computer_vision/" class="set-1">computer_vision</a> <a href="/tag/electrical/" class="set-2">electrical</a> <a href="/tag/electronics/" class="set-5">electronics</a> <a href="/tag/embedded-system/" class="set-1">embedded-system</a> <a href="/tag/fpga/" class="set-1">fpga</a> <a href="/tag/gdb/" class="set-1">gdb</a> <a href="/tag/image_processing/" class="set-1">image_processing</a> <a href="/tag/interpreters/" class="set-2">interpreters</a> <a href="/tag/jekyll/" class="set-1">jekyll</a> <a href="/tag/memory/" class="set-1">memory</a> <a href="/tag/mobile-technology/" class="set-1">mobile-technology</a> <a href="/tag/mosfet/" class="set-1">mosfet</a> <a href="/tag/rectifiers/" class="set-1">rectifiers</a> <a href="/tag/relays/" class="set-1">relays</a> <a href="/tag/ros_singularity/" class="set-1">ros_singularity</a> <a href="/tag/semiconductors/" class="set-1">semiconductors</a> <a href="/tag/simulation/" class="set-1">simulation</a> <a href="/tag/transistors/" class="set-1">transistors</a></div>
+  
+
+
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits"><a href="https://github.com/bitbrain/jekyll-dash">dash</a> theme for Jekyll by <a href="https://github.com/bitbrain">bitbrain</a> made with <i class="fas fa-heart"></i><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>

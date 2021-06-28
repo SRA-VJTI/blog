@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Using Jekyll to generate static sites and hosting them on Github Pages [Part 1] | sra-vjti</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Using Jekyll to generate static sites and hosting them on Github Pages [Part 1]" />
+<meta name="author" content="sra-vjti" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is a tutorial for using jekyll to generate static sites" />
+<meta property="og:description" content="This is a tutorial for using jekyll to generate static sites" />
+<link rel="canonical" href="blog.sravjti.in/2020/09/14/using-jekyll-with-github-pages-1.html" />
+<meta property="og:url" content="blog.sravjti.in/2020/09/14/using-jekyll-with-github-pages-1.html" />
+<meta property="og:site_name" content="sra-vjti" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-14T00:00:00+00:00" />
+<script type="application/ld+json">
+{"description":"This is a tutorial for using jekyll to generate static sites","url":"blog.sravjti.in/2020/09/14/using-jekyll-with-github-pages-1.html","headline":"Using Jekyll to generate static sites and hosting them on Github Pages [Part 1]","dateModified":"2020-09-14T00:00:00+00:00","datePublished":"2020-09-14T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"blog.sravjti.in/2020/09/14/using-jekyll-with-github-pages-1.html"},"author":{"@type":"Person","name":"sra-vjti"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png" /><link type="application/atom+xml" rel="alternate" href="blog.sravjti.in/feed.xml" title="sra-vjti" /></head>
+<body><div class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">sra-vjti<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <span class="social_links">
+        <a class="color-pink-hover" href="https://www.instagram.com/sra_vjti/"><i class="fab fa-instagram"></i></a><a class="color-blue-hover" href="https://www.linkedin.com/company/society-of-robotics-and-automation-vjti/"><i class="fab fa-linkedin"></i></a><a class="color-cyan-hover" href="https://www.facebook.com/pg/sra.vjti/posts/"><i class="fab fa-facebook"></i></a><a class="color-red-hover" href="https://www.youtube.com/channel/UC-g67CbV2Iu30n7TvipRiCA/featured"><i class="fab fa-youtube"></i></a><a class="color-yellow-hover" href="https://github.com/sra-vjti"><i class="fab fa-github-square"></i></a>
+    </span>
+  </div>
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+  <div class="author-box">
+    
+    
+        <img src="
+            https://github.com/sra-vjti.png
+        " class="author-avatar" alt="Avatar" />
+    
+The Society of Robotics and Automation is a society for VJTI students. As the name suggests, we deal with Robotics, Machine Vision and Automation
+
+</div>
+
+
+<div class="post">
+  <h1 class="post-title">Using Jekyll to generate static sites and hosting them on Github Pages [Part 1]</h1>
+  
+  <div class="post-tags">
+      
+      <a class="tag" href="/tag/jekyll/">jekyll</a>
+      
+  </div>
+  
+  <div class="post-date">Published on 14 Sep 2020</div>
+  
+  <div class="post-description">This is a tutorial for using jekyll to generate static sites</div>
+  
+  <p>– <a href="https://github.com/VedantParanjape">Vedant Paranjape</a></p>
+
+<h1 id="introduction-to-jekyll">Introduction to Jekyll</h1>
+
+<h2 id="what-is-jekyll">What is Jekyll</h2>
+
+<p>Jekyll is a simple, blog-aware, static site generator perfect for personal, project, or organization sites. Think of it like a file-based CMS, without all the complexity. Jekyll takes your content, renders Markdown and Liquid templates, and spits out a complete, static website ready to be served by Apache, Nginx or another web server. Jekyll is the engine behind GitHub Pages, which you can use to host sites right from your GitHub repositories.</p>
+
+<p>Jekyll does what you tell it to do — no more, no less. It doesn’t try to outsmart users by making bold assumptions, nor does it burden them with needless complexity and configuration. Put simply, Jekyll gets out of your way and allows you to concentrate on what truly matters: your content.</p>
+
+<h2 id="what-are-dynamic-websites">What are dynamic websites</h2>
+
+<p>Dynamic websites pull information from a database to fill in the content on a webpage. When you search for some movie on Google.com, the search results page you are shown didn’t already exist as a full HTML page; instead, Google.com has a template for search results page that includes things all results pages share, but it queries the database to insert the results of that search you initiated into that template and thus shows the result on your screen.</p>
+
+<h2 id="what-are-static-websites">What are static websites</h2>
+
+<p>Static websites do not use a database to store information. All the info that is to be displayed on the webpage is already contained inside the html file, be it javascript or css. The HTML pages that make up a static site can be completely written by hand, or you can offload some of this work using something like Jekyll.</p>
+
+<h2 id="github-pages">Github Pages</h2>
+
+<p>GitHub Pages is a place to store the files that run a website and host that website for people to visit. It can only be used to host static websites. Using it we can publish static websites through github, the domain name for the page is as follows <code class="highlighter-rouge">&lt;github_username&gt;.github.io</code></p>
+
+<h1 id="getting-started">Getting started</h1>
+
+<h2 id="using-html-files">Using html files</h2>
+
+<ul>
+  <li>Create a new repository with any name, say jekyll-site</li>
+</ul>
+
+<p><img src="/assets/posts/using-jekyll-with-github-pages-part-1/create_repo.png" alt="" /></p>
+
+<ul>
+  <li>Add a new file named, <code class="highlighter-rouge">index.html</code> to the repository.</li>
+</ul>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;html&gt;</span>
+hello world from jekyll
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p><img src="/assets/posts/using-jekyll-with-github-pages-part-1/add_file.png" alt="" /></p>
+
+<ul>
+  <li>Commit changes and push it to the repository.</li>
+  <li>Go to repository settings, and scroll down, you will see a Github Pages section, in that in source, dropdown and select branch as master, and then press save. Now wait for some time, you will see something like <code class="highlighter-rouge">Your site is published at &lt;link to your site&gt;</code>.</li>
+</ul>
+
+<p><img src="/assets/posts/using-jekyll-with-github-pages-part-1/go_to_github_pages.png" alt="" /></p>
+
+<p><img src="/assets/posts/using-jekyll-with-github-pages-part-1/published.png" alt="" /></p>
+
+<ul>
+  <li>Press the link, and see the expected output as follows.</li>
+</ul>
+
+<p><img src="/assets/posts/using-jekyll-with-github-pages-part-1/site.png" alt="" /></p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<ul>
+  <li>Remember one thing, if there are multiple .html files, index.html file is the one which is shown as the first page.</li>
+  <li>So, this is how you use github pages to host your own html pages, but again we are using html and css to build a site, which actually hasn’t solved our problem, So, now we show how to do the same using markdown files.</li>
+</ul>
+
+<h2 id="using-markdown-files">Using markdown files</h2>
+
+<ul>
+  <li>Rename index.html to index.md</li>
+  <li>Edit index.md and add the following to it</li>
+</ul>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Helloworld</span>
+<span class="gu">## Hello world using jekyll</span>
+
+<span class="sb">`this is code fencing`</span>
+
+<span class="ge">*Text in Italic*</span>
+
+<span class="gs">**Text in Bold**</span>
+
+Normal Text
+</code></pre></div></div>
+
+<ul>
+  <li>Now commit the changes and push it to repository.</li>
+  <li>Go out and check your mobile for a minute, as it takes few minutes to reflect changes.</li>
+  <li>Now open the site and see the expected output as follows.</li>
+</ul>
+
+<p><img src="/assets/posts/using-jekyll-with-github-pages-part-1/site_with_markdown.png" alt="" /></p>
+
+<h1 id="conclusion-1">Conclusion</h1>
+
+<ul>
+  <li>Site will be rendered into html files using jekyll, even if our file is in markdown.</li>
+  <li>So, Jekyll translates the markdown file into html files, thus reducing our work, and since markdown is very easy to use and maintain, and doesn’t have wierd tags like html, it is very human readable and maintainable.</li>
+  <li>Now, say you want to add such a page to some project you did, so you can’t add these .md files in your github pages, there is a functionality to overcome this, we can store all our github pages files in a sub folder called <code class="highlighter-rouge">/docs</code>, and this will be rendered as earlier, to do this, go to repository settings, and scroll down, you will see a Github Pages section, in that in source, dropdown and select file as /docs, and then press save.</li>
+</ul>
+
+<p><img src="/assets/posts/using-jekyll-with-github-pages-part-1/settings_select_docs_as_root_folder.png" alt="" /></p>
+
+<ul>
+  <li>Try this yourself, by creating a docs folder and moving the <code class="highlighter-rouge">index.md</code> to /docs, then commit and push the changes.</li>
+  <li>You can also try to theme your page, click on <code class="highlighter-rouge">choose a theme</code> below source section, and select the theme of your choice, wait for sometime, and check the website again. For example here, I have used the <code class="highlighter-rouge">slate-theme</code>.</li>
+</ul>
+
+<p><img src="/assets/posts/using-jekyll-with-github-pages-part-1/page_with_theme.png" alt="" /></p>
+
+</div>
+
+
+
+
+
+<div class="related">
+  <h2>related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2021/06/27/adversarial-attacks.html">
+            Adversarial Attacks
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2021/06/26/using-python-api-in-coppeliasim.html">
+            Using PythonAPI in CoppeliaSim
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2020/12/11/singularity-ros-melodic.html">
+            Guide to using singularity to run ROS Melodic
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+  
+  <h2>all tags</h2>
+  <div class="tag-cloud"><a href="/tag/api/" class="set-1">API</a> <a href="/tag/python/" class="set-1">Python</a> <a href="/tag/assembly/" class="set-1">assembly</a> <a href="/tag/compilers/" class="set-3">compilers</a> <a href="/tag/computer_vision/" class="set-1">computer_vision</a> <a href="/tag/electrical/" class="set-2">electrical</a> <a href="/tag/electronics/" class="set-5">electronics</a> <a href="/tag/embedded-system/" class="set-1">embedded-system</a> <a href="/tag/fpga/" class="set-1">fpga</a> <a href="/tag/gdb/" class="set-1">gdb</a> <a href="/tag/image_processing/" class="set-1">image_processing</a> <a href="/tag/interpreters/" class="set-2">interpreters</a> <a href="/tag/jekyll/" class="set-1">jekyll</a> <a href="/tag/memory/" class="set-1">memory</a> <a href="/tag/mobile-technology/" class="set-1">mobile-technology</a> <a href="/tag/mosfet/" class="set-1">mosfet</a> <a href="/tag/rectifiers/" class="set-1">rectifiers</a> <a href="/tag/relays/" class="set-1">relays</a> <a href="/tag/ros_singularity/" class="set-1">ros_singularity</a> <a href="/tag/semiconductors/" class="set-1">semiconductors</a> <a href="/tag/simulation/" class="set-1">simulation</a> <a href="/tag/transistors/" class="set-1">transistors</a></div>
+  
+
+
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits"><a href="https://github.com/bitbrain/jekyll-dash">dash</a> theme for Jekyll by <a href="https://github.com/bitbrain">bitbrain</a> made with <i class="fas fa-heart"></i><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>

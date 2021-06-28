@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Rotating Image By Any Angle (Shear Transformation) Using Only NumPy | sra-vjti</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Rotating Image By Any Angle (Shear Transformation) Using Only NumPy" />
+<meta name="author" content="sra-vjti" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Rotate a image by x degrees using only numpy and PIL" />
+<meta property="og:description" content="Rotate a image by x degrees using only numpy and PIL" />
+<link rel="canonical" href="blog.sravjti.in/2020/09/09/sheer-transformation.html" />
+<meta property="og:url" content="blog.sravjti.in/2020/09/09/sheer-transformation.html" />
+<meta property="og:site_name" content="sra-vjti" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-09T00:00:00+00:00" />
+<script type="application/ld+json">
+{"description":"Rotate a image by x degrees using only numpy and PIL","url":"blog.sravjti.in/2020/09/09/sheer-transformation.html","headline":"Rotating Image By Any Angle (Shear Transformation) Using Only NumPy","dateModified":"2020-09-09T00:00:00+00:00","datePublished":"2020-09-09T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"blog.sravjti.in/2020/09/09/sheer-transformation.html"},"author":{"@type":"Person","name":"sra-vjti"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png" /><link type="application/atom+xml" rel="alternate" href="blog.sravjti.in/feed.xml" title="sra-vjti" /></head>
+<body><div class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">sra-vjti<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <span class="social_links">
+        <a class="color-pink-hover" href="https://www.instagram.com/sra_vjti/"><i class="fab fa-instagram"></i></a><a class="color-blue-hover" href="https://www.linkedin.com/company/society-of-robotics-and-automation-vjti/"><i class="fab fa-linkedin"></i></a><a class="color-cyan-hover" href="https://www.facebook.com/pg/sra.vjti/posts/"><i class="fab fa-facebook"></i></a><a class="color-red-hover" href="https://www.youtube.com/channel/UC-g67CbV2Iu30n7TvipRiCA/featured"><i class="fab fa-youtube"></i></a><a class="color-yellow-hover" href="https://github.com/sra-vjti"><i class="fab fa-github-square"></i></a>
+    </span>
+  </div>
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+  <div class="author-box">
+    
+    
+        <img src="
+            https://github.com/sra-vjti.png
+        " class="author-avatar" alt="Avatar" />
+    
+The Society of Robotics and Automation is a society for VJTI students. As the name suggests, we deal with Robotics, Machine Vision and Automation
+
+</div>
+
+
+<div class="post">
+  <h1 class="post-title">Rotating Image By Any Angle (Shear Transformation) Using Only NumPy</h1>
+  
+  <div class="post-tags">
+      
+      <a class="tag" href="/tag/image_processing/">image_processing</a>
+      
+  </div>
+  
+  <div class="post-date">Published on 09 Sep 2020</div>
+  
+  <div class="post-description">Rotate a image by x degrees using only numpy and PIL</div>
+  
+  <p>– <a href="https://github.com/gautam-dev-maker">Gautam Agrawal</a></p>
+
+<p align="center"><img width="768" height="350" src="/assets/posts/shear-transformation/image_1.png" /></p>
+
+<p>These days, we are spoiled with high end libraries. When It comes to Image Processing and advanced libraries such as OpenCV Rotating Image may sound like a very easy task using inbuilt functions.I am not telling you to code everything from scratch, However, an understanding about how things work will make you a better programmer. So let’s get started.</p>
+
+<h2 id="bitmaps">Bitmaps</h2>
+
+<p>A typical computer image these days uses 24 bits to represent the color of each pixel. Eight bits are used to store the intensity of the <strong>red</strong> part of a pixel (<strong>00000000</strong> through <strong>11111111</strong>), giving 256 distinct values. Eight bits are used to store the <strong>green</strong> component, and eight bits are used to store the <strong>blue</strong> component.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img width="600" height="250" src="/assets/posts/shear-transformation/image_2.png" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Each pixel has a coordinate pair (x,y) describing its position on two orthogonal axes from defined origin O. It is around this origin we are going to rotate this image.What we need to do is take the RGB values at every (x,y) location, rotate it as needed, and then write these values in the new location, considering (x,y) with respect to the origin we assumed.The new location is obtained by using the transformation matrix.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img width="600" height="150" src="/assets/posts/shear-transformation/image_3.png" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When image will be rotated ,the dimension of the frame containing it will change so to find the new dimensions we use this formula,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>new_width=|old_width×cosθ|+|old_height×sinθ|
+
+new_height=|old_height×cosθ|+ |old_row×sinθ|
+</code></pre></div></div>
+
+<p>now let’s code it</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">Image</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span><span class="s">"test.png"</span><span class="p">))</span>             <span class="c1"># Load the image
+</span><span class="n">angle</span><span class="o">=</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"Enter the angle :- "</span><span class="p">))</span>              <span class="c1"># Ask the user to enter the angle of rotation
+</span>
+<span class="c1"># Define the most occuring variables
+</span><span class="n">angle</span><span class="o">=</span><span class="n">math</span><span class="p">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>                            <span class="c1">#converting degrees to radians
+</span><span class="n">cosine</span><span class="o">=</span><span class="n">math</span><span class="p">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+<span class="n">sine</span><span class="o">=</span><span class="n">math</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+<span class="n">height</span><span class="o">=</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                                <span class="c1">#define the height of the image
+</span><span class="n">width</span><span class="o">=</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>                                 <span class="c1">#define the width of the image
+</span>
+<span class="c1"># Define the height and width of the new image that is to be formed
+</span><span class="n">new_height</span>  <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">cosine</span><span class="p">)</span><span class="o">+</span><span class="nb">abs</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">sine</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">new_width</span>  <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">cosine</span><span class="p">)</span><span class="o">+</span><span class="nb">abs</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">sine</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span>
+
+<span class="c1"># define another image variable of dimensions of new_height and new _column filled with zeros
+</span><span class="n">output</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">new_height</span><span class="p">,</span><span class="n">new_width</span><span class="p">,</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+
+<span class="c1"># Find the centre of the image about which we have to rotate the image
+</span><span class="n">original_centre_height</span>   <span class="o">=</span> <span class="nb">round</span><span class="p">(((</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>    <span class="c1">#with respect to the original image
+</span><span class="n">original_centre_width</span>    <span class="o">=</span> <span class="nb">round</span><span class="p">(((</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>    <span class="c1">#with respect to the original image
+</span>
+<span class="c1"># Find the centre of the new image that will be obtained
+</span><span class="n">new_centre_height</span><span class="o">=</span> <span class="nb">round</span><span class="p">(((</span><span class="n">new_height</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>        <span class="c1">#with respect to the new image
+</span><span class="n">new_centre_width</span><span class="o">=</span> <span class="nb">round</span><span class="p">(((</span><span class="n">new_width</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>          <span class="c1">#with respect to the new image
+</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
+        <span class="c1">#co-ordinates of pixel with respect to the centre of original image
+</span>        <span class="n">y</span><span class="o">=</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="n">original_centre_height</span>                   
+        <span class="n">x</span><span class="o">=</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">j</span><span class="o">-</span><span class="n">original_centre_width</span>                      
+
+        <span class="c1">#co-ordinate of pixel with respect to the rotated image
+</span>        <span class="n">new_y</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="o">-</span><span class="n">x</span><span class="o">*</span><span class="n">sine</span><span class="o">+</span><span class="n">y</span><span class="o">*</span><span class="n">cosine</span><span class="p">)</span>
+        <span class="n">new_x</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">cosine</span><span class="o">+</span><span class="n">y</span><span class="o">*</span><span class="n">sine</span><span class="p">)</span>
+
+        <span class="s">'''since image will be rotated the centre will change too, 
+        so to adust to that we will need to change new_x and new_y with
+        respect to the new centre'''</span>
+        <span class="n">new_y</span><span class="o">=</span><span class="n">new_centre_height</span><span class="o">-</span><span class="n">new_y</span>
+        <span class="n">new_x</span><span class="o">=</span><span class="n">new_centre_width</span><span class="o">-</span><span class="n">new_x</span>
+
+        <span class="c1"># adding if check to prevent any errors in the processing
+</span>        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">new_x</span> <span class="o">&lt;</span> <span class="n">new_width</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">new_y</span> <span class="o">&lt;</span> <span class="n">new_height</span> <span class="ow">and</span> <span class="n">new_x</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">new_y</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">output</span><span class="p">[</span><span class="n">new_y</span><span class="p">,</span><span class="n">new_x</span><span class="p">,:]</span><span class="o">=</span><span class="n">image</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,:]</span>                          <span class="c1">#writing the pixels to the new destination in the output image
+</span>
+<span class="n">pil_img</span><span class="o">=</span><span class="n">Image</span><span class="p">.</span><span class="n">fromarray</span><span class="p">((</span><span class="n">output</span><span class="p">).</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">uint8</span><span class="p">))</span>    <span class="c1"># converting array to image
+</span><span class="n">pil_img</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">"rotated_image.png"</span><span class="p">)</span>                                                 <span class="c1"># saving the image
+</span></code></pre></div></div>
+
+<p align="center"><img width="768" height="350" src="/assets/posts/shear-transformation/image_4.png" /></p>
+<p align="center">Image obtained by matrix rotation</p>
+
+<h2 id="aliasing">Aliasing</h2>
+
+<p>So our resultant image is rotated by 15 degrees ,so it really worked,but what are those black dots?This is a problem called aliasing.Multiplying by sines and cosines on the integer coordinates of the source image gives real number results, and these have to be rounded back to integers again to be plotted. Sometimes this number rounding means the same destination location is addressed more than once, and sometimes certain pixels are missed completely. When the pixels are missed, the background shows through. This is why there are holes.The aliasing problem gets worse when angles are closesr to the diagonals. Here are a few examples of images at different rotations:</p>
+
+<p align="center"><img width="1080" height="1080" src="/assets/posts/shear-transformation/image_5.png" /></p>
+
+<p>What can we do about this? There are a variety of solutions. One of them is to oversample the source image. We can pretend that each of the original source pixels is really a grid of <em>n x n</em> smaller pixels (all of the same color), and calculate the destination coordinates of each of these subpixels and plot these</p>
+
+<p>A more refined way is called <em>Area Mapping</em>. For this, you invert the problem, and for each <em>destination</em> pixel, you find which <em>four</em> partial source pixels that it was created from. The color for the destination is calculated by the area-weighted average of the four source pixels (The source pixels that contribute more to the destination pixel have a greater influence on its color). This algorithm not only ensures that there are no gaps in the destination, but also appropriately averages the colors (ensuring both a smoother image and also keeping the average brightness of the rotated image constant).</p>
+
+<p>However, there is a more elegant method, and this is the method that was used many years ago when computing power (and memory) were at a premium and every processor cycle worth its weight in gold. It is called the <em>three shear rotation</em> method.</p>
+
+<h2 id="three-shears">Three shears</h2>
+
+<p>These method works by expanding 2D rotation matrix into three different matrices.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><img width="600" height="150" src="/assets/posts/shear-transformation/image_6.png" /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>There are some interesting properties of this matrix:-</p>
+
+<ol>
+  <li>The three matrices are all shear matrices</li>
+  <li>The first and the last matrices are the same</li>
+  <li>The determinant of each matrix is same (each stage is conformal and keeps the area the same).</li>
+  <li>As the shear happens in just one plane at time, and each stage is conformal in area, no aliasing gaps appear in any stage.</li>
+</ol>
+
+<p><strong>note</strong>: Shear matrix shown above rotates in clockwise direction so we need to take angle in negative values to assess for that.</p>
+
+<p>So let’s code the shear transformation</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
+<span class="kn">import</span> <span class="nn">math</span>
+
+
+<span class="k">def</span> <span class="nf">shear</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+    <span class="s">'''
+    |1  -tan(𝜃/2) |  |1        0|  |1  -tan(𝜃/2) | 
+    |0      1     |  |sin(𝜃)   1|  |0      1     |
+
+    '''</span>
+    <span class="c1"># shear 1
+</span>    <span class="n">tangent</span><span class="o">=</span><span class="n">math</span><span class="p">.</span><span class="n">tan</span><span class="p">(</span><span class="n">angle</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+    <span class="n">new_x</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="o">*</span><span class="n">tangent</span><span class="p">)</span>
+    <span class="n">new_y</span><span class="o">=</span><span class="n">y</span>
+
+    <span class="c1">#shear 2
+</span>    <span class="n">new_y</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">new_x</span><span class="o">*</span><span class="n">math</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span><span class="o">+</span><span class="n">new_y</span><span class="p">)</span>      <span class="c1">#since there is no change in new_x according to the shear matrix
+</span>
+    <span class="c1">#shear 3
+</span>    <span class="n">new_x</span><span class="o">=</span><span class="nb">round</span><span class="p">(</span><span class="n">new_x</span><span class="o">-</span><span class="n">new_y</span><span class="o">*</span><span class="n">tangent</span><span class="p">)</span>              <span class="c1">#since there is no change in new_y according to the shear matrix
+</span>
+    <span class="k">return</span> <span class="n">new_y</span><span class="p">,</span><span class="n">new_x</span>
+
+<span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">Image</span><span class="p">.</span><span class="nb">open</span><span class="p">(</span><span class="s">"test.png"</span><span class="p">))</span>             <span class="c1"># Load the image
+</span><span class="n">angle</span><span class="o">=-</span><span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s">"Enter the angle :- "</span><span class="p">))</span>                <span class="c1"># Ask the user to enter the angle of rotation
+</span>
+<span class="c1"># Define the most occuring variables
+</span><span class="n">angle</span><span class="o">=</span><span class="n">math</span><span class="p">.</span><span class="n">radians</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>                               <span class="c1">#converting degrees to radians
+</span><span class="n">cosine</span><span class="o">=</span><span class="n">math</span><span class="p">.</span><span class="n">cos</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+<span class="n">sine</span><span class="o">=</span><span class="n">math</span><span class="p">.</span><span class="n">sin</span><span class="p">(</span><span class="n">angle</span><span class="p">)</span>
+
+<span class="n">height</span><span class="o">=</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>                                   <span class="c1">#define the height of the image
+</span><span class="n">width</span><span class="o">=</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>                                    <span class="c1">#define the width of the image
+</span>
+<span class="c1"># Define the height and width of the new image that is to be formed
+</span><span class="n">new_height</span>  <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">cosine</span><span class="p">)</span><span class="o">+</span><span class="nb">abs</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">sine</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span>
+<span class="n">new_width</span>  <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">cosine</span><span class="p">)</span><span class="o">+</span><span class="nb">abs</span><span class="p">(</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">sine</span><span class="p">))</span><span class="o">+</span><span class="mi">1</span>
+
+<span class="c1"># define another image variable of dimensions of new_height and new _column filled with zeros
+</span><span class="n">output</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">new_height</span><span class="p">,</span><span class="n">new_width</span><span class="p">,</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+<span class="n">image_copy</span><span class="o">=</span><span class="n">output</span><span class="p">.</span><span class="n">copy</span><span class="p">()</span>
+
+
+<span class="c1"># Find the centre of the image about which we have to rotate the image
+</span><span class="n">original_centre_height</span>   <span class="o">=</span> <span class="nb">round</span><span class="p">(((</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>    <span class="c1">#with respect to the original image
+</span><span class="n">original_centre_width</span>    <span class="o">=</span> <span class="nb">round</span><span class="p">(((</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>    <span class="c1">#with respect to the original image
+</span>
+<span class="c1"># Find the centre of the new image that will be obtained
+</span><span class="n">new_centre_height</span><span class="o">=</span> <span class="nb">round</span><span class="p">(((</span><span class="n">new_height</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>        <span class="c1">#with respect to the new image
+</span><span class="n">new_centre_width</span><span class="o">=</span> <span class="nb">round</span><span class="p">(((</span><span class="n">new_width</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>          <span class="c1">#with respect to the new image
+</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">height</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">width</span><span class="p">):</span>
+        <span class="c1">#co-ordinates of pixel with respect to the centre of original image
+</span>        <span class="n">y</span><span class="o">=</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="n">original_centre_height</span>                   
+        <span class="n">x</span><span class="o">=</span><span class="n">image</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="mi">1</span><span class="o">-</span><span class="n">j</span><span class="o">-</span><span class="n">original_centre_width</span> 
+
+        <span class="c1">#Applying shear Transformation                     
+</span>        <span class="n">new_y</span><span class="p">,</span><span class="n">new_x</span><span class="o">=</span><span class="n">shear</span><span class="p">(</span><span class="n">angle</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+
+        <span class="s">'''since image will be rotated the centre will change too, 
+            so to adust to that we will need to change new_x and new_y with respect to the new centre'''</span>
+        <span class="n">new_y</span><span class="o">=</span><span class="n">new_centre_height</span><span class="o">-</span><span class="n">new_y</span>
+        <span class="n">new_x</span><span class="o">=</span><span class="n">new_centre_width</span><span class="o">-</span><span class="n">new_x</span>
+
+
+        <span class="c1"># adding if check to prevent any errors in the processing
+</span>        <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">new_x</span> <span class="o">&lt;</span> <span class="n">new_width</span> <span class="ow">and</span> <span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">new_y</span> <span class="o">&lt;</span> <span class="n">new_height</span> <span class="ow">and</span> <span class="n">new_x</span><span class="o">&gt;=</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">new_y</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">output</span><span class="p">[</span><span class="n">new_y</span><span class="p">,</span><span class="n">new_x</span><span class="p">,:]</span><span class="o">=</span><span class="n">image</span><span class="p">[</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,:]</span>                          <span class="c1">#writing the pixels to the new destination in the output image
+</span>
+
+<span class="n">pil_img</span><span class="o">=</span><span class="n">Image</span><span class="p">.</span><span class="n">fromarray</span><span class="p">((</span><span class="n">output</span><span class="p">).</span><span class="n">astype</span><span class="p">(</span><span class="n">np</span><span class="p">.</span><span class="n">uint8</span><span class="p">))</span>                       <span class="c1"># converting array to image
+</span><span class="n">pil_img</span><span class="p">.</span><span class="n">save</span><span class="p">(</span><span class="s">"rotated_image.png"</span><span class="p">)</span>                                                 <span class="c1"># saving the image]
+</span></code></pre></div></div>
+
+<p align="center"><img width="1400" height="400" src="/assets/posts/shear-transformation/image_7.png" /></p>
+
+<p>In the first shear operation, raster columns are simply shifted up and down relative to each other. The shearing is symmetric around the center of the image. It’s analogous to shearing a deck of playing cards.</p>
+
+<p>The second shear operation does a similar thing on the previous image, but this time does the shearing left to right.</p>
+
+<p>The final shear is the same as the first operation; this time applied to the intermediate image.</p>
+
+<p>No gaps! How elegant is that? We just rotated an image an arbitrary amount (smoothly) using three shear operations!</p>
+
+<p>In times-past, when floating point and trig calculations were expensive, these properties were very important. Because only one plane was being modified at once, no additional memory was needed as the code could simple walk down the raster line making the changes it needed. Pretty cool.</p>
+
+
+</div>
+
+
+
+
+
+<div class="related">
+  <h2>related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2021/06/27/adversarial-attacks.html">
+            Adversarial Attacks
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2021/06/26/using-python-api-in-coppeliasim.html">
+            Using PythonAPI in CoppeliaSim
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2020/12/11/singularity-ros-melodic.html">
+            Guide to using singularity to run ROS Melodic
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+  
+  <h2>all tags</h2>
+  <div class="tag-cloud"><a href="/tag/api/" class="set-1">API</a> <a href="/tag/python/" class="set-1">Python</a> <a href="/tag/assembly/" class="set-1">assembly</a> <a href="/tag/compilers/" class="set-3">compilers</a> <a href="/tag/computer_vision/" class="set-1">computer_vision</a> <a href="/tag/electrical/" class="set-2">electrical</a> <a href="/tag/electronics/" class="set-5">electronics</a> <a href="/tag/embedded-system/" class="set-1">embedded-system</a> <a href="/tag/fpga/" class="set-1">fpga</a> <a href="/tag/gdb/" class="set-1">gdb</a> <a href="/tag/image_processing/" class="set-1">image_processing</a> <a href="/tag/interpreters/" class="set-2">interpreters</a> <a href="/tag/jekyll/" class="set-1">jekyll</a> <a href="/tag/memory/" class="set-1">memory</a> <a href="/tag/mobile-technology/" class="set-1">mobile-technology</a> <a href="/tag/mosfet/" class="set-1">mosfet</a> <a href="/tag/rectifiers/" class="set-1">rectifiers</a> <a href="/tag/relays/" class="set-1">relays</a> <a href="/tag/ros_singularity/" class="set-1">ros_singularity</a> <a href="/tag/semiconductors/" class="set-1">semiconductors</a> <a href="/tag/simulation/" class="set-1">simulation</a> <a href="/tag/transistors/" class="set-1">transistors</a></div>
+  
+
+
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits"><a href="https://github.com/bitbrain/jekyll-dash">dash</a> theme for Jekyll by <a href="https://github.com/bitbrain">bitbrain</a> made with <i class="fas fa-heart"></i><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>

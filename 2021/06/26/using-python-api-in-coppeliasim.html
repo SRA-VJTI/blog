@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Using PythonAPI in CoppeliaSim | sra-vjti</title>
+<meta name="generator" content="Jekyll v3.8.7" />
+<meta property="og:title" content="Using PythonAPI in CoppeliaSim" />
+<meta name="author" content="sra-vjti" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Basic functions and Usage of PythonAPI in CoppeliaSim" />
+<meta property="og:description" content="Basic functions and Usage of PythonAPI in CoppeliaSim" />
+<link rel="canonical" href="blog.sravjti.in/2021/06/26/using-python-api-in-coppeliasim.html" />
+<meta property="og:url" content="blog.sravjti.in/2021/06/26/using-python-api-in-coppeliasim.html" />
+<meta property="og:site_name" content="sra-vjti" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-26T00:00:00+00:00" />
+<script type="application/ld+json">
+{"description":"Basic functions and Usage of PythonAPI in CoppeliaSim","url":"blog.sravjti.in/2021/06/26/using-python-api-in-coppeliasim.html","headline":"Using PythonAPI in CoppeliaSim","dateModified":"2021-06-26T00:00:00+00:00","datePublished":"2021-06-26T00:00:00+00:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"blog.sravjti.in/2021/06/26/using-python-api-in-coppeliasim.html"},"author":{"@type":"Person","name":"sra-vjti"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="icon" type="image/png" href="/assets/favicon.png" /><link type="application/atom+xml" rel="alternate" href="blog.sravjti.in/feed.xml" title="sra-vjti" /></head>
+<body><div class="site-header">
+  <div class="wrapper">
+    <a class="site-title" rel="author" href="/">sra-vjti<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
+    <span class="social_links">
+        <a class="color-pink-hover" href="https://www.instagram.com/sra_vjti/"><i class="fab fa-instagram"></i></a><a class="color-blue-hover" href="https://www.linkedin.com/company/society-of-robotics-and-automation-vjti/"><i class="fab fa-linkedin"></i></a><a class="color-cyan-hover" href="https://www.facebook.com/pg/sra.vjti/posts/"><i class="fab fa-facebook"></i></a><a class="color-red-hover" href="https://www.youtube.com/channel/UC-g67CbV2Iu30n7TvipRiCA/featured"><i class="fab fa-youtube"></i></a><a class="color-yellow-hover" href="https://github.com/sra-vjti"><i class="fab fa-github-square"></i></a>
+    </span>
+  </div>
+</div>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        
+  <div class="author-box">
+    
+    
+        <img src="
+            https://github.com/sra-vjti.png
+        " class="author-avatar" alt="Avatar" />
+    
+The Society of Robotics and Automation is a society for VJTI students. As the name suggests, we deal with Robotics, Machine Vision and Automation
+
+</div>
+
+
+<div class="post">
+  <h1 class="post-title">Using PythonAPI in CoppeliaSim</h1>
+  
+  <div class="post-tags">
+      
+      <a class="tag" href="/tag/simulation/">simulation</a>
+      
+      <a class="tag" href="/tag/Python/">Python</a>
+      
+      <a class="tag" href="/tag/API/">API</a>
+      
+  </div>
+  
+  <div class="post-date">Published on 26 Jun 2021</div>
+  
+  <div class="post-description">Basic functions and Usage of PythonAPI in CoppeliaSim</div>
+  
+  <p>– <a href="https://github.com/hashmis79">Saad Hashmi</a></p>
+<ul>
+  <li>We can do many simulation tasks in CoppeliaSim, but the biggest turndown is that we will have to learn a whole new language called Lua. To overcome this CoppeliaSim provides us with an API with can connect CoppeliaSim to many languages including Python, C, C++. In this blog, we will be focusing on Setting up the Python API and some of its basic functions.</li>
+</ul>
+
+<p>We will be covering the basic functions of Python API and their use in simulation&lt;/br&gt;</p>
+<ul>
+  <li><a href="#setting-up-the-files">Setting Up the Files</a>&lt;/br&gt;</li>
+  <li><a href="#establishing-communication">Establishing Communication with V-Rep</a>&lt;/br&gt;</li>
+  <li><a href="#retrieving-object-handles-in-python">Retrieving Object Handles in python</a>&lt;/br&gt;</li>
+  <li><a href="#setting-actuator-velocities">Setting Actuator Velocities</a>&lt;/br&gt;</li>
+  <li><a href="#retrieving-image-data">Retrieving Image data from Vrep to python</a>&lt;/br&gt;</li>
+  <li><a href="#putting-it-all-together">Putting it all together</a></li>
+</ul>
+
+<h2 id="setting-up-the-files">Setting Up the Files</h2>
+<ul>
+  <li>For Setting up the API, we should add the necessary files to our working directory that are needed for the API which can be found in the CoppeliaSim installation Folder</li>
+</ul>
+
+<p>1) Navigate to <code class="highlighter-rouge">CoppeliaRobotics\CoppeliaSimEdu\programming\remoteApiBindings\python\python</code> and copy all the .py files into the working directory&lt;/br&gt;
+2) Navigate to <code class="highlighter-rouge">CoppeliaRobotics\CoppeliaSimEdu\programming\remoteApiBindings\lib\lib</code>&lt;/br&gt;
+  Depending on the System you are on, you can select the folder (Windows, Ubuntu 16/18, MacOS)&lt;/br&gt;
+  copy the .dll, .so, or the .dylib file respectively to your working directory.</p>
+
+<p>3) The next thing we want to do is that we have to create a threaded script in any component of the scene where you want to implement API.</p>
+<p align="center">
+  <img src="/assets/posts/using-python-api-in-coppeliasim/PythonAPI_Adding_Script.gif" height="512" />
+</p>
+<p>4) In the Script we should add the following statement in the sysCall_threadmain() function</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">simRemoteApi</span><span class="p">.</span><span class="n">start</span><span class="p">(</span><span class="mi">19990</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p><strong>Note: 19999 is the port that will be used for API communications, this can be defined by you.</strong></p>
+
+<p>Now you are all set for using the PythonAPI in CoppeliaSim.</p>
+<h2 id="establishing-communication">Establishing Communication</h2>
+<ul>
+  <li>For Establishing Communication we need to follow the following steps :&lt;/br&gt;
+1) import the <code class="highlighter-rouge">sim</code> library in the code&lt;/br&gt;
+2) Add the below statements to the code</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sim</span><span class="p">.</span><span class="n">simxFinish</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">clientID</span> <span class="o">=</span> <span class="n">sim</span><span class="p">.</span><span class="n">simxStart</span><span class="p">(</span><span class="s">'127.0.0.1'</span><span class="p">,</span><span class="mi">19990</span><span class="p">,</span><span class="bp">True</span><span class="p">,</span><span class="bp">True</span><span class="p">,</span><span class="mi">5000</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+</code></pre></div></div>
+<p><strong>Note: The port being used in the statement should match the port number specified while setting up.</strong></p>
+
+<ul>
+  <li>For Testing the establishment of communication you have to run the following code after starting the simulation in CoppeliaSim :
+```python
+import sim
+import sys</li>
+</ul>
+
+<p>sim.simxFinish(-1)</p>
+
+<p>clientID=sim.simxStart(‘127.0.0.1’,19990,True,True,5000,5)</p>
+
+<p>if clientID != -1:
+    print(“Connected to the remote API server”)
+else:
+    print(“Connection not successful”)
+    sys.exit(“Could not connect”)</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>**Note: You have to run the Simulation before you run the Code or else the Connection would not be established**
+&lt;p align="center"&gt;
+  &lt;img src="/assets/posts/using-python-api-in-coppeliasim/PythonAPI_StartAPI.gif" height ="512"/&gt;
+&lt;/p&gt;
+
+## Retrieving Object Handles in python
+* Object handles can be considered as a key or an ID which a component possesses. It is used to provide commands to a component(For eg. joint Velocity to a motor). PythonAPI also has an inbuilt function for that:
+
+```python
+sim.simxGetObjectHandle()
+</code></pre></div></div>
+
+<table align="center">
+    <tr>
+     <td align="left"><b>Parameters</b></td>
+     <td align="left"><b>clientID</b>: the client ID  <br /> <b>objectName</b>: name of the object. <br /><b>operationMode</b>: a remote API function operation mode. Recommended operation mode for this function is <code>sim.simx_opmode_blocking</code></td>
+    </tr>
+    <tr>
+        <td align="left"><b>Return Values</b></td>
+        <td align="left"><b>returnCode</b>: a remote API function return code &lt;/br&gt; <b>handle</b>: the Object handle</td>
+    </tr>
+</table>
+
+<p>An Example of using this Function is :</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">error_code</span><span class="p">,</span><span class="n">motor_handle</span> <span class="o">=</span> <span class="n">sim</span><span class="p">.</span><span class="n">simxGetObjectHandle</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span><span class="s">"Object Name in CoppeliaSim"</span><span class="p">,</span> <span class="n">sim</span><span class="p">.</span><span class="n">simx_opmode_oneshot_wait</span><span class="p">)</span>
+</code></pre></div></div>
+<h2 id="setting-actuator-velocities">Setting Actuator Velocities</h2>
+<ul>
+  <li>Setting actuator velocities is a really simple task. The following function can be used for it:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sim</span><span class="p">.</span><span class="n">simxSetJointTargetVelocity</span><span class="p">()</span>
+</code></pre></div></div>
+
+<table align="center">
+    <tr>
+     <td align="left"><b>Parameters</b></td>
+     <td align="left"><b>clientID</b>: the client ID  <br /> <b>jointHandle</b>: handle of the joint <br /><b>targetVelocity</b>: target velocity of the joint (linear or angular velocity depending on the joint-type)<br /><b>operationMode</b>: a remote API function operation mode. Recommended operation mode for this function is <code>sim.simx_opmode_oneshot</code> or <code>sim.simx_opmode_streaming</code></td>
+    </tr>
+    <tr>
+        <td align="left"><b>Return Values</b></td>
+        <td align="left"><b>returnCode</b>: a remote API function return code </td>
+    </tr>
+</table>
+
+<p>An Example of using this Function is :</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">error_Code</span> <span class="o">=</span> <span class="n">sim</span><span class="p">.</span><span class="n">simxSetJointTargetVelocity</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span><span class="n">motor_handle</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="n">sim</span><span class="p">.</span><span class="n">simx_opmode_streaming</span><span class="p">)</span>
+</code></pre></div></div>
+<h2 id="retrieving-image-data">Retrieving Image data</h2>
+<ul>
+  <li>We can also retrieve image data from CoppeliaSim using the following Function:</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sim</span><span class="p">.</span><span class="n">simxGetVisionSensorImage</span><span class="p">()</span>
+</code></pre></div></div>
+
+<table align="center">
+    <tr>
+     <td align="left"><b>Parameters</b></td>
+     <td align="left"><b>clientID</b>: the client ID  <br /> <b>sensorHandle</b>: handle of the vision sensor <br /><b>options</b>: image options, bit-coded:bit0 set: each image pixel is a byte (greyscale image), otherwise each image pixel is a rgb byte-triplet<br /><b>operationMode</b>: a remote API function operation mode. Recommended operation mode for this function is <code>sim.simx_opmode_streaming</code></td>
+    </tr>
+    <tr>
+        <td align="left"><b>Return Values</b></td>
+        <td align="left"><b>returnCode</b>: a remote API function return code <br /> <b>resolution</b>: the resolution of the image (x,y)<br /><b>image</b>: the image data</td>
+    </tr>
+</table>
+
+<p>The image array returned by the function is a 1D Array. So for the image to be displayable we first resize the image and convert it to RGB formate using <code class="highlighter-rouge">NumPy</code></p>
+
+<p>An Example of using this Function is :</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">errorCode</span><span class="p">,</span><span class="n">resolution</span><span class="p">,</span><span class="n">image</span><span class="o">=</span> <span class="n">sim</span><span class="p">.</span><span class="n">simxGetVisionSensorImage</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span><span class="n">cam_handle</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">vrep</span><span class="p">.</span><span class="n">simx_opmode_streaming</span><span class="p">)</span>
+<span class="n">img</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">dtype</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">uint8</span><span class="p">)</span>
+<span class="n">img</span><span class="p">.</span><span class="n">resize</span> <span class="o">=</span> <span class="p">(</span><span class="n">resolution</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">resolution</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="mi">3</span><span class="p">)</span>
+</code></pre></div></div>
+<h2 id="stopping-simulation">Stopping Simulation</h2>
+<ul>
+  <li>We can use the below function for stopping the simulation :</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sim</span><span class="p">.</span><span class="n">simxStopSimulation</span><span class="p">()</span>
+</code></pre></div></div>
+
+<table align="center">
+    <tr>
+     <td align="left"><b>Parameters</b></td>
+     <td align="left"><b>clientID</b>: the client ID  <br /> <b>operationMode</b>: a remote API function operation mode. Recommended operation mode for this function is <code>sim.simx_opmode_oneshot</code></td>
+    </tr>
+    <tr>
+        <td align="left"><b>Return Values</b></td>
+        <td align="left"><b>returnCode</b>: a remote API function return code </td>
+    </tr>
+</table>
+
+<p>An Example of using this Function is :</p>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sim</span><span class="p">.</span><span class="n">simxStopSimulation</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span> <span class="n">sim</span><span class="p">.</span><span class="n">simx_opmode_oneshot_wait</span><span class="p">)</span>
+</code></pre></div></div>
+
+<h2 id="putting-it-all-together">Putting it all together</h2>
+<ul>
+  <li>After learning all of the above functions. We will write a simple code for an environment containing a Vision sensor, a Pioneer_p3dx (under Mobile Robots), and a plant.
+The below code establishes a connection with the simulation and commands the joint motors. It also retrieves the image from the vision sensor and displays after resizing it.</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sim</span> 
+<span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">cv2</span>
+
+<span class="n">sim</span><span class="p">.</span><span class="n">simxFinish</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">clientID</span> <span class="o">=</span> <span class="n">sim</span><span class="p">.</span><span class="n">simxStart</span><span class="p">(</span><span class="s">'127.0.0.1'</span><span class="p">,</span><span class="mi">19990</span><span class="p">,</span><span class="bp">True</span><span class="p">,</span><span class="bp">True</span><span class="p">,</span><span class="mi">5000</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">clientID</span><span class="o">!=</span> <span class="o">-</span><span class="mi">1</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Connected to Remote API Server"</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Connection failed"</span><span class="p">)</span>
+    <span class="n">sys</span><span class="p">.</span><span class="nb">exit</span><span class="p">(</span><span class="s">'Could not reconnect'</span><span class="p">)</span>
+
+<span class="n">errorcode</span><span class="p">,</span><span class="n">left_motor_handle</span> <span class="o">=</span> <span class="n">sim</span><span class="p">.</span><span class="n">simxGetObjectHandle</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span><span class="s">'Pioneer_p3dx_leftMotor'</span><span class="p">,</span><span class="n">sim</span><span class="p">.</span><span class="n">simx_opmode_oneshot_wait</span><span class="p">)</span>
+<span class="n">errorcode</span><span class="p">,</span><span class="n">right_motor_handle</span> <span class="o">=</span> <span class="n">sim</span><span class="p">.</span><span class="n">simxGetObjectHandle</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span><span class="s">'Pioneer_p3dx_rightMotor'</span><span class="p">,</span><span class="n">sim</span><span class="p">.</span><span class="n">simx_opmode_oneshot_wait</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="s">"Given Target Velocities to the Joints"</span><span class="p">)</span>
+<span class="n">errorcode</span><span class="p">,</span><span class="n">cam_handle</span> <span class="o">=</span> <span class="n">sim</span><span class="p">.</span><span class="n">simxGetObjectHandle</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span><span class="s">'Cam'</span><span class="p">,</span><span class="n">sim</span><span class="p">.</span><span class="n">simx_opmode_oneshot_wait</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="k">while</span> <span class="bp">True</span><span class="p">:</span>
+
+        <span class="n">sim</span><span class="p">.</span><span class="n">simxSetJointTargetVelocity</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span><span class="n">left_motor_handle</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">sim</span><span class="p">.</span><span class="n">simx_opmode_streaming</span><span class="p">)</span>
+        <span class="n">sim</span><span class="p">.</span><span class="n">simxSetJointTargetVelocity</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span><span class="n">right_motor_handle</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">sim</span><span class="p">.</span><span class="n">simx_opmode_streaming</span><span class="p">)</span>
+
+        <span class="n">errorCode</span><span class="p">,</span><span class="n">resolution</span><span class="p">,</span><span class="n">image</span><span class="o">=</span><span class="n">sim</span><span class="p">.</span><span class="n">simxGetVisionSensorImage</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span><span class="n">cam_handle</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">sim</span><span class="p">.</span><span class="n">simx_opmode_streaming</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">image</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">array</span><span class="p">(</span><span class="n">image</span><span class="p">,</span><span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="p">.</span><span class="n">dtype</span><span class="p">(</span><span class="s">'uint8'</span><span class="p">))</span>
+            <span class="n">image</span> <span class="o">=</span> <span class="n">np</span><span class="p">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">image</span><span class="p">,(</span><span class="n">resolution</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="n">resolution</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="mi">3</span><span class="p">))</span>
+            <span class="n">cv2</span><span class="p">.</span><span class="n">imshow</span><span class="p">(</span><span class="s">"Image"</span><span class="p">,</span> <span class="n">image</span><span class="p">)</span>
+            <span class="n">cv2</span><span class="p">.</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="k">except</span> <span class="nb">KeyboardInterrupt</span><span class="p">:</span>   <span class="c1">#Checks if ctrl+c is pressed 
+</span>    <span class="n">sim</span><span class="p">.</span><span class="n">simxStopSimulation</span><span class="p">(</span><span class="n">clientID</span><span class="p">,</span> <span class="n">sim</span><span class="p">.</span><span class="n">simx_opmode_oneshot_wait</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"Stopping Simulation"</span><span class="p">)</span>
+    <span class="k">pass</span>
+    
+<span class="n">sim</span><span class="p">.</span><span class="n">simxFinish</span><span class="p">(</span><span class="n">clientID</span><span class="p">)</span>
+</code></pre></div></div>
+<h2 id="output-">Output :</h2>
+<p align="center">
+  <img src="/assets/posts/using-python-api-in-coppeliasim/PythonAPI_Final_Code.gif" height="512" />
+</p>
+
+<h2 id="finding-the-rest-of-the-functions">Finding the rest of the Functions</h2>
+<ul>
+  <li>You can find the rest of the equivalent functions from the <a href="https://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm">PythonAPI Functions list</a>. You just have to search the Lua function’s name and you will find the Python equivalent function and its description.</li>
+</ul>
+
+<h2 id="references-used">References Used</h2>
+<ul>
+  <li><a href="https://youtu.be/SQont-mTnfM">A video tutorial via a small project by Nikolai</a>&lt;/br&gt;</li>
+  <li><a href="https://www.coppeliarobotics.com/helpFiles/en/remoteApiFunctionsPython.htm">The official API documentation and Functions List provided by CoppeliaSim</a>&lt;/br&gt;</li>
+  <li>Learn more about streaming modes <a href="https://www.coppeliarobotics.com/helpFiles/en/remoteApiConstants.htm#operationModes">here</a></li>
+  <li>For learning CoppeliaSim from scratch, go <a href="https://www.youtube.com/watch?v=PwGY8PxQOXY&amp;list=PLjzuoBhdtaXOoqkJUqhYQletLLnJP8vjZ">here</a>.</li>
+</ul>
+
+</div>
+
+
+
+
+
+<div class="related">
+  <h2>related posts</h2>
+  <ul class="related-posts">
+    
+      <li>
+        <h3>
+          <a href="/2021/06/27/adversarial-attacks.html">
+            Adversarial Attacks
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2020/12/11/singularity-ros-melodic.html">
+            Guide to using singularity to run ROS Melodic
+          </a>
+        </h3>
+      </li>
+    
+      <li>
+        <h3>
+          <a href="/2020/10/11/gdb-for-noobs.html">
+            GDB For Noobs
+          </a>
+        </h3>
+      </li>
+    
+  </ul>
+</div>
+
+
+
+
+  
+  <h2>all tags</h2>
+  <div class="tag-cloud"><a href="/tag/api/" class="set-1">API</a> <a href="/tag/python/" class="set-1">Python</a> <a href="/tag/assembly/" class="set-1">assembly</a> <a href="/tag/compilers/" class="set-3">compilers</a> <a href="/tag/computer_vision/" class="set-1">computer_vision</a> <a href="/tag/electrical/" class="set-2">electrical</a> <a href="/tag/electronics/" class="set-5">electronics</a> <a href="/tag/embedded-system/" class="set-1">embedded-system</a> <a href="/tag/fpga/" class="set-1">fpga</a> <a href="/tag/gdb/" class="set-1">gdb</a> <a href="/tag/image_processing/" class="set-1">image_processing</a> <a href="/tag/interpreters/" class="set-2">interpreters</a> <a href="/tag/jekyll/" class="set-1">jekyll</a> <a href="/tag/memory/" class="set-1">memory</a> <a href="/tag/mobile-technology/" class="set-1">mobile-technology</a> <a href="/tag/mosfet/" class="set-1">mosfet</a> <a href="/tag/rectifiers/" class="set-1">rectifiers</a> <a href="/tag/relays/" class="set-1">relays</a> <a href="/tag/ros_singularity/" class="set-1">ros_singularity</a> <a href="/tag/semiconductors/" class="set-1">semiconductors</a> <a href="/tag/simulation/" class="set-1">simulation</a> <a href="/tag/transistors/" class="set-1">transistors</a></div>
+  
+
+
+
+      </div>
+    </main><footer class="site-footer">
+  <div class="wrapper">
+    <div class="credits"><a href="https://github.com/bitbrain/jekyll-dash">dash</a> theme for Jekyll by <a href="https://github.com/bitbrain">bitbrain</a> made with <i class="fas fa-heart"></i><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
+</div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
+
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+	window.localStorage.setItem('theme', 'dark');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script></div>
+  </div>
+</footer>
+
+
+<script>
+      window.FontAwesomeConfig = {
+        searchPseudoElements: true
+      }
+    </script>
+  </body>
+
+</html>
