@@ -1,0 +1,25 @@
+layout : post  
+title : Write-mate
+tags : Python ,ML ,RNN, CNN
+Write-mate
+--
+Write-mate is a ML model which converts given printed text into handwritten text using deep learning, neural networks like RNN, CNN. We will be working on the project from ground up without using technologies like PyTorch and tensor flow. WriteMate is an innovative machine learning-based project aimed at bridging the gap between digital and analog communication styles. The project focuses on developing a system that can convert printed letters into handwritten letters using advanced machine learning techniques. This technology finds applications in personalization, artistic expression, and enhancing the warmth of digital communication.
+
+---
+
+I am Sanika Kumbhare from EXTC working together with Mohammed Bhadsorawala from CSE -VJTI
+
+---
+Week 1
+--
+We started off with getting familiar with markdown, learning concepts like Linear algebra.We got familiar with the workings of git and GitHub. 
+
+Week 2
+--
+We are currently learning about the neural network and deep learning from Deeplearning.AI and python
+
+---
+Challenges faced
+--
+- The first challenge we experienced was the uploading of git file of markdown notes on GitHub using terminal. We solved it by making an ssh key and saving the key on my laptop. We are thankful to the mentors for correctly guiding us and always readily solving our doubts.
+- The main challenge during this project what we feel we will face is managing travelling, academics and learning this simultaneously. But we am optimistic that we would learn to balance it out and complete out project successfully.
