@@ -1,7 +1,8 @@
 source "https://rubygems.org"
 
-gem "jekyll", "~> 3.8.5"
+#gem "jekyll"
+gem "github-pages", "~> 228", group: :jekyll_plugins
 
-gem 'jekyll-dash', '~> 1.0.0'
+gem 'jekyll-dash'
 gem "liquid-md5"
 gem "jekyll-tagging"
