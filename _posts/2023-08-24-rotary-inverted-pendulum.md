@@ -17,8 +17,7 @@ Model predictive control (MPC) is an advanced method of process control that is 
 - an optimization algorithm minimizing the cost function
 #### Simulation
 To validate the mathematical model, numerical simulation of nonlinear model of the system is performed via MATLAB Simulink. As the structure consists of the pendulum with mass, the motor ,the rotor along with the base. We  simulate these individual components to obtain the output graph associated with the components shows their behavior .The horizontal and vertical plane are used geometrically to visualize the position of pendulum and the arms.  These are then coupled to form the device whose planar output is then observed to be as same as the rotary inverted pendulum.  This helps us in understanding the lag associated along with the correct dimensions of the components.
-#### Mentor
---
+
 #### Mentees
 --[Roshan](https://github.com/RoshAd-06)
 -- [Shankari](https://github.com/Shankari02) 
