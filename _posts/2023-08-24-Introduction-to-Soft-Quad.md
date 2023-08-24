@@ -38,9 +38,9 @@ Unlike traditional rigid robots, this project utilizes soft robotics principles 
 ## Tasks done in week 1
 1. Understanding ESP IDF through flashing of codes like Led Blink, printing 'Hello World' and understand the working of PWM motors
 
-![](https://hackmd.io/_uploads/H1sw42X63.png)
+![](assets/posts/Introduction-to-Soft-Quad/HelloWorld.png)
 
-![](https://hackmd.io/_uploads/ry_qjnXTn.gif)
+![](assets/posts/Introduction-to-Soft-Quad/LEDBlink.gif)
 
 2. Learning about ESP 32  and its pin diagram, PWM motors and research papers on soft quad,why **SOFT QUAD** rather than a normal rigid material quad? 
 3. Learnt about the components of SRA Development Board and their uses.
