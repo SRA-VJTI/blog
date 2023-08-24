@@ -6,6 +6,7 @@ description: Overview of Project Soft Quad and Tasks throughout the First Week
 ---
 -- [Soft Quad](https://github.com/pavit15/softquad)
 - Mentees:
+
 -- [Atharva Atre-SY Electronics](https://github.com/AtharvaAtre)
 (about me)Mainly Interested in Core Electronics.Wanting to learn and domains such as Embedded Systems,PCBs,etc.
 
