@@ -9,15 +9,15 @@ description: Overview of Project Soft Quad and Tasks throughout the First Week
 
 1. [Atharva Atre](https://github.com/AtharvaAtre)
 
-Mainly Interested in Core Electronics.Wanting to learn and domains such as Embedded Systems,PCBs,etc.
+    Mainly Interested in Core Electronics.Wanting to learn and domains such as Embedded Systems,PCBs,etc.
 
 2. [Pavit Kaur](https://github.com/pavit15)
 
-Excited to learn and explore the field of robotics. Want to learn PCB designing, on both software and hardware. Interested domain of Electronics and want to enhance skills to make projects that can be utilized to solve real world problems.
+    Excited to learn and explore the field of robotics. Want to learn PCB designing, on both software and hardware. Interested domain of Electronics and want to enhance skills to make projects that can be utilized to solve real world problems.
     
 3. [Varad Naik](https://github.com/VaradNaik921)
 
-Robotics, which encompasses mechanical design, robot and PCB fabrication, and embedded systems, intrigues me as an enthusiastic learner. Through the lens of this project, I'm eager to deepen my understanding of how hardware and software are integrated in Soft Robot.
+    Robotics, which encompasses mechanical design, robot and PCB fabrication, and embedded systems, intrigues me as an enthusiastic learner. Through the lens of this project, I'm eager to deepen my understanding of how hardware and software are integrated in Soft Robot.
 
 - Mentors:
 
