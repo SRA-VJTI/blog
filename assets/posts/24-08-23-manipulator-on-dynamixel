@@ -36,10 +36,10 @@ description: <Controlling and designing a 3-DOF manipulator utilizing three dyna
 
       3)Simulation and Visualization: ROS 2 supports simulation environments like Gazebo and tools like  for visualization. These tools allow developers to test and validate manipulator control algorithms in simulated scenarios before deploying them on physical hardware. 
 
-## Mentors 
---[Mahesh Tupe] 
---[Alqama Shaikh] 
-
 ## Mentees 
 --[Atharv Dubey] 
 --[Isha Nair]    
+
+## Mentors 
+--[Mahesh Tupe] 
+--[Alqama Shaikh] 
