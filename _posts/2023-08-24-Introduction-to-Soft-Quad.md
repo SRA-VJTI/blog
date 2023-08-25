@@ -4,8 +4,9 @@ title: Introduction to Soft Quad
 tags: mechanical-design PCB-design embedded-system soft-robotics
 description: Overview of Project Soft Quad and Tasks throughout the First Week
 ---
-[Soft Quad](https://github.com/pavit15/softquad)
+-- [Soft Quad](https://github.com/pavit15/softquad)
 - Mentees:
+
    -- [Atharva Atre](https://github.com/AtharvaAtre)
 
     Mainly Interested in Core Electronics.Wanting to learn and domains such as Embedded Systems,PCBs,etc.
@@ -19,6 +20,7 @@ description: Overview of Project Soft Quad and Tasks throughout the First Week
     Robotics, which encompasses mechanical design, robot and PCB fabrication, and embedded systems, intrigues me as an enthusiastic learner. Through the lens of this project, I'm eager to deepen my understanding of how hardware and software are integrated in Soft Robot.
 - Mentors:
    -- [Chinmay Mundane](https://github.com/ChinmayMundane)
+
    -- [Vaidic Gupta](https://github.com/Vaidicgupta)
 
 # Soft Quad
