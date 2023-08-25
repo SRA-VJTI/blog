@@ -19,6 +19,7 @@ description: Overview of Project Soft Quad and Tasks throughout the First Week
 
     Robotics, which encompasses mechanical design, robot and PCB fabrication, and embedded systems, intrigues me as an enthusiastic learner. Through the lens of this project, I'm eager to deepen my understanding of how hardware and software are integrated in Soft Robot.
 - Mentors:
+
    -- [Chinmay Mundane](https://github.com/ChinmayMundane)
 
    -- [Vaidic Gupta](https://github.com/Vaidicgupta)
