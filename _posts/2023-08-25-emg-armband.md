@@ -1,16 +1,14 @@
-| layout | title | tags | description |
-|----------|----------|----------|----------|
-| post | EMG_ArmBand | Embedded Systems, IoT, PCB Designing, ML | To create an EMG (Electromyography) Arm Band, which may be worn as a bracelet, to detect hand movements and orientation via muscle impulses transmitted through your forearm. |
-
-
+---
+layout: post
+title: "Unlocking the Future: The EMG ArmBand Project"
+tags: Embedded Systems IoT PCB Designing ML
+description: "To create an EMG (Electromyography) Arm Band, which may be worn as a bracelet, to detect hand movements and orientation via muscle impulses transmitted through your forearm."
+---
 
 -- [Purva Yeshi]([Link-to-their-github-account](https://github.com/purviyeshi/EMG_ArmBand.git))
 
 -- Anuj Akotkar
 
-
-
-# **Title: "Unlocking the Future: The EMG ArmBand Project"**
 Greetings, fellow tech enthusiasts! We are thrilled to embark on this exciting journey through the realm of Embedded Systems, IoT, PCB Designing, and Machine Learning with our innovative project - EMG ArmBand. Allow us to introduce ourselves and shed light on the captivating world we are about to explore.
 
 ## Meet the Team: 
@@ -60,5 +58,3 @@ Let's fast-forward a bit and share what we've already achieved. We've delved int
 
 What's Brewing Next:
 But that's just the beginning. Currently, our focus is fixated on the ESP-NOW Communication protocol. Using ESP-NOW for communication between components could enable seamless and efficient data exchange between the EMG sensors and the main microcontroller.
-
-
