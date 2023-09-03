@@ -1,9 +1,13 @@
-|layout |title |tags |description |
-| :---: |:----:| :---: | :---: | 
-| post | Rotary Inverted Pendulum | Control-Theory, Embedded-systems | Implement MPC using LQR on rotary inverted pendulum in simulation and hardware |
+---
+layour: post
+title: "Rotary Inverted Pendulum"
+tags: Control-Theory Embedded-systems
+description: Implement MPC using LQR on rotary inverted pendulum in simulation and hardware
+---
 
+--[Roshan](https://github.com/RoshAd-06)
+-- [Shankari](https://github.com/Shankari02) 
 
---[Rotary Inverted Pendulum](https://github.com/Shankari02/Rotary_Inverted_Pendulum_using_MPC_and_LQR) 
 #### Introduction 
 Control systems form the basis for ensuring that every automatic system performs its ordained task accurately, efficiently and quickly (optimally) despite being subjected to varying environmental conditions. In this project, we will implement MPC(Model Predictive control) on Rotary Inverted Pendulum system using LQR(Linear Quadratic Regulator) as an optimizer. The mechanical structure of inverted pendulum is based on two factors, the actuation method and degree of freedom (DOF) of the system. The actuation methods are linear and rotary. The simplest controllable structure of inverted pendulum system has two DOF, one for the base position and other for the pendulum angle. 
  Rotary inverted pendulum system is essentially a combination of three elements: a motor, an arm and a pendulum. In this system one end of the arm is connected to the shaft of the motor and pendulum is attached to other end of the arm by a pin joint that is allowed to rotate freely in the vertical plane.
@@ -20,8 +24,5 @@ Model predictive control (MPC) is an advanced method of process control that is 
 #### Simulation
 To validate the mathematical model, numerical simulation of nonlinear model of the system is performed via MATLAB Simulink. As the structure consists of the pendulum with mass, the motor ,the rotor along with the base. We  simulate these individual components to obtain the output graph associated with the components shows their behavior .The horizontal and vertical plane are used geometrically to visualize the position of pendulum and the arms.  These are then coupled to form the device whose planar output is then observed to be as same as the rotary inverted pendulum.  This helps us in understanding the lag associated along with the correct dimensions of the components.
 
-#### Mentees
---[Roshan](https://github.com/RoshAd-06)
--- [Shankari](https://github.com/Shankari02) 
-
-
+## Git Repository
+[Rotary Inverted Pendulum](https://github.com/Shankari02/Rotary_Inverted_Pendulum_Using_MPC_and_LQR)
