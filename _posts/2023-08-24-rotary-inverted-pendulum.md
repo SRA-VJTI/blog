@@ -1,7 +1,9 @@
 |layout |title |tags |description |
 | :---: |:----:| :---: | :---: | 
-| post | Rotary Inverted Pendulum | Control-Theory, Embedded-systems | Implement MPC using LQR on rotary inverted pendulum in simulation and hardware 
--- [Rotary Inverted Pendulum](https://github.com/Shankari02/Rotary_Inverted_Pendulum_using_MPC_and_LQR) 
+| post | Rotary Inverted Pendulum | Control-Theory, Embedded-systems | Implement MPC using LQR on rotary inverted pendulum in simulation and hardware |
+
+
+--[Rotary Inverted Pendulum](https://github.com/Shankari02/Rotary_Inverted_Pendulum_using_MPC_and_LQR) 
 #### Introduction 
 Control systems form the basis for ensuring that every automatic system performs its ordained task accurately, efficiently and quickly (optimally) despite being subjected to varying environmental conditions. In this project, we will implement MPC(Model Predictive control) on Rotary Inverted Pendulum system using LQR(Linear Quadratic Regulator) as an optimizer. The mechanical structure of inverted pendulum is based on two factors, the actuation method and degree of freedom (DOF) of the system. The actuation methods are linear and rotary. The simplest controllable structure of inverted pendulum system has two DOF, one for the base position and other for the pendulum angle. 
  Rotary inverted pendulum system is essentially a combination of three elements: a motor, an arm and a pendulum. In this system one end of the arm is connected to the shaft of the motor and pendulum is attached to other end of the arm by a pin joint that is allowed to rotate freely in the vertical plane.
