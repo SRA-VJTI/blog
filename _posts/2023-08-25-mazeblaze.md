@@ -1,18 +1,19 @@
-| Layout | Title | Tags |Description|
-| -------- | -------- | -------- |-------------|
-| post    | MazeBlaze     | Embedded System, Control Systems, Embedded C, PCB Designing, Graph Algorithms, Electronics    | Develop a Line following and Maze Solving bot based on the PID controller which can find the shortest path in a given maze.  |
-
-# MazeBlaze :
+---
+layout: post
+title: "MazeBlaze"
+tags: [Embedded System, Control Systems, Embedded C, PCB Designing, Graph Algorithms, Electronics]
+description: "Develop a Line following and Maze Solving bot based on the PID controller which can find the shortest path in a given maze."
+---
 
 Greetings, curious minds! We're excited to embark on this digital journey as we dive into the captivating world of robotics and artificial intelligence. Welcome to the inaugural blog post of Mazeblaze, a project that's set to unravel the mysteries of maze-solving bots.
 
 ## **Mentors:**
--Raj Gupta
--Prit Kanadiya
+-- Raj Gupta
+-- Prit Kanadiya
 
 ## **Mentees:**
--SURAJ SONAWANE
--ATHARVA NAREKAR
+-- SURAJ SONAWANE
+-- ATHARVA NERKAR
 
 ## **Our Introduction:**
 Driven by an unyielding enthusiasm for embedded systems, our goal is clear -to improve MazeBlaze-v2.1's design and model in order to reach unusual efficiency and achieve remarkable speeds. Join us on this journey as we solve problems, engineer creative solutions, and lead MazeBlaze into a realm of unmatched success.
