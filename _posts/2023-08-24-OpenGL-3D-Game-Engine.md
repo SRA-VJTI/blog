@@ -1,7 +1,7 @@
 ---
 layout: post
 title: OpenGL-3D-GameEngine
-tags: OpenGL,C++,Graphics API
+tags: OpenGL C++ Graphics-API
 description: To create a 3D Game Engine using OpenGL librarires in C++ and make a game like checkers/chess.
 ---
 
