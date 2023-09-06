@@ -1,8 +1,9 @@
-
-layout : post
-title: Moving ahead with the Rotary Inverted Pendulum Project
+---
+layout: post
+title: "Moving ahead with the project - Rotary Inverted Pendulum"
 tags: MATLAB, Control-Systems
 description: Simulating systems using LQR (Linear Quadratic Regulator)
+---
 
 Mentees:
 -- [Roshan](https://github.com/RoshAd-06)
