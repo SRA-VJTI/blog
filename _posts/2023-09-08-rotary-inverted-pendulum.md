@@ -61,7 +61,7 @@ As we are new to the MATLAB software, we weren't well versed with the different 
 
 
 #### Future Tasks:
-Our next task is to simulate a complex pulley ( also knows as an atwood machine). For that, again we shall be deriving the Lagrangian equation and then move on with the animation and simulation part. Following which, we will stabilise an inverted pendulum using this software.
+Our next task is to simulate a complex pulley ( also known as an atwood machine). For that, again we shall derive the Lagrangian equation and then move on with the animation and simulation part. Following which, we will stabilise an inverted pendulum using this software.
 
 #### Git repository
 -- [Rotary Inverted Pendulum](https://github.com/Shankari02/Rotary_Inverted_Pendulum_using_MPC_and_LQR)
