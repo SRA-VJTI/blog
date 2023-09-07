@@ -27,7 +27,7 @@ In an ideal system we do not provide any external input u.
 
 Simulation of an ideal pendulum system :
 Initial point: -pi/3
-![ideal_pendulum](assets/posts/inverted_pendulum/ideal_pendulum.mp4)
+![](assets/posts/inverted_pendulum/ideal_pendulum.mp4)
 
 Simulation of an ideal spring-mass system:
 Initial point: (1,0)
