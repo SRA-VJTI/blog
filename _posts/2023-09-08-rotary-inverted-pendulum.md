@@ -33,7 +33,7 @@ Initial point: -pi/3
 
 Simulation of an ideal spring-mass system:
 Initial point: (1,0)
-![ideal_spring](/assets/posts/inverted_pendulum/ideal_spring.mp4)
+! [ideal_spring](/assets/posts/inverted_pendulum/ideal_spring.mp4)
 
 
 Using LQR:
@@ -49,12 +49,12 @@ Here, Q is a matrix which tells us about the penalty that could be developed if 
 Simulation of pendulum system using LQR:
 Initial point: -pi/2
 Stable at: pi
-![lqr_pendulum](/assets/posts/inverted_pendulum/lqr_pendulum.mp4)
+! [lqr_pendulum](/assets/posts/inverted_pendulum/lqr_pendulum.mp4)
 
 Simulation of spring-mass system using LQR:
 Initial point: (1,0)
 Stable at: (0,0)
-![lqr_spring](/assets/posts/inverted_pendulum/lqr_spring.mp4)
+! [lqr_spring](/assets/posts/inverted_pendulum/lqr_spring.mp4)
 
 
 
