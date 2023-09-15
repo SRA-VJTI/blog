@@ -33,6 +33,15 @@ It has helped us to know about
 
 So far we have learnt to discover and experiment with a variety of different initialization methods, apply L2 regularisation and dropout to avoid model overfitting, then apply gradient checking to identify errors in a fraud detection model.
 
+Week  3
+--
+
+- We learnt more about Jax and its implementation and advantages
+- We successfully completed building the MNIST number detection model using Jax. It is now inputting the MNIST dataset of hand-written numbers and detecting the numbers with an accuracy of 99.6%. The model runs within 3 minutes.
+- Now, we are learning about Convolutional Neural Networks .
+- We are learning about the ways to implement the foundational layers of CNNs (pooling, convolutions) and stack them properly in a deep network to solve multi-class image classification problems.
+
+
 
 
 
