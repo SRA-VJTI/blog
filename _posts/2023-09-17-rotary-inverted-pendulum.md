@@ -1,8 +1,7 @@
-
 ---
-layout : post
-title: Done with the initial step of Rotary Inverted Pendulum!... Now what!?
-tags: MATLAB, Control-Systems
+layout: post
+title: "Done with the initial step...now what!?"
+tags: MATLAB Control-Systems
 description: Simulating Rotary Inverted Pendulum using LQR (Linear Quadratic Regulator)
 ---
 
@@ -18,6 +17,7 @@ So, we referred to some papers for the equations as manually deriving it is diff
 
 The Langrangian equations are as follows:
 [Langrangian equations](/assets/posts/inverted_pendulum/lagrangian_eqns.png)
+
 So, we had created a function for the dynamic equations where in we have 4 equations.
 
 #### Animation 
