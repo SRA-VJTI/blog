@@ -28,12 +28,14 @@ Then, moving ahead with the systems, we achieved an ideal system as well as a sy
 
 - For an ideal inverted pendulum system, the external input provided should be zero.
 	Visualization of ideal inverted pendulum : ![Ideal_inverted_pendulum](/assets/posts/inverted_pendulum/ideal_inverted_pendulum.mp4)
-	Initial point: [pi 0 pi/2 0]
+
+	- Initial point: [pi 0 pi/2 0]
 
 - For LQR system, we found out the jacobians A and B. Then, using the inbuilt function of LQR , value of K is found out.
 	Visualization of inverted pendulum using LQR : ![lqr_inverted_pendulum](/assets/posts/inverted_pendulum/lqr_inverted_pendulum.mp4)
-	Initial point: [pi 0 pi/6 0]
-	Final point: [0 0 0 0]
+
+	- Initial point: [pi 0 pi/6 0]
+	- Final point: [0 0 0 0]
 
 #### Problems we faced!
 Deriving the equations was the major hurdle in our simulation step. So, we had to refer multiple research papers for it. Even though we went through multiple papers, yet the equation satisfying our conditions was not found. So we deployed a large amount of time towards obtaining the required equations. Still after deriving the equation we had to give MATLAB a jacobian, from which it shall calculate the position and by using LQR stabilised our system. We faced issues in this step too. Even though there is function in MATLAB itself to help us find the jacobian, but the input equations must be properly correct and in order. Many times our variables were not in proper position or there were syntax errors. As the stable points are [0 0 0 0], we used subs function to substitute that in our equations before calculating the jacobians as the state variables present in the jacobian was causing errors in the program. We obtained two jacobians A and B, which were calculated with respect to our setpoints and the input vector, u, respectively. We also faced errors while running the program, for which, our mentor helped us in debugging them. We also referred to documentations in this regard. 
