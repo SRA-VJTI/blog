@@ -1,9 +1,10 @@
 
-
+---
 layout : post
 title: Done with the initial step of Rotary Inverted Pendulum!... Now what!?
 tags: MATLAB, Control-Systems
 description: Simulating Rotary Inverted Pendulum using LQR (Linear Quadratic Regulator)
+---
 
 Mentees:
 -- [Roshan](https://github.com/RoshAd-06)
