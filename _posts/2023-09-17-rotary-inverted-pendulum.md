@@ -16,7 +16,7 @@ Our first step to achieve the simulation was to derive the Langrangian equations
 So, we referred to some papers for the equations as manually deriving it is difficult. For this system, the state vectors are **θ**$_0$ and **θ**$_1$.
 
 The Langrangian equations are as follows:
-[Langrangian equations](/assets/posts/inverted_pendulum/lagrangian_eqns.png)
+![Langrangian equations](/assets/posts/inverted_pendulum/lagrangian_eqns.png)
 
 So, we had created a function for the dynamic equations where in we have 4 equations.
 
@@ -27,11 +27,11 @@ Then, moving ahead with the systems, we achieved an ideal system as well as a sy
 #### Simulation of the two different systems
 
 - For an ideal inverted pendulum system, the external input provided should be zero.
-	Visualization of ideal inverted pendulum : [Ideal_inverted_pendulum](/assets/posts/inverted_pendulum/ideal_inverted_pendulum.mp4)
+	Visualization of ideal inverted pendulum : ![Ideal_inverted_pendulum](/assets/posts/inverted_pendulum/ideal_inverted_pendulum.mp4)
 	Initial point: [pi 0 pi/2 0]
 
 - For LQR system, we found out the jacobians A and B. Then, using the inbuilt function of LQR , value of K is found out.
-	Visualization of inverted pendulum using LQR : [lqr_inverted_pendulum](/assets/posts/inverted_pendulum/lqr_inverted_pendulum.mp4)
+	Visualization of inverted pendulum using LQR : ![lqr_inverted_pendulum](/assets/posts/inverted_pendulum/lqr_inverted_pendulum.mp4)
 	Initial point: [pi 0 pi/6 0]
 	Final point: [0 0 0 0]
 
