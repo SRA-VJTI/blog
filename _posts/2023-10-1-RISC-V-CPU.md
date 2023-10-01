@@ -1,6 +1,6 @@
 ---
 layout: post
-title: RISC-V CPU (2)
+title: Further updates on RISC-V CPU
 tags:
   - electronics
   - microprocessor
@@ -43,8 +43,12 @@ The job isn't finished yet as we don't know whether the whole CPU as a unit perf
 
 ## Problem we Faced:
 The first and foremost problem we faced was while testing the written code with their respective testbench as the whole idea of test benches was new to us, generally, we just used the print statements. 
+
 The Second problem encountered when we started to suspect if the ALU would be able to perform a complex task like in a mere time of one clock cycle and our suspicions came true for some time when the multiplications for numbers other than two's powers were incorrect and absolutely misleading, although we later figured out it was just another implementation error and our ALU was doing just fine handling the multiplication task at ease. Once all the basic modules were done we moved to the bigger fish ***'The Control Unit'***. The control unit being the center of all the data flow and the key to integrating and binding all the modules together to make a functioning CPU, the module had to be defined perfectly. 
-This is where we encountered another problem we could not really test the CU module individually, it had to be tested together with all the units combined, which would only make it harder to debug and time-consuming as we later found out it takes almost an hour to synthesize and simulate the whole CPU unit, more over the control unit was a FSM(finite state machine) which would make it even harder to pinpoint the cause of error. Although thanks to our mentor's guidance we had a clear idea of how the CU module was going to function we made it do exactly that and we didn't have to face errors for most of the part. However, there were some times when the thought of *punching the laptop crossed our mind as we saw it take a complete hour to compile the code when all we did was add one little line for debugging purposes.*
+
+This is where we encountered another problem we could not really test the CU module individually, it had to be tested together with all the units combined, which would only make it harder to debug and time-consuming as we later found out it takes almost an hour to synthesize and simulate the whole CPU unit, more over the control unit was a FSM(finite state machine) which would make it even harder to pinpoint the cause of error. 
+
+Although thanks to our mentor's guidance we had a clear idea of how the CU module was going to function we made it do exactly that and we didn't have to face errors for most of the part. However, there were some times when the thought of *punching the laptop crossed our mind as we saw it take a complete hour to compile the code when all we did was add one little line for debugging purposes.*
 
 ## Conclusion:
 Facing all the challenges and problems we now have a working CPU(only software synthesized for now), By joining the input-output pins in their correct places and completing the control flow of the CPU we will be moving to our next task and one step closer to having our own working CPU.
