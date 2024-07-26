@@ -77,6 +77,8 @@ In this project, we will further:
 2) Train the model on image datasets and evaluate its performance.<br>
 3) Extend the model to generate descriptive captions for provided images.<br>
 
+-- [Github Repository for the project](https://github.com/sneha31415/vision_transformers_from_scratch) 
+
 Stay tuned for more updates as we delve into the fascinating world of Vision Transformers!
 
 
