@@ -64,5 +64,10 @@ basically we ended up with a simple EMG analizer using esp32.
 ## end product
 expirement with different applications like examples here
 
+
 # Difficulties we faced
+
+
+
+### github repo - [emgband](https://github.com/vovw/emgband)
 
