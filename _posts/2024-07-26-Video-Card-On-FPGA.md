@@ -1,13 +1,12 @@
 ---
 layout: post
-title: Voice_Video_Manipulator
+title: Building a Video Card on FPGA!
 tags: 
-    - Robotics
-    - ROS2
-    - Inverse kinematics
-    - Machine Learning
-    - Image Processing
-description: Developing a robotic manipulator system equipped with both video input capabilities and speech recognition.
+    - Electronics
+    - FPGA
+    - Verilog
+    - Video_Card
+description: Harnessing the power of the FPGA to create a video card from scratch.
 ---
 
 ## Mentees:
