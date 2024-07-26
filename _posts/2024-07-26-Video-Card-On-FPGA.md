@@ -1,7 +1,7 @@
 ---
-layout: post
-title: Building a Video Card on FPGA!
-tags: 
+layout : post
+title : Building a Video Card on FPGA!
+tags : 
 - Electronics
 - FPGA
 - Verilog
