@@ -1,6 +1,6 @@
 ---
 layout: post
-title: EMG Armband: The Conclusion
+title: EMG Armband, The Conclusion
 tags: ML Systems IoT PCB Designing Embedded
 description: Developing an EMG system that can understand human hand motions.
 ---
@@ -11,6 +11,7 @@ description: Developing an EMG system that can understand human hand motions.
 - [Atharva Kshirsagar](https://github.com/vovw)
 
 ### This project is sponsored by [Upside Down Labs](https://upsidedownlabs.tech/)
+![up](/assets/posts/emg-armband/upside_down.webp)
 ### GitHub Repo: [emgband](https://github.com/vovw/emgband)
 
 # What is our project?
