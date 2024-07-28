@@ -50,7 +50,7 @@ Besides this, we also learned some basic definitions of various components of a 
 
 ## K-armed Bandit :
 
-![[slot machine .jpeg]]                  
+                 
 Here we are working on our very first problem. K-armed bandits are a genre of problems where the agent can choose from a large number of levers or actions, say a 1000. Each of these actions yields the agent a reward. The task is then to maximize this reward that the agent receives. The value of any action \( a \) taken at time-step “t” then is:
 
 \[ q^*(a) = \mathbb{E}[R(t) \mid A(t) = a] \]
@@ -68,12 +68,12 @@ The dilemma now is that the agent has to exploit what it has already experienced
 
 To solve this, we use a strategy called the epsilon-greedy strategy. The idea is to spam greedy action with a mix of non-greedy action in between. The non-greedy action will be executed with the probability of epsilon (a small number generally 10%) and the greedy action will be taken up with the probability of 1-epsilon. By this, we are able to find a middle ground between the two extremes.
 
-![[karm1.png]](/assets/post/Gym-master/karm1.png)
+![[karm1.png]](/assets/posts/Gym-master/karm1.png)
 
-![[karm2.png]](/assets/post/Gym-master/karm2.png)
+![[karm2.png]](/assets/posts/Gym-master/karm2.png)
 
 
-![[karm3.png]](/assets/post/Gym-master/karm3.png)
+![[karm3.png]](/assets/posts/Gym-master/karm3.png)
 
 ## Markov decision process (MDP)
 
@@ -110,10 +110,10 @@ This means that “the future is independent of the past given the present”.
     - \( \gamma \) (gamma): Discount factor (0 < gamma < 1), which reduces the value of future rewards to account for uncertainty and delay.
     - \( V(s') \): Value function for the next state \( s' \), representing the expected return from state \( s' \) onward.
     
-    (Example of Bellman Equation Image here)
+    
     
 7. **Discount Factor**: The discount factor is a value between 0 and 1 that reduces the value of future rewards to account for uncertainty and delay. This means preferring an immediate reward over a future one because the future is uncertain.
-![[mdp.png]](/assets/post/Gym-master/mdp.png)
+![[mdp.png]](/assets/posts/Gym-master/mdp.png)
 ### Conclusion
 
 Markov Decision Processes form the backbone of many reinforcement learning algorithms by providing a structured way to handle decision-making under uncertainty. By understanding states, actions, rewards, and policies, we can design intelligent systems capable of making optimal decisions over time.
@@ -168,7 +168,7 @@ Dynamic programming is a mathematical way of mapping states to actions and then 
 # Grid World Problem Overview
 
 The grid world problem is a simple game used to teach basic ideas in reinforcement learning. In this game, an agent (like a robot) moves around a grid, aiming to reach a goal while avoiding dangerous spots.
-![[grid.png]](/assets/post/Gym-master/grid.png)
+![[grid.png]](/assets/posts/Gym-master/grid.png)
 ## Setup
 
 - **Grid**: A 4x4 grid where each cell is a different state.
