@@ -13,10 +13,6 @@ tags:
    - Control systems
    - Mechanics
    - Embedded C
-   
-   
-   
-
     
 description: Designing a mcicromouse PCB from scratch and implement maze floodfill algorithm on it!
 ---
@@ -52,7 +48,7 @@ The first step in our Micromouse journey was thorough research. We explored exis
 - **Sensors:** [Infrared (IR) sensors](https://www.google.com/aclk?sa=l&ai=DChcSEwiQ64aQgcWHAxU3JIMDHZhVBC8YABANGgJzZg&ae=2&gclid=CjwKCAjwko21BhAPEiwAwfaQCC9ncxupTqnD8_NwuCRVwdP9jfz7p2Ebeoz7weSzbc14q_aTVSaCGBoCCNQQAvD_BwE&sig=AOD64_2y9-pOHruFv_p7x1aFc9yXVSXpBg&ctype=5&q=&ved=2ahUKEwjumv-PgcWHAxV7oGMGHb5sCPwQ9aACKAB6BAgFEAs&adurl=) were selected for obstacle detection and maze navigation.
 - **Motor Driver:** The [**DRV8833 motor driver**](https://www.google.com/aclk?sa=l&ai=DChcSEwih48HIgcWHAxW-pGYCHdmiAoYYABAFGgJzbQ&ae=2&gclid=CjwKCAjwko21BhAPEiwAwfaQCN_crjgbqgcfNMXOUCDmcktT3nIMEzoj80RmHIMGhGmja_556GHwwxoCR10QAvD_BwE&sig=AOD64_1UZ-hyA-wvlKIp9qmQZqtmxFhIYw&ctype=5&q=&ved=2ahUKEwiPn7HIgcWHAxU1zzgGHWOpHvoQ9aACKAB6BAgGEA4&adurl=) was selected for controlling the motors efficiently.
 - **Power Supply:** A 3.7V battery with capacity of 1500mAh chosen to power the ESP32 and other components.
-- **Suction Fan:** A [cad model](https://cad.onshape.com/documents/5b027c1a45be050170ab0933/w/2cf490c21f33f93412b4d271/e/b109720c6b2de3519dd8fe4c?renderMode=0&uiState=6696ba83c0c8e51d2d4387c4) of suction fan is designed with it's [**coreless motor 8520**](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://robu.in/product/8520-magnetic-micro-coreless-motor-for-micro-quadcopters-2xcw-2xccw/&ved=2ahUKEwjJ54ewgsWHAxXBxzgGHWKtBRUQFnoECBcQAQ&usg=AOvVaw39rHcyWfG-QxI15rqqZfMt).![image](/assets/posts/Micromouse/cad1.png)![image](/assets/posts/Micromouse/cad2.png)
+- **Suction Fan:** A [cad model](https://cad.onshape.com/documents/5b027c1a45be050170ab0933/w/2cf490c21f33f93412b4d271/e/b109720c6b2de3519dd8fe4c?renderMode=0&uiState=6696ba83c0c8e51d2d4387c4) of suction fan is designed with it's [**coreless motor 8520**](https://www.google.com/url?sa=t&source=web&rct=j&opi=89978449&url=https://robu.in/product/8520-magnetic-micro-coreless-motor-for-micro-quadcopters-2xcw-2xccw/&ved=2ahUKEwjJ54ewgsWHAxXBxzgGHWKtBRUQFnoECBcQAQ&usg=AOvVaw39rHcyWfG-QxI15rqqZfMt).![image](https://hackmd.io/_uploads/BJ5-YS-KA.png)![image](https://hackmd.io/_uploads/Sk1atrbYA.png)
 - **i/o Expander [PCA9536D](https://www.google.com/aclk?sa=l&ai=DChcSEwiAn7npgsWHAxVKo2YCHbM5F_QYABAGGgJzbQ&ae=2&gclid=CjwKCAjwko21BhAPEiwAwfaQCPNZ_mAsPTWNjftKBWAajQ01uIptUQpqohdBdMNT7zeHr2Ud1qELzxoCqgkQAvD_BwE&sig=AOD64_2cwUdn6kxSD9c3M404e9maSWL3gw&ctype=5&q=&ved=2ahUKEwiov7TpgsWHAxVD4zgGHQWUAcMQ9aACKAB6BAgFEBQ&adurl=):** This IC gives extra GPIO pins.
 
 
@@ -66,7 +62,7 @@ Creating the schematic was a crucial step in ensuring that all components would 
 4. **Power Regulation:** Incorporating LM2596, XL4015 and AMS117 voltage regulators to maintain stable power supply to the ESP32 and motors.
 
 Here's a simplified version of our schematic:
-![Screenshot 2024-07-26 at 9.20.54 PM](/assets/posts/Micromouse/image.png)
+![Screenshot 2024-07-26 at 9.20.54 PM](https://hackmd.io/_uploads/r1KWLBbtR.png)
  <!-- Replace with actual schematic image -->
 
 ## Testing the Schematic
