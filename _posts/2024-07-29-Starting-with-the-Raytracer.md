@@ -37,14 +37,12 @@ Technically, OpenGL is a set of specifications that specify the function prototy
 
 ## Modern vs Legacy OpenGL
 
-Legacy OpenGL:
-
+**Legacy OpenGL**:
 + It was a set of presets.
 + Short and easy to use code.
 + Provides less control.
 
-Modern OpenGL:
-
+**Modern OpenGL**:
 + Provides greater control.
 + The use of shaders is the primary distinction between Modern and Legacy OpenGL.
 
