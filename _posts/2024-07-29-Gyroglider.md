@@ -25,17 +25,16 @@ The ultimate goal? EvoBorne will have a semi-drone mode, allowing it to navigate
 
 # What have we done so far?
 ### Courses we completed
-Since last 2 Weeks we went through ample amount of resources. Starting with Linear Algebra which is quite important for this project. Understanding of algebra and its meaning Geometrically has played a crucial role till present date. Later we studied and implemented Dshot protocol to deal with the ESC and work with BLDC, we have studied Fusion 360 for mechanical designing of the project and Ansys to test its strength. 
-
+Over the past two weeks, we delved into various resources. Starting with Linear Algebra, crucial for understanding the geometric implications in our project, we laid a solid foundation. We then studied and implemented the Dshot protocol to interface with the ESC and work with BLDC motors. We also explored Fusion 360 for mechanical design and Ansys to test the strength and durability of our components.
 
 ### Practical Implementaion
-After competing this courses we started it's implementation, As it was not safe to directly try the semi drone mode on Evoborne therefore we created a testmodel 'T' shape clamp and mounted two bldcon its end . for running the bldc we develope the code using dshot protocol, but while testing it, it didnt work on bldc and one of the BLDC was burnt and both were not on same speed therefore we switched to different BLDC motor, and trying to find the balance
+After completing these courses, we moved on to practical implementation. To ensure safety, we first created a test model—a T-shaped clamp—mounting two BLDC motors on its ends. Using the Dshot protocol, we developed code to run the BLDC(RS2210 980kv) motors. However, during testing, one of the motors burned out, and both motors did not operate at the same speed. We then switched to different BLDC motors and worked on finding the right balance.
 
-We have successfully completed the run of motors using ESC and now trying to find the balance
+We have successfully completed the running of motors using ESC and now trying to find the balance
 
 ---
 # What are we dealing with now
-To Find the mathematical equation for adjusting the angle of inclination when we mount the propelers
+To Find the mathematical equation for adjusting the angle of inclination when we mount the propellers
 
 # Difficulties we faced 
-While building the code and flashing it
+We encountered several challenges while building the code and flashing it onto the hardware. Despite these setbacks, our team is dedicated to overcoming these hurdles and advancing the project.
