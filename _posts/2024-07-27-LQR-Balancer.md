@@ -136,6 +136,11 @@ Using ESP32-WROOM we plan to launch our model to control it.
 This CAD-Model is to be simulated in MATLAB.
 
 
+## Updates
+- Completed understanding basics of Control Systems and LQR
+- Successfully simulated control of Pendulum, Spring mass system and Inverse Pendulum
+- Finished CAD-Model for balancer
+
 ## Challenges
 - Problems in achiveing stepper control in ESP-IDF
 - Setting up state space matrices
