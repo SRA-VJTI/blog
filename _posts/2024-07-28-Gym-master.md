@@ -15,24 +15,13 @@ description: Learning the concepts of RL and solving various OpenAI-Gym environm
 
 -- [Gaurav Tatpate](https://github.com/Gaurav-Gt01)
 
---[Vyoma](https://github.com/vyomathecoolest)
+-- [Vyoma](https://github.com/vyomathecoolest)
 
 # GYM - MASTER :
 
 ## What is our project?
 
-Our project pushes us to explore the uncharted waters of **RL - REINFORCEMENT LEARNING**. Building a solid foundation on key concepts of RL, learning the relevant and necessary technologies of PyTorch and/or TensorFlow. We then implement our learnings to solve various OpenAI gym environments and then move on to make a marquee project utilizing all our learnings.
-
--- [The repository for our project](https://github.com/De-funkd/gym_master-Sra-)
-
-## What are we referring to?
-
-Since the last 3 weeks we’ve been going through a video lecture series on RL by Prof. David Silver uploaded on Google DeepMind’s official YouTube channel -- [Link to the playlist](https://www.youtube.com/playlist?list=PLqYmG7hTraZDM-OYHWgPebj2MfCFzFObQ). 
-Along with this, we’ve been referring to *Reinforcement Learning: An Introduction*, authored by Richard Sutton and Andrew Barto, and many other videos across the internet.
-
-## What have we done till now?
-
-These past weeks we have laid the foundation for our journey ahead. Taking the time to learn and implement the basics of RL and then subsequently the OpenAI-GYM has been our primary concern. The details of our work will now unfold in the subsequent sections.
+Our project pushes us to explore the uncharted waters of **RL - REINFORCEMENT LEARNING**. Building a solid foundation on key concepts of RL, learning the relevant and necessary technologies of PyTorch and/or TensorFlow. We then implement our learnings to solve various OpenAI gym environments and then move on to make a marquee project utilising all our learnings.
 
 ## Intro to RL
 
@@ -50,30 +39,33 @@ Besides this, we also learned some basic definitions of various components of a 
 
 ## K-armed Bandit :
 
-                 
-Here we are working on our very first problem. K-armed bandits are a genre of problems where the agent can choose from a large number of levers or actions, say a 1000. Each of these actions yields the agent a reward. The task is then to maximize this reward that the agent receives. The value of any action \( a \) taken at time-step “t” then is:
 
-\[ q^*(a) = \mathbb{E}[R(t) \mid A(t) = a] \]
+K-armed bandit problems, where the agent chooses from a large number of levers or actions. Each of these actions yields the agent a reward. The task is then to maximize this reward that the agent receives. 
+The value of any action \( a \) taken at time-step “t” then is:
 
-where \( R(t) \) is the reward for that time-step. Now we do not have the value of all the actions, we need to estimate this value to make decisions, which we do by taking averages of rewards that we get for that time-step. But we also have to update this value for each time-step which we do using this formula:
 
-\[ \text{NewEstimate} = \text{OldEstimate} + \text{StepSize} \times [\text{Target} - \text{OldEstimate}] \]
+![q(a).png](/assets/posts/Gym-master/q(a).png)
+
+
+where \( R(t) \) is the reward for that time-step.
+We do not have the value of all the actions, we need to estimate this value to make decisions, which we do by taking averages of rewards .But we also have to update this value for each time-step which we do using this formula:
+
+
+![newestimate.png](/assets/posts/Gym-master/newestimate.png)
+
 
 ### Exploitation vs exploration
 
 - **Exploitation**: The action of repeatedly choosing the action that yields max reward (also called greedy action) is called exploitation.
 - **Exploration**: The action of choosing a variety of different actions (non-greedy actions) and not exclusively choosing one is exploration.
 
-The dilemma now is that the agent has to exploit what it has already experienced in order to obtain reward, but it also has to explore in order to make better action selections in the future. The dilemma is that neither exploration nor exploitation can be pursued exclusively without failing at the task. The agent must try a variety of actions and progressively favor those that appear to be best. This dilemma is unique to reinforcement learning.
+Agent has to exploit what it has already experienced,but it also has to explore in order to make better action selections in the future. The dilemma is that neither exploration nor exploitation can be pursued exclusively without failing at the task. The agent must try a variety of actions and progressively favor those that appear to be best. This dilemma is unique to reinforcement learning.
+
+
+![Screenshot_k-arm1.png](/assets/posts/Gym-master/Screenshot_k-arm1.png)
+
 
 To solve this, we use a strategy called the epsilon-greedy strategy. The idea is to spam greedy action with a mix of non-greedy action in between. The non-greedy action will be executed with the probability of epsilon (a small number generally 10%) and the greedy action will be taken up with the probability of 1-epsilon. By this, we are able to find a middle ground between the two extremes.
-
-![[karm1.png]](/assets/posts/Gym-master/karm1.png)
-
-![[karm2.png]](/assets/posts/Gym-master/karm2.png)
-
-
-![[karm3.png]](/assets/posts/Gym-master/karm3.png)
 
 ## Markov decision process (MDP)
 
@@ -83,37 +75,31 @@ Markov Decision Processes (MDPs) provide a mathematical framework for modeling d
 
 A Markov state follows the property:
 
-\[ P[ S_{t+1} \mid S_t ] = P[S_{t+1} \mid S_1, ..., S_t ] \]
+
+![markov.png](![karm3.png](/assets/posts/Gym-master/markov.png))
+
 
 This means that “the future is independent of the past given the present”.
 
 ### Key Concepts
+    
+1. **Transition Probabilities**: These probabilities indicate the likelihood of moving from one state to another, given a specific action. For example, what is the probability of a piece moving from D3 to B5?
+    
+2. **Policies**: A policy is a strategy that defines the action to be taken in each state. In chess, a policy could be a strategy that tells you which move to make in each configuration of pieces.
+    
+3. **Value Function**: The value function measures the expected return (total rewards) starting from a state and following a particular policy. For example, the expected points you would get from a certain state in the game if you follow a particular strategy. We calculate the value function using the Bellman Equation which is:
 
-1. **States**: States represent different situations or configurations in which the system can be. For example, in a chess game, each possible arrangement of pieces on the board is a state.
     
-2. **Actions**: Actions are the choices or moves that an agent can take from a state. For instance, moving a chess piece from one square to another is an action.
-    
-3. **Transition Probabilities**: These probabilities indicate the likelihood of moving from one state to another, given a specific action. For example, what is the probability of a piece moving from D3 to B5?
-    
-4. **Rewards**: Rewards are the immediate returns received after transitioning from one state to another due to an action. For example, how many points you get to be in a state.
-    
-5. **Policies**: A policy is a strategy that defines the action to be taken in each state. In chess, a policy could be a strategy that tells you which move to make in each configuration of pieces.
-    
-6. **Value Function**: The value function measures the expected return (total rewards) starting from a state and following a particular policy. For example, the expected points you would get from a certain state in the game if you follow a particular strategy. We calculate the value function using the Bellman Equation which is:
-    
-    \[ V(s) = \max(R(s,a) + \gamma V(s')) \]
+   ![value_function.png](/assets/posts/Gym-master/value_function.png)
 
-    Where:
-    - \( V(s) \): Value function for state \( s \), representing the maximum expected return from state \( s \).
-    - \( \max \): Maximum operator over all possible actions \( a \), indicating the choice of the best action.
-    - \( R(s,a) \): Reward received after taking action \( a \) in state \( s \).
-    - \( \gamma \) (gamma): Discount factor (0 < gamma < 1), which reduces the value of future rewards to account for uncertainty and delay.
-    - \( V(s') \): Value function for the next state \( s' \), representing the expected return from state \( s' \) onward.
+
     
-    
-    
-7. **Discount Factor**: The discount factor is a value between 0 and 1 that reduces the value of future rewards to account for uncertainty and delay. This means preferring an immediate reward over a future one because the future is uncertain.
-![[mdp.png]](/assets/posts/Gym-master/mdp.png)
+4. **Discount Factor**: The discount factor is a value between 0 and 1 that reduces the value of future rewards to account for uncertainty and delay. This means preferring an immediate reward over a future one because the future is uncertain.
+
+
+![mdp.png](/assets/posts/Gym-master/mdp.png)
+
+
 ### Conclusion
 
 Markov Decision Processes form the backbone of many reinforcement learning algorithms by providing a structured way to handle decision-making under uncertainty. By understanding states, actions, rewards, and policies, we can design intelligent systems capable of making optimal decisions over time.
@@ -137,13 +123,13 @@ Dynamic programming is a mathematical way of mapping states to actions and then 
     - We have to calculate the best possible reward from the already given policy.
   - **Control**:
     - MDP is given, i.e., all parameters are given.
-    - The output is the optimal value function, so basically, we have to figure out the best policy to get the best rewards.
-    - We evaluate policies as well as improve them iteratively to get maximum rewards.
+    - The output is the optimal value function.
+    - We evaluate policies and improve them iteratively to get maximum rewards.
 
 ### Algorithms
 - **Prediction: Policy Evaluation**
   - **Steps**:
-    1. Initialize the initial state of the value function to an initial value, such as 0.
+    1. Initialize the state of the value function to an initial value.
     2. Set a threshold for convergence.
     3. Update the value function according to the Bellman expectation equation.
     4. If the final value is smaller than the value of the threshold, then we stop the iterations.
@@ -168,14 +154,18 @@ Dynamic programming is a mathematical way of mapping states to actions and then 
 # Grid World Problem Overview
 
 The grid world problem is a simple game used to teach basic ideas in reinforcement learning. In this game, an agent (like a robot) moves around a grid, aiming to reach a goal while avoiding dangerous spots.
-![[grid.png]](/assets/posts/Gym-master/grid.png)
+
+
+![grid.png](/assets/posts/Gym-master/grid.png)
+
+
 ## Setup
 
 - **Grid**: A 4x4 grid where each cell is a different state.
 - **States**:
-  - **Winning State**: Reaching this cell gives a reward of +1.
-  - **Losing State**: Reaching this cell gives a penalty of -1.
-  - **Neutral State**: All other cells have no reward (0).
+- **Winning State**: Reaching this cell gives a reward of +1.
+- **Losing State**: Reaching this cell gives a penalty of -1
+- **Neutral State**: All other cells have no reward (0).
 - **Actions**: The agent can move:
   - Up
   - Down
@@ -192,4 +182,12 @@ To solve this problem, we use a method called value iteration. This method helps
 - **Iterate**: Update the values of each state by looking at possible actions.
 - **Calculate Value**: For each action, calculate the expected reward and update the value of the state.
 - The process continues until the change in the value function is less than a small threshold (theta), indicating convergence.
-- **Determine Policy**: Find the best action for each state based on the calculated values.
+- **Determine Policy**: Find the best action for each state based on the calculated values.\
+
+## What have we done till now?
+
+These past weeks we have laid the foundation for our journey ahead. Taking the time to learn  the basics of RL and then subsequently apply them on various OpenAI-GYM environments has been our primary concern. 
+
+## What are we referring to?
+
+Since the last 3 weeks we’ve been going through a video lecture series on RL by Prof. David Silver uploaded on Google DeepMind’s official YouTube channel. Along with this, we’ve been referring to *Reinforcement Learning: An Introduction*, authored by Richard Sutton and Andrew Barto, and many other videos across the internet.
