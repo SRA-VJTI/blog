@@ -76,7 +76,7 @@ Markov Decision Processes (MDPs) provide a mathematical framework for modeling d
 A Markov state follows the property:
 
 
-![markov.png](![karm3.png](/assets/posts/Gym-master/markov.png))
+![markov.png](/assets/posts/Gym-master/markov.png)
 
 
 This means that “the future is independent of the past given the present”.
