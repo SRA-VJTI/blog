@@ -14,7 +14,7 @@ description : Designing RISC-V Single Core with IMAF extensions
 The ApexCore project is an immersive journey into the world of computer architecture and organization (COA). Although the subject is vast and intricate, we, Shri Vishakh Devanand, Aditya Mahajan, and Shaurya Rane, began our exploration by understanding the core components of a CPU. We started with an edX course that, despite being taught in TLVerilog (a newer and less common programming language), provided us with the foundational knowledge necessary to progress.
  
 ## A simple breakdown of the CPU
-![CPU_FLOWCHART](https://camo.githubusercontent.com/b358dd62eb8b83c6bb9021613e3f72d17188788fa3a181efd30888b9f10acdc8/68747470733a2f2f6861636b6d642e696f2f5f75706c6f6164732f724a5363664f4558542e706e67 "The Image shows a simple flowchart of CPU")
+![CPU_FLOWCHART](/assets/posts/ApexCore/flowchart.png "The Image shows a simple flowchart of CPU")
 To understand the logic of how it works, let's go through the diagram with the flow.
 
 1. Imagine a 32-bit instruction is going through to the CPU.
@@ -34,7 +34,7 @@ We have completed testing RV32-IM extensions under simulation, which introduces 
 4.   Documentation: Alongside coding and simulation, we documented our process and findings. This documentation will serve as a valuable reference for future development and troubleshooting.
 5.  Preparation for Hardware Testing: We have prepared the code for the upcoming hardware testing phase. This includes ensuring compatibility with our target FPGA platform and setting up the necessary testing environment.
 
-![Simulation](https://hackmd.io/_uploads/H1zyJlStA.png)
+![Simulation](/assets/posts/ApexCore/Simulation.png)
 
 ## Plans for the coming days
 1. We are about to test the current code on hardware and ensure it works with high confidence.
