@@ -4,13 +4,12 @@ title: Implementing Convolutions on FPGA
 tags:
  - electronics
  - fpga
- - computer_architecture
- - image processing 
+ - image processing
+ - computer vision
 description: Implementing convolution on FPGA
 ---
 
 
----
 -- [Sujal Dwivedi](https://github.com/5usu)
 -- [Yug Pachori](https://github.com/yug1025)
 -- [Bhavesh Phundkar](https://github.com/shadyschrader)
@@ -76,7 +75,7 @@ Our next big challenge is implementing convolutions. Here's our approach:
 - Apply the same to the 3x3 kernel, resulting in a 9-element 1D array
 - Perform convolution on these two 1D arrays
 
-![Convolution Framework](https://github.com/user-attachments/assets/bbbbb0ae-95ab-4f56-a4de-d44316ab3c69)
+![Convolution Framework](/assets/posts/convolution-fpga/Convolutional-framework.png)
 
 Our Verilog framework will include:
 - Multiplexers to flip signals
@@ -91,20 +90,20 @@ Kernels, also known as "masks", determine the type of convolution applied to an 
 
 ### 1. Gaussian Blur
 
-![Gaussian Kernels](https://github.com/user-attachments/assets/bb5a2ef8-5a4e-4b9a-bf85-82994316b759)
-![Gaussian Blur Effect](https://github.com/user-attachments/assets/2712dc49-de14-45f0-8535-14292598bcb2)
+![Guassian blur kernel](/assets/posts/convolution-fpga/Guassian-kernel.png)
+![Gaussian Blur Effect](/assets/posts/convolution-fpga/Guassian-blur-effect.jpg)
 
 - Higher values towards the center of the matrix
 
 ### 2. Sobel Operator
 
 #### Sobel Edge Operator
-![Sobel Edge Operator](https://github.com/user-attachments/assets/29024ada-0e70-4607-a79f-b8969bf1a175)
-![Sobel Edge Effect](https://github.com/user-attachments/assets/b9a8cc70-6537-4a7f-b815-dfe2ce62667b)
+![Sobel Edge Operator](/assets/posts/convolution-fpga/Sobel-edge-operator.png)
+![Sobel Edge Effect](/assets/posts/convolution-fpga/sobel-edge-effect.jpg)
 
 #### Sobel Sharpening Operator
-![Sobel Sharpening Operator](https://github.com/user-attachments/assets/4c985fe2-0862-42fc-8372-bcd353ad016c)
-![Sobel Sharpening Effect](https://github.com/user-attachments/assets/150c136c-c485-4ecd-ae91-9e086bb4d660)
+![Sobel Sharpening Opertor](/assets/posts/convolution-fpga/sobel-sharpening-operator.png)
+![Sobel Sharpening Effect](/assets/posts/convolution-fpga/sobel-sharpening-effect.png)
 
 ### 3. Box Blur
 
