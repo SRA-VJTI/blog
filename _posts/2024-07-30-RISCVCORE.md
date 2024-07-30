@@ -6,7 +6,7 @@ description : Building the base...
 ---
 
 --[Shri Vishakh Devanand](https://github.com/LOuLOu-THEKing)
---[Aditya Mahajan]()
+--[Aditya Mahajan](https://github.com/aditya200523)
 --[Shaurya Rane]()
 
 ## Understanding the Basics
