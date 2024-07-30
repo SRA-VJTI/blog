@@ -2,7 +2,7 @@
 layout: post
 title: ApexCore A RISC-V based CPU
 tags : electronics microprocessor fpga embedded_systems computer_architecture
-description : Building the base...
+description : Designing RISC-V Single Core with IMAF extensions
 ---
 
 --[Shri Vishakh Devanand](https://github.com/LOuLOu-THEKing)
@@ -18,11 +18,11 @@ The ApexCore project is an immersive journey into the world of computer architec
 To understand the logic of how it works, let's go through the diagram with the flow.
 
 1. Imagine a 32-bit instruction is going through to the CPU.
-2. It gets stored in the Instruction memory and each previous instruction's address is stored in the program counter. The instruction received by the decoder to decode the instruction into what generally occurs into 3 or 4 different things.
+2. Instructions are stored in Instruction Memory and they are accessed via addresses stored in Program Counter. The instruction received by the decoder to decode the instruction into what generally occurs into 3 or 4 different things.
 The instruction type is defined by the operation code.
-a. The source values are given as the address of its place in the register, rather than the value itself, or for some instructions there comes something called immediate values, where you don't want to store the value but just use the value for another calculation and lose it.
-    b. Then the destination register, where the calculated value is going to be stored until it is stored in memory or discarded.
-    c. Then, it goes into the control unit, where it decides what type of calculation is required for this particular instruction and sends it to the ALU to calculate it.
+* The source values are given as the address of its place in the register, rather than the value itself, or for some instructions there comes something called immediate values, where you don't want to store the value but just use the value for another calculation and lose it.
+* Then the destination register, where the calculated value is going to be stored until it is stored in memory or discarded.
+* Then, it goes into the control unit, where it decides what type of calculation is required for this particular instruction and sends it to the ALU to calculate it.
 3. Once the final result is received by the control unit, it is then stored in the destination register as instructed.
 
 ## What have we done so far
