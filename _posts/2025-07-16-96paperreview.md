@@ -1,4 +1,5 @@
 ---
+
 layout : post
 title :  Computer Architects From 1996 Look At The Future - Review
 tags :
@@ -6,7 +7,7 @@ tags :
      - Memory Systems
      - Hardware
 description :
- Five architects predict the future - what did they predict and were they right?
+   Five architects predict the future - what did they predict and were they right?
 ---
 -- [Mayuresh Surve](https://github.com/amimayo), [Shasvat Prabhu](https://github.com/shashvatprabhu)
 
@@ -38,13 +39,28 @@ By 1996, processors were rapidly developing. However, these astounding progress 
 
 Bell traces the history of computing from the invention of stored program computers and transistors in the year 1947, all the way up-to the development of the microprocessor in 1971. He believed that the future for hardware development looked bright. If the processing power continues to double every 1.5 years as stated by Moore’s law, it is only a matter of time until we have computers 10 billion times more powerful. Similarly, magnetic storage density and fiber optic transmission rates are doubling every 18 months. He even predicts that whilst the simple structure of a home computer may not change beyond any particular need, parallelism in instruction execution would become more common to improve performance leading to faster problem-solving rates. Crucially, Bell envisions that in the future, anything bitable will be in the “cyberspace” with the introduction of hardware and gesture interfaces and neural simulation. He anticipates that robots would become a norm in home and office spaces and that telepresence would rightly become the “addiction” of the next generation.
 
+
+![](/assets/posts/1996-review-blog/timegraph.jpeg)
+
+##### _Here is an attached graph by Gordon Bell. Solid lines indicate rapid progression in processing power, memory and bandwidth by 2047. Dashed lines indicate cautious scenario but still displaying significant predicted progresss. CPU speeds especially grow steeper than memory capacity, implying that despite the boom in memory capacity, it would face difficulty in aiding CPU due to increased latency._
+
+
+
 He mentions that the world wide web has stimulated the growth of other computer classes, such as network computers, tele-computers and television computers which are combined with phones and televisions respectively. Scalable computing, using an arbitrary number of computers and high speed network to operate as one is likely to replace traditional computers. This approach is SNAP, for scalable networks and platforms. The underlying parallelism is a problem that has escaped for several decades.
+
 
 He predicts that nearly zero-cost communicating computers will be everywhere from our phones to light switches, they will eventually be the eyes and ears for the blind and deaf and a high speed digital subscriber link that permits high speed data to go via fibre optic cables (due to increase in transfer rates with more bits/second annually at 1.6x per year) while radio links will empower anywhere computing. However, he also seems to suggest that despite massive hardware upgrades, none of it will matter as much without the development of useful and meaningful applications which would be equally important.
 
 #### Richard Sites :
 
 Richard Sites cites his experience from the development of the Alpha architecture design in the year 1988 when they had estimated a compounded performance improvement of 32% per year over the 25 year lifetime, i.e. a total of 1000x - 10x from clock improvements, 10x from multiple instruction issues and 10x from multi-processors. However in reality, the CPU clock speed was ahead of the estimates with a 2.5x improvement, followed by issue width with a 2x improvement and on-chip multiprocessing behind at only 1x improvement.
+
+
+![](/assets/posts/1996-review-blog/alpha.jpeg)
+
+##### _Given is a graph in which Sites predicted a 1000x increase in performance starting from a 200MHz, 2-issue, 1 CPU chip. However while CPU clock speed soared to more than double the amount to 500MHz along with issue rate, number of CPUs on the chips remained 1. However, Sites points out that with the advent of multi-threaded software (back then), multi-processing would also see expansion in the near future._
+
+
 
 He further emphasizes on how processors are miles ahead of memory systems. Every 3 out of 4 cycles retired zero instruction in the 200MHz Pentium Pro and 400 MHz 21164 Alpha systems. Most were spent waiting for memory. Increasing the width of the instruction issue only makes the memory bottleneck worse. Memory bandwidth is clearly not able to keep up with the clock speeds and issue width. 
 
@@ -82,7 +98,7 @@ He predicts such a uniprocessor will have wider issue widths, faster cycles, mor
 
 Bell had correctly guessed the ongoing rise in processor power and performance and although exaggerated, his predictions about the faster rates and parallelism in modern computers remains true. He also correctly foresaw the rise of scalable computing through cloud platforms such as AWS, introduction of robots in industries, and the idea of “cyberspace” with gesture-controlled services and upgrades in fibre-optic communication.
 
-Sites has correctly predicted an increase in CPU clock speeds, hindered only by slower memory systems. He also correctly predicted the development and use of multithreaded software. His prediction of a growing importance for memory design is accurate and incredibly significant to keep in mind when designing memory subsystems.
+Sites has correctly predicted an increase in CPU clock speeds, hindered only by slower memory systems. He also correctly predicted the development and use of multithreaded software and multi-processing chips. His prediction of a growing importance for memory design is accurate and incredibly significant to keep in mind when designing memory subsystems.
 
 Dally correctly foretold the stagnancy in ILP and legacy instruction sets and the increase in parallelism in modern computers. He also realised System-On-Chip (SoC) accurately, involving the integration of CPU/GPU and Memory onto a single chip that is in great use today. His opinion regarding the onset of memory-centric computers is also true in modern times.
 
@@ -94,7 +110,8 @@ Though Patt predicted the push by tech giants for more powerful single-core proc
 
 The major bottleneck as said earlier, is memory. Memory is not able to keep up with the pace of processor performative progress . While processors have become fast at executing instructions, DRAM access latency has not significantly improved causing stalls. The ubiquity of parallelism in modern machines had put incredible load on the memory systems. Slower inefficient memory also affects performance in AI/ML/Video processing. In short, as Richard Sites mentioned :
 
-" It's memory, stupid !"
+**It's memory, stupid !**
+
 
 ## Going Forward
 
@@ -102,10 +119,23 @@ Therefore, in the upcoming years, memory will be the center of improvement in co
 
 ## What We Are Doing ?
 
-With such an emphasis on improving memory systems, we will be learning the fundamentals of computer architecture. We aim to build two cache subsystems for a pipelined RISC-V CPU Core as a project to implement the concepts . Thus, we will understand how to create better memory systems for computers.
+With such an emphasis on improving memory systems, it becomes exceedingly clear that faster methods are crucial to be used to enable the usage of the potential of CPU rates. One such common method is Cache. Caches are smaller but faster memory spaces placed closer to the core, storing frequently accessed data from the main memory such that the CPU does not have to access the slower main memory and can instead use the nearby cache. Cache theory involves the concept of caching, cache-mapping and write/replacement policies. To understand caches better, we will be implementing two cache subsystems - Direct-Mapped and 2-Way Set Associative - and integrate them into a pre-existing RISC-V CPU Core, while verifying them using testbenches. In this way, we will be able to learn how to make better memory subsystems.
+
+
+![](/assets/posts/1996-review-blog/cache.jpeg)
+
+
+##### _Caches_
+
 
 ### Resources :
 
-[Stupid Architects Look At Future By Safari ETHZ August 1996](https://safari.ethz.ch/architecture/fall2021/lib/exe/fetch.php?media=stupid_architects_look_to_future.pdf)
+[Stupid Architects Look To Future By Safari ETHZ August 1996](https://safari.ethz.ch/architecture/fall2021/lib/exe/fetch.php?media=stupid_architects_look_to_future.pdf)
+
+[Cache Theory Paper](https://www.abrj.org/publications-of-abrj/article/282/)
+
+[Cache Design & Management Lecture](https://youtu.be/BGaLNhyr-2Q?si=s96znQAC1mYxGO7T)
+
+
 
 
