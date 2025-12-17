@@ -143,15 +143,12 @@ Using Wandb experiment tracking, the training loss graphs for each method are pl
 
 **Full FT:**
 
-<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-31_223501.png" width="400">
-
-**LoRA:**
-
-<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-25_145920.png" width="400">
+<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-31_223501.png" style="width:50%"
+<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-25_145920.png" style="width:50%"
 
 **QLoRA:**
 
-<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-25_151451.png" width="400">
+<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-25_151451.png" style="width:50%"
 
 All three methods show a rapid drop initially followed by a steady drop. Full Fine Tuning and LoRA reach a lower loss (<0.3) while QLoRA plateaus above 0.3. This can be justified since quantization in QLoRA introduces relatively noisier gradients due to reduced precision. The lower learning rate in comparison with LoRA fine tuning also explains the higher value of loss after convergence. 
 
@@ -164,15 +161,15 @@ Using Wandb experiment tracking, the GPU utilization graphs for each method are 
 
 **Full FT:**
 
-<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-25_015008.png" width="400">
+<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-25_015008.png" style="width:50%"
 
 **LoRA:**
 
-<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-25_015206.png" width="400">
+<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-25_015206.png" style="width:50%"
 
 **QLoRA:**
 
-<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-31_225311.png" width="400">
+<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-31_225311.png" style="width:50%"
 
 Full Fine-Tuning uses substantially more GPU memory (around 55% on a 4090) because all model weights, optimizer states, and activation checkpoints are accounted for. LoRA and QLoRA remain near 25% because LoRA freezes most weights and only stores a few adapter parameters, and QLoRA's low-bit representation further reduces stored weight size. 
 
@@ -180,15 +177,15 @@ Full Fine-Tuning uses substantially more GPU memory (around 55% on a 4090) becau
 
 **Full FT:**
 
-<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-31_225919.png" width="400">
+<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-31_225919.png" style="width:50%"
 
 **LoRA:**
 
-<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-25_145951.png" width="400">
+<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-25_145951.png" style="width:50%"
 
 **QLoRA:**
 
-<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-31_225234.png" width="400">
+<img src="/assets/posts/comparing-finetuning-methods/Screenshot_2025-08-31_225234.png" style="width:50%"
 
 Full FT power draw is high and periodically dips when GPU utilization drops. LoRA shows a noisy power profile as their utilization traces frequent short kernels and synchronization cause fast power oscillations. Since power responds rapidly to instantaneous load, any fragmentation of work (as in LoRA/QLoRA) is noisier even when the total energy consumed over an epoch is similar.
 
@@ -206,15 +203,15 @@ LoRA and QLoRA update only a small set of adapter parameters (LoRA) or using low
 
 **Full FT:**
 
-<img src="/assets/posts/comparing-finetuning-methods/image%201.png" width="400">
+<img src="/assets/posts/comparing-finetuning-methods/image%201.png" style="width:50%"
 
 **LoRA:**
 
-<img src="/assets/posts/comparing-finetuning-methods/image%202.png" width="400">
+<img src="/assets/posts/comparing-finetuning-methods/image%202.png" style="width:50%"
 
 **QLoRA:**
 
-<img src="/assets/posts/comparing-finetuning-methods/image%203.png" width="400">
+<img src="/assets/posts/comparing-finetuning-methods/image%203.png" style="width:50%"
 
 The evaluation metrics for the LoRA- and QLoRA fine-tuned models indicate that both approaches achieved strong and comparable performance. The consistently high precision across both suggests that the models are conservative in their corrections. This behavior aligns with the design of low-rank adaptation methods, which tend to preserve the pretrained model's linguistic knowledge while selectively adjusting attention mechanisms.
 
