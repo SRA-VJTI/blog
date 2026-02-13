@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="220" viewBox="0 0 720 220" font-family="'Helvetica Neue', Arial, sans-serif">
+  <style>
+    .label { font-size: 16px; fill: #f8fafc; font-weight: 600; }
+    .detail { font-size: 12px; fill: #e2e8f0; }
+    .annotation { font-size: 12px; fill: #e2e8f0; }
+    .arrow { stroke: #e2e8f0; stroke-width: 2; marker-end: url(#arrowhead); }
+  </style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050c1a"/>
+      <stop offset="100%" stop-color="#0f1b2f"/>
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e2e8f0" />
+    </marker>
+  </defs>
+  <rect width="720" height="220" fill="url(#bg)" rx="18" />
+  <rect x="190" y="150" width="220" height="40" rx="6" fill="#1d4ed8" />
+  <text x="300" y="173" class="label" text-anchor="middle">PCIe 5.0 / 6.0 PHY</text>
+  <rect x="190" y="110" width="220" height="40" rx="6" fill="#22c55e" />
+  <text x="300" y="135" class="label" text-anchor="middle">CXL.io</text>
+  <text x="300" y="150" class="detail" text-anchor="middle">Device discovery &amp; config space</text>
+  <rect x="190" y="70" width="220" height="40" rx="6" fill="#f97316" />
+  <text x="300" y="95" class="label" text-anchor="middle">CXL.cache</text>
+  <text x="300" y="110" class="detail" text-anchor="middle">Accelerator coherence protocol</text>
+  <rect x="190" y="30" width="220" height="40" rx="6" fill="#a855f7" />
+  <text x="300" y="55" class="label" text-anchor="middle">CXL.mem</text>
+  <text x="300" y="70" class="detail" text-anchor="middle">Load/store into pooled memory</text>
+  <line class="arrow" x1="410" y1="130" x2="510" y2="130" />
+  <text x="520" y="133" class="annotation" dominant-baseline="middle">OS enumerates devices</text>
+  <line class="arrow" x1="190" y1="90" x2="100" y2="90" />
+  <text x="90" y="93" class="annotation" dominant-baseline="middle" text-anchor="end">GPU cache ops</text>
+  <line class="arrow" x1="410" y1="50" x2="510" y2="50" />
+  <text x="520" y="53" class="annotation" dominant-baseline="middle">Memory expanders</text>
+</svg>

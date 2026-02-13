@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="200" viewBox="0 0 760 200" font-family="'Helvetica Neue', Arial, sans-serif">
+  <style>
+    .stage { fill: #020617; stroke: #facc15; stroke-width: 1.8; }
+    .label { font-size: 14px; font-weight: 600; fill: #fef9c3; }
+    .arrow { stroke: #fef3c7; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    .detail { font-size: 12px; fill: #fde68a; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#fef3c7" />
+    </marker>
+  </defs>
+  <rect width="760" height="200" fill="#0f172a" rx="18" />
+  <rect class="stage" x="20" y="60" width="160" height="80" rx="10" />
+  <text class="label" x="100" y="95" text-anchor="middle">BIOS / Firmware</text>
+  <text class="detail" x="100" y="115" text-anchor="middle">CEDT, HMAT tables</text>
+  <rect class="stage" x="210" y="60" width="160" height="80" rx="10" />
+  <text class="label" x="290" y="95" text-anchor="middle">Linux `cxl` subsystem</text>
+  <text class="detail" x="290" y="115" text-anchor="middle">`cxl_mem`, `cxl_pci`</text>
+  <rect class="stage" x="400" y="60" width="160" height="80" rx="10" />
+  <text class="label" x="480" y="95" text-anchor="middle">Memory tiering</text>
+  <text class="detail" x="480" y="115" text-anchor="middle">AutoNUMA, memtier</text>
+  <rect class="stage" x="590" y="60" width="160" height="80" rx="10" />
+  <text class="label" x="670" y="95" text-anchor="middle">AI frameworks</text>
+  <text class="detail" x="670" y="115" text-anchor="middle">PyTorch, DeepSpeed</text>
+  <path class="arrow" d="M180 100 H210" />
+  <text class="detail" x="195" y="50" text-anchor="middle">tables</text>
+  <path class="arrow" d="M370 100 H400" />
+  <text class="detail" x="385" y="50" text-anchor="middle">regions</text>
+  <path class="arrow" d="M560 100 H590" />
+  <text class="detail" x="575" y="50" text-anchor="middle">NUMA hints</text>
+</svg>

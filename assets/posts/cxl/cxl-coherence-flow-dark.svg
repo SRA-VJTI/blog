@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="280" viewBox="0 0 720 280" font-family="'Helvetica Neue', Arial, sans-serif">
+  <style>
+    .box { fill: #0f172a; stroke: #93c5fd; stroke-width: 2; }
+    .title { font-size: 16px; font-weight: 600; fill: #e2e8f0; }
+    .arrow { stroke: #93c5fd; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    .label { font-size: 13px; fill: #e2e8f0; }
+  </style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#030712" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="9" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#93c5fd" />
+    </marker>
+  </defs>
+  <rect width="720" height="280" fill="url(#bg)" rx="18" />
+  <rect class="box" x="100" y="40" width="180" height="100" rx="12" />
+  <text class="title" x="190" y="90" text-anchor="middle">CPU caches</text>
+  <rect class="box" x="440" y="40" width="180" height="100" rx="12" />
+  <text class="title" x="530" y="90" text-anchor="middle">Accelerator cache</text>
+  <rect class="box" x="180" y="180" width="360" height="80" rx="12" />
+  <text class="title" x="360" y="225" text-anchor="middle">Host DRAM</text>
+  <path class="arrow" d="M280 90 H440" />
+  <text class="label" x="360" y="75" text-anchor="middle">Snoop request</text>
+  <path class="arrow" d="M440 110 H280" />
+  <text class="label" x="360" y="130" text-anchor="middle">Invalidate / writeback ack</text>
+  <path class="arrow" d="M190 140 V190" />
+  <text class="label" x="170" y="175" text-anchor="end">Load/store</text>
+  <path class="arrow" d="M530 140 V190" />
+  <text class="label" x="550" y="175" text-anchor="start">CXL.cache transactions</text>
+</svg>

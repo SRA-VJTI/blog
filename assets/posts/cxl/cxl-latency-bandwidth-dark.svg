@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="340" viewBox="0 0 800 340" font-family="'Helvetica Neue', Arial, sans-serif">
+  <style>
+    .axis { stroke: #e2e8f0; stroke-width: 1.5; }
+    .bar { fill: #38bdf8; }
+    .line { fill: none; stroke: #f472b6; stroke-width: 2.5; }
+    .dot { fill: #f472b6; }
+    .label { font-size: 13px; fill: #e2e8f0; }
+    .title { font-size: 16px; font-weight: 600; fill: #f8fafc; }
+  </style>
+  <rect width="800" height="340" fill="#020617" rx="18" />
+  <text x="400" y="30" class="title" text-anchor="middle">Latency vs. Bandwidth of Memory Tiers</text>
+  <!-- Legend -->
+  <rect class="bar" x="130" y="305" width="20" height="12" />
+  <text class="label" x="155" y="315">Latency (bars)</text>
+  <line class="line" x1="130" y1="325" x2="150" y2="325" />
+  <circle class="dot" cx="140" cy="325" r="4" />
+  <text class="label" x="155" y="330">Bandwidth (line)</text>
+  <line class="axis" x1="120" y1="280" x2="700" y2="280" />
+  <line class="axis" x1="120" y1="60" x2="120" y2="280" />
+  <text class="label" x="40" y="170" text-anchor="middle" transform="rotate(-90 40 170)">Latency (ns)</text>
+  <text class="label" x="700" y="300" text-anchor="end">Tier</text>
+  <rect class="bar" x="150" y="140" width="60" height="140" />
+  <text class="label" x="180" y="300" text-anchor="middle">HBM</text>
+  <rect class="bar" x="250" y="220" width="60" height="60" />
+  <text class="label" x="280" y="300" text-anchor="middle">DDR5</text>
+  <rect class="bar" x="350" y="190" width="60" height="90" />
+  <text class="label" x="380" y="300" text-anchor="middle">CXL.mem</text>
+  <rect class="bar" x="450" y="60" width="60" height="220" />
+  <text class="label" x="480" y="300" text-anchor="middle">NVMe</text>
+  <rect class="bar" x="550" y="40" width="60" height="240" />
+  <text class="label" x="580" y="300" text-anchor="middle">Network</text>
+  <text class="label" x="180" y="135" text-anchor="middle">300</text>
+  <text class="label" x="280" y="210" text-anchor="middle">80</text>
+  <text class="label" x="380" y="180" text-anchor="middle">170</text>
+  <text class="label" x="480" y="50" text-anchor="middle">50k</text>
+  <text class="label" x="580" y="30" text-anchor="middle">100k</text>
+  <line class="axis" x1="700" y1="280" x2="700" y2="60" stroke-dasharray="4 4" />
+  <text class="label" x="760" y="170" text-anchor="middle" transform="rotate(-90 760 170)">Bandwidth (GB/s)</text>
+  <polyline class="line" points="180,100 280,160 380,200 480,240 580,260" />
+  <circle class="dot" cx="180" cy="100" r="5" />
+  <text class="label" x="180" y="95" text-anchor="middle">1000</text>
+  <circle class="dot" cx="280" cy="160" r="5" />
+  <text class="label" x="280" y="155" text-anchor="middle">200</text>
+  <circle class="dot" cx="380" cy="200" r="5" />
+  <text class="label" x="380" y="195" text-anchor="middle">32</text>
+  <circle class="dot" cx="480" cy="240" r="5" />
+  <text class="label" x="480" y="235" text-anchor="middle">7</text>
+  <circle class="dot" cx="580" cy="260" r="5" />
+  <text class="label" x="580" y="255" text-anchor="middle">1</text>
+</svg>
