@@ -34,12 +34,16 @@ This type is often seen in NVIDIA CUDA architectures where you have a shared cac
 ## 3. The ALU and Decoder
 
 TinyGPU has its own ALU that can do only Integer type operations for now (because of the FPGA limiation, which I will discuss later). The ALU can do:  
-* Add  
-* Sub  
-* Mul (signed, unsigned, higher upper)  
-* Div (signed)  
-* Matrix Multiplication (vmacc.vv)  
-Implementing the Mul and Div was a task due to Vivado bloating up the ALU to 900 LUTs!!
+1. Add  
+2. Sub  
+3. Mul (signed, unsigned, higher upper)  
+4. Div (signed)  
+5. Matrix Multiplication (vmacc.vv)  
+
+
+Implementing the Mul and Div was a task due to Vivado bloating up the ALU to 900 LUTs!! <br><br>
+
+
 
 The decoder is set to decode standard RVV opcode, with the func3 and func7 mixing created as well. It separates the instrucions into two broad categories - VMACC.vv and NON-VMACC.vv. This is done so that the design properly aligns the data into rows (for non vmacc op) or rows and columns (for vmacc.vv op). This is done by padding in the VRF 1 itself.
 
