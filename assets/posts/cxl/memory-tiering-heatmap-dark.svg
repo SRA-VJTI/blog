@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="220" viewBox="0 0 720 220" font-family="'Helvetica Neue', Arial, sans-serif">
+  <style>
+    .tier { font-size: 16px; font-weight: 600; fill: #f8fafc; }
+    .detail { font-size: 13px; fill: #e2e8f0; }
+    .note { font-size: 13px; fill: #e2e8f0; }
+    .arrow { stroke: #e2e8f0; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    .dashed { stroke-dasharray: 6 4; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e2e8f0" />
+    </marker>
+  </defs>
+  <rect width="720" height="220" fill="#040b19" rx="20" />
+  <rect x="80" y="80" width="150" height="80" rx="10" fill="#dc2626" />
+  <text x="155" y="115" class="tier" text-anchor="middle">HBM</text>
+  <text x="155" y="135" class="detail" text-anchor="middle">~1 TB/s, 300 ns</text>
+  <rect x="280" y="80" width="150" height="80" rx="10" fill="#f59e0b" />
+  <text x="355" y="115" class="tier" text-anchor="middle">Local DDR5</text>
+  <text x="355" y="135" class="detail" text-anchor="middle">~200 GB/s, 80 ns</text>
+  <rect x="480" y="80" width="170" height="80" rx="10" fill="#0ea5e9" />
+  <text x="565" y="115" class="tier" text-anchor="middle">CXL.mem NUMA</text>
+  <text x="565" y="135" class="detail" text-anchor="middle">~32 GB/s, 170 ns</text>
+  <line class="arrow" x1="155" y1="80" x2="155" y2="35" />
+  <text x="155" y="25" class="note" text-anchor="middle">Hot activations</text>
+  <line class="arrow" x1="355" y1="80" x2="355" y2="35" />
+  <text x="355" y="25" class="note" text-anchor="middle">Warm tensors</text>
+  <line class="arrow" x1="565" y1="80" x2="565" y2="35" />
+  <text x="565" y="25" class="note" text-anchor="middle">Cold weights / KV cache</text>
+  <line class="arrow dashed" x1="565" y1="180" x2="355" y2="180" />
+  <text x="460" y="200" class="note" text-anchor="middle">AutoNUMA migration</text>
+</svg>

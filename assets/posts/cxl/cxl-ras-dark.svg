@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="280" viewBox="0 0 720 280" font-family="'Helvetica Neue', Arial, sans-serif">
+  <style>
+    .fabric { fill: #1e293b; stroke: #38bdf8; stroke-width: 2; }
+    .bubble { fill: #0f172a; stroke: #38bdf8; stroke-width: 2; }
+    .label { font-size: 14px; font-weight: 600; fill: #e2e8f0; }
+    .arrow { stroke: #38bdf8; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    .note { font-size: 12px; fill: #e2e8f0; }
+  </style>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#030712" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#38bdf8" />
+    </marker>
+  </defs>
+  <rect width="720" height="280" fill="url(#bg)" rx="18" />
+  <rect class="fabric" x="270" y="90" width="180" height="80" rx="14" />
+  <text class="label" x="360" y="135" text-anchor="middle">CXL Fabric</text>
+  <rect class="bubble" x="70" y="40" width="150" height="60" rx="12" />
+  <text class="label" x="145" y="75" text-anchor="middle">ECC + scrubbing</text>
+  <rect class="bubble" x="500" y="40" width="150" height="60" rx="12" />
+  <text class="label" x="575" y="75" text-anchor="middle">Poison handling</text>
+  <rect class="bubble" x="285" y="190" width="160" height="60" rx="12" />
+  <text class="label" x="365" y="225" text-anchor="middle">IDE encryption</text>
+  <path class="arrow" d="M220 90 L300 110" />
+  <path class="arrow" d="M500 90 L420 110" />
+  <path class="arrow" d="M365 190 L365 170" />
+  <text class="note" x="360" y="265" text-anchor="middle">Alerts enable workload migration &amp; quarantine</text>
+</svg>

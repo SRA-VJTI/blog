@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="320" viewBox="0 0 720 320" font-family="'Helvetica Neue', Arial, sans-serif">
+  <style>
+    .gpu { fill: #0f172a; stroke: #22d3ee; stroke-width: 2; }
+    .pool { fill: #1e1b4b; stroke: #a855f7; stroke-width: 2; }
+    .label { font-size: 14px; font-weight: 600; fill: #f8fafc; }
+    .arrow { stroke: #e2e8f0; stroke-width: 2; marker-end: url(#arrowhead); fill: none; }
+    .note { font-size: 12px; fill: #e2e8f0; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e2e8f0" />
+    </marker>
+  </defs>
+  <rect width="720" height="320" fill="#020617" rx="18" />
+  <rect class="gpu" x="60" y="40" width="170" height="60" rx="12" />
+  <text class="label" x="145" y="75" text-anchor="middle">GPU node 1</text>
+  <text class="note" x="145" y="95" text-anchor="middle">HBM 80 GB</text>
+  <rect class="gpu" x="60" y="130" width="170" height="60" rx="12" />
+  <text class="label" x="145" y="165" text-anchor="middle">GPU node 2</text>
+  <text class="note" x="145" y="185" text-anchor="middle">HBM 80 GB</text>
+  <rect class="gpu" x="60" y="220" width="170" height="60" rx="12" />
+  <text class="label" x="145" y="255" text-anchor="middle">GPU node N</text>
+  <rect class="pool" x="420" y="60" width="240" height="200" rx="20" />
+  <text class="label" x="540" y="145" text-anchor="middle">CXL pooled memory</text>
+  <text class="note" x="540" y="165" text-anchor="middle">DDR / SCM (2–8 TB)</text>
+  <text class="note" x="540" y="185" text-anchor="middle">CXL switch / fabric</text>
+  <path class="arrow" d="M230 70 C320 70 320 110 420 110" />
+  <text class="note" x="325" y="60" text-anchor="middle">KV cache fetch</text>
+  <path class="arrow" d="M230 160 C320 160 320 170 420 170" />
+  <text class="note" x="325" y="150" text-anchor="middle">Optimizer shards</text>
+  <path class="arrow" d="M230 250 C320 250 320 230 420 230" />
+  <text class="note" x="325" y="260" text-anchor="middle">MoE expert pulls</text>
+</svg>
