@@ -33,6 +33,9 @@ p.subtitle { font-style: italic; opacity: 0.85; margin-top: -0.5rem; }
 
 
 
+**Source Code:** [Splaterra](https://github.com/javAmeya/splaterra)
+
+
 
 # Motivation
 
@@ -287,6 +290,16 @@ What you see above was trained within 24 GB of VRAM, from a minute-long video ta
 Our biggest realisation was that a strong geometric prior is necessary but far from sufficient. LoGeR's point cloud gave us a great prior on paper, but with small accumulative inconsistencies, which are definitely hard to avoid when a learned model predicts geometry chunk by chunk over a long sequence, so the downstream optimization has to absorb them. Most of our progress, hence, came from making the optimization respect the prior rather than overwriting it.
 
 The room to improve is still immense, particularly in fine detail. But it's a good proof of concept that large-scale 3D reconstruction and Gaussian splatting can be both consistent and photorealistic without expensive hardware.
+
+## Acknowledgements
+
+**LoGeR** — Thank You for your open source work on 3d reconstruction and making this project possible
+  [Junyi42](https://www.junyi42.com/)
+
+**RunPod** — Thank You RunPod for the compute  [Luke_Piette](https://x.com/LukePiette)
+  
+<img src="{{ '/assets/posts/splaterra/Runpod.png' | relative_url }}" alt="RunPod" style="max-width: 80px; height: auto;">
+
 
 # References
 1. **LoGeR: Long-Context Geometric Reconstruction.** [https://loger-project.github.io/files/loger_paper.pdf](https://loger-project.github.io/files/loger_paper.pdf)
