@@ -131,7 +131,6 @@ html[data-theme='dark'] .theme-icon-dark { display: inline; }
 .prose th { font-weight: 600; }
 /* MathJax 2 is still loaded from default.html. Avoid clipping display equations. */
 .prose .MathJax_Display, .prose mjx-container[display='true'] { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: 10px 0; }
-.prose .MathJax { font-size: 1.03em !important; }
 .article-afterword { max-width: 760px; margin: 70px auto 0; padding-top: 25px; border-top: 1px solid var(--border); font-size: 13px; }
 .article-afterword a:hover { color: var(--accent); }
 .related-section { max-width: 760px; margin: 75px auto 0; }
@@ -336,3 +335,112 @@ body { line-height: 1.7; }
   .primary-nav a, .brand, .row-main h3 a, .footer-links a { transition: none; }
 }
 /* END SRA SITE-ALIGNED POLISH */
+
+/* BEGIN SRA REVIEW FIXES V8
+   Follow-up for PR review: simpler homepage, header/social links, math legibility.
+   All changes are theme-only; posts and technical content remain unmodified.
+*/
+
+/* Main identity: keep the page intentionally quiet. */
+.site-header .header-inner { min-height: 74px; }
+.site-header .brand { display: inline-flex; align-items: center; flex: none; gap: 0; }
+.site-header .brand-logo {
+  display: block; width: 54px; height: 46px; object-fit: contain;
+  filter: brightness(0); /* Official SRA logo appears black on light backgrounds. */
+}
+html[data-theme='dark'] .site-header .brand-logo { filter: brightness(0) invert(1); }
+.site-header .primary-nav { display: flex; align-items: center; gap: clamp(12px, 1.6vw, 23px); }
+.site-header .primary-nav a { font: 600 12px/1.5 var(--sans); color: var(--secondary); white-space: nowrap; letter-spacing: -.012em; }
+.site-header .primary-nav a:hover,
+.site-header .primary-nav a:focus-visible { color: var(--accent); }
+.site-header .theme-toggle { flex: none; margin-left: 3px; }
+
+/* No more oversized display font, slogans or redundant page furniture. */
+.home-intro { max-width: 760px; padding: 56px 0 41px; }
+.home-intro h1 {
+  margin: 0;
+  font: 600 clamp(36px, 4.2vw, 49px)/1.17 var(--sans);
+  letter-spacing: -.048em;
+  color: var(--text);
+}
+
+/* Inline media in acknowledgements: preserve the left-aligned RunPod logo. */
+.prose img[src*='runpod' i],
+.prose img[alt*='runpod' i] {
+  margin: 1.25em auto 1.25em 0;
+  object-position: left center;
+}
+
+@media (max-width: 900px) {
+  .site-header .header-inner { gap: 12px 20px; padding-block: 13px; flex-wrap: wrap; }
+  .site-header .primary-nav { flex: 1 1 auto; justify-content: flex-end; gap: clamp(10px, 2.5vw, 19px); }
+}
+@media (max-width: 680px) {
+  .site-header .header-inner { align-items: center; padding-block: 11px 13px; }
+  .site-header .brand-logo { width: 46px; height: 42px; }
+  .site-header .primary-nav { flex: 1 1 100%; justify-content: space-between; gap: 7px; }
+  .site-header .primary-nav a { font-size: 11px; }
+  .site-header .theme-toggle { margin-left: 0; }
+  .home-intro { padding: 43px 0 36px; }
+  .home-intro h1 { font-size: clamp(34px, 9vw, 42px); }
+  .prose .MathJax_Display, .prose .MathJax_SVG_Display { text-align: left; }
+}
+@media (max-width: 360px) {
+  .site-header .primary-nav { flex-wrap: wrap; justify-content: flex-start; gap: 9px 14px; }
+  .site-header .theme-toggle { margin-left: auto; }
+}
+/* END SRA REVIEW FIXES V8 */
+
+/* BEGIN SRA TOPICS AND MATH FIX V9 */
+/* Each article gets one compact row; tags only link to that article. */
+.topics-section { padding-top: 48px; }
+.topic-post-row {
+  display: grid;
+  grid-template-columns: minmax(160px, 265px) minmax(0, 1fr);
+  align-items: start;
+  gap: 16px 28px;
+  padding: 19px 0;
+  border-bottom: 1px solid var(--border);
+}
+.topic-post-title {
+  color: var(--secondary);
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 600;
+  text-decoration: none;
+}
+.topic-post-title:hover { color: var(--accent); }
+.topic-post-row .tag-cloud { padding-top: 0; gap: 8px; }
+.topic-post-row .tag-cloud a {
+  color: var(--accent);
+  border-radius: 3px;
+  font-size: 13px !important;
+  text-decoration: none;
+}
+.topic-post-row .tag-cloud a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+/* Tags in the article index are navigable too, without relying on tag-archive URLs. */
+.row-tags a { color: var(--accent); text-decoration: none; white-space: nowrap; }
+/* Keep topics within individual posts red, but do not send readers to dead archives. */
+.article-tags span { color: var(--accent); font-size: 14px; }
+.row-tags a:hover { text-decoration: underline; text-underline-offset: 3px; }
+/* Use MathJax's native CommonHTML font metrics; don't resize inline Greek glyphs. */
+.prose .MathJax_CHTML { vertical-align: baseline; }
+.prose .MJXc-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+@media (max-width: 680px) {
+  .topic-post-row { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 18px 0; }
+  .topic-post-title { font-size: 13.5px; }
+}
+/* END SRA TOPICS AND MATH FIX V9 */
+
+/* BEGIN SRA SERIF TITLE RESTORE V13 */
+/* Use the same editorial face as the original article titles. */
+.home-intro h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -.035em;
+}
+/* END SRA SERIF TITLE RESTORE V13 */

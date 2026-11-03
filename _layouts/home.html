@@ -5,9 +5,7 @@ layout: default
 <div class="site-shell home-page">
   {% if paginator == nil or paginator.page == 1 %}
   <header class="home-intro">
-    <p class="eyebrow">Society of Robotics and Automation · VJTI</p>
-    <h1>Writing from SRA.</h1>
-    <p>Projects, experiments, and technical notes from our lab.</p>
+    <h1>The Workbench</h1>
   </header>
   {% endif %}
 
@@ -28,7 +26,7 @@ layout: default
           {% endif %}
           {% if post.tags.size > 0 %}
           <div class="row-tags" aria-label="Article topics">
-            {% for tag in post.tags limit:3 %}<span>{{ tag | escape }}</span>{% endfor %}
+            {% for tag in post.tags limit:3 %}<a href="{{ post.url | relative_url }}" title="Read {{ post.title | escape }}">{{ tag | escape }}</a>{% endfor %}
           </div>
           {% endif %}
         </div>
@@ -39,5 +37,5 @@ layout: default
     </div>
     {% include pagination.html %}
   </section>
-  {% if paginator == nil or paginator.page == 1 %}{% include tagcloud.html %}{% endif %}
+  {% include tagcloud.html posts=display_posts %}
 </div>
