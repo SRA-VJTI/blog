@@ -1,8 +1,12 @@
-
-{% if site.plugins contains "jekyll/tagging" %}
-{% assign size = site | tag_cloud | size %}
-  {% if size != 0 %}
-  <h2>all tags</h2>
-  <div class="tag-cloud">{{ site | tag_cloud }}</div>
-  {% endif %}
+{% if site.tags.size > 0 %}
+<section class="topics-section" id="topics" aria-labelledby="topics-heading">
+  <div class="section-heading"><h2 id="topics-heading">Topics</h2></div>
+  <div class="tag-cloud">
+    {% for topic in site.tags %}
+      {% assign topic_name = topic[0] %}
+      {% assign topic_slug = topic_name | downcase | replace: ' ', '-' | url_encode %}
+      <a href="{{ '/tag/' | relative_url }}{{ topic_slug }}/">{{ topic_name | escape }}</a>
+    {% endfor %}
+  </div>
+</section>
 {% endif %}

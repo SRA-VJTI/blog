@@ -1,9 +1,20 @@
 <footer class="site-footer">
-  <div class="wrapper">
-    <div class="credits"><a href="https://github.com/bitbrain/jekyll-dash">dash</a> theme for Jekyll by <a href="https://github.com/bitbrain">bitbrain</a> made with <i class="fas fa-heart"></i>
-      {%- include theme-toggle.html -%}
+  <div class="site-shell footer-inner">
+    <div class="footer-identity">
+      <strong>Society of Robotics and Automation</strong>
+      <span>VJTI, Mumbai</span>
+    </div>
+    <div class="footer-links" aria-label="Social links">
+      {% for link in site.dash.social_links %}
+        {% assign label = 'Social' %}
+        {% if link.icon contains 'instagram' %}{% assign label = 'Instagram' %}
+        {% elsif link.icon contains 'linkedin' %}{% assign label = 'LinkedIn' %}
+        {% elsif link.icon contains 'facebook' %}{% assign label = 'Facebook' %}
+        {% elsif link.icon contains 'youtube' %}{% assign label = 'YouTube' %}
+        {% elsif link.icon contains 'github' %}{% assign label = 'GitHub' %}
+        {% endif %}
+        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ label }}</a>
+      {% endfor %}
     </div>
   </div>
 </footer>
-
-

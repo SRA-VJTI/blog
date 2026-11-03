@@ -1,8 +1,13 @@
-<div class="site-header">
-  <div class="wrapper">
-    <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
-    <span class="social_links">
-        {% for link in site.dash.social_links %}<a class="color-{{ link.color }}-hover" href="{{ link.url }}"><i class="fab fa-{{ link.icon }}"></i></a>{% endfor %}
-    </span>
+<header class="site-header">
+  <div class="site-shell header-inner">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="SRA Journal home">SRA <span aria-hidden="true">/</span> <span class="brand-subname">Journal</span></a>
+    <nav class="primary-nav" aria-label="Main navigation">
+      <a href="{{ '/' | relative_url }}#archive">Articles</a>
+      <a href="https://sravjti.in/" target="_blank" rel="noopener noreferrer">About SRA</a>
+      <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme" title="Switch color theme" aria-pressed="false">
+        <span class="theme-icon-light" aria-hidden="true">☾</span>
+        <span class="theme-icon-dark" aria-hidden="true">☀</span>
+      </button>
+    </nav>
   </div>
-</div>
+</header>
