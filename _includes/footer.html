@@ -4,17 +4,8 @@
       <strong>Society of Robotics and Automation</strong>
       <span>VJTI, Mumbai</span>
     </div>
-    <div class="footer-links" aria-label="Social links">
-      {% for link in site.dash.social_links %}
-        {% assign label = 'Social' %}
-        {% if link.icon contains 'instagram' %}{% assign label = 'Instagram' %}
-        {% elsif link.icon contains 'linkedin' %}{% assign label = 'LinkedIn' %}
-        {% elsif link.icon contains 'facebook' %}{% assign label = 'Facebook' %}
-        {% elsif link.icon contains 'youtube' %}{% assign label = 'YouTube' %}
-        {% elsif link.icon contains 'github' %}{% assign label = 'GitHub' %}
-        {% endif %}
-        <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ label }}</a>
-      {% endfor %}
+    <div class="footer-links" aria-label="SRA links">
+      {% include social-links.html %}
     </div>
   </div>
 </footer>

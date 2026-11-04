@@ -1,9 +1,10 @@
 <header class="site-header">
   <div class="site-shell header-inner">
-    <a class="brand" href="{{ '/' | relative_url }}" aria-label="SRA Journal home">SRA <span aria-hidden="true">/</span> <span class="brand-subname">Journal</span></a>
-    <nav class="primary-nav" aria-label="Main navigation">
-      <a href="{{ '/' | relative_url }}#archive">Articles</a>
-      <a href="https://sravjti.in/" target="_blank" rel="noopener noreferrer">About SRA</a>
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="SRA Blog home" title="SRA Blog home">
+      <img class="brand-logo" src="https://sravjti.in/sra-logo.png" alt="SRA" width="54" height="46">
+    </a>
+    <nav class="primary-nav" aria-label="SRA links">
+      {% include social-links.html %}
       <button class="theme-toggle" type="button" data-theme-toggle aria-label="Switch color theme" title="Switch color theme" aria-pressed="false">
         <span class="theme-icon-light" aria-hidden="true">☾</span>
         <span class="theme-icon-dark" aria-hidden="true">☀</span>

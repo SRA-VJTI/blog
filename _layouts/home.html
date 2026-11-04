@@ -3,13 +3,8 @@ layout: default
 ---
 {% assign display_posts = paginator.posts | default: site.posts %}
 <div class="site-shell home-page">
-  {% if paginator == nil or paginator.page == 1 %}
-  <header class="home-intro">
-    <h1>The Workbench</h1>
-  </header>
-  {% endif %}
-
-  <section class="archive-section" id="archive" aria-labelledby="archive-heading">
+  
+<section class="archive-section" id="archive" aria-labelledby="archive-heading">
     <div class="section-heading">
       <h2 id="archive-heading">{% if paginator and paginator.page != 1 %}Writing{% else %}Latest articles{% endif %}</h2>
     </div>

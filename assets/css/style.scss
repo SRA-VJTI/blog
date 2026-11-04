@@ -444,3 +444,31 @@ html[data-theme='dark'] .site-header .brand-logo { filter: brightness(0) invert(
   letter-spacing: -.035em;
 }
 /* END SRA SERIF TITLE RESTORE V13 */
+
+/* Homepage without a separate hero title */
+.home-page .archive-section {
+  padding-top: 64px;
+}
+
+@media (max-width: 680px) {
+  .home-page .archive-section {
+    padding-top: 42px;
+  }
+}
+
+/* BEGIN SRA HEADER SOCIALS V14 */
+/* Keep the article index immediately below the site header. */
+.home-page .archive-section { padding-top: 60px; }
+/* Show all official links at the right without overflowing on tablets/phones. */
+.site-header .primary-nav { gap: 10px 15px; }
+.site-header .primary-nav a { font-size: 11px; }
+.site-footer .footer-links { gap: 10px 17px; }
+@media (max-width: 980px) {
+  .site-header .header-inner { flex-wrap: wrap; padding-block: 12px; }
+  .site-header .primary-nav { flex: 1 1 100%; flex-wrap: wrap; justify-content: flex-start; }
+}
+@media (max-width: 680px) {
+  .home-page .archive-section { padding-top: 38px; }
+  .site-header .primary-nav { gap: 8px 13px; }
+}
+/* END SRA HEADER SOCIALS V14 */
