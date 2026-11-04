@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Building a Two-Wheeled Balancer with LQR Control
-tags: control-systems matlab embedded_systems electronics
+tags: [control-systems, matlab, embedded-systems, electronics]
 description: Improvise. Adaptive Control. Overcome.
 ---
 ### Mentees

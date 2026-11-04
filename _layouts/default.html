@@ -8,17 +8,31 @@
       {{ content }}
     </main>
     {%- include footer.html -%}
-    <!-- Keep the repository's existing MathJax 2 configuration so old $...$
-         and \\(...\\) formula syntax continues working in every post. -->
+    <!-- SRA MathJax font v11: STIX-Web, with the original LaTeX syntax preserved. -->
     <script type="text/x-mathjax-config">
       MathJax.Hub.Config({
+        showProcessingMessages: false,
+        messageStyle: "none",
         tex2jax: {
-          inlineMath: [['$','$'], ['\\(','\\)']],
-          processEscapes: true
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        "HTML-CSS": {
+          availableFonts: [],
+          preferredFont: null,
+          webFont: "STIX-Web",
+          scale: 100,
+          linebreaks: { automatic: true, width: 'container' }
+        },
+        TeX: {
+          extensions: ['AMSmath.js', 'AMSsymbols.js', 'noErrors.js', 'noUndefined.js']
         }
       });
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS_HTML" type="text/javascript" onerror="this.onerror=null;this.src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS_HTML';"></script>
     <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
   </body>
 </html>

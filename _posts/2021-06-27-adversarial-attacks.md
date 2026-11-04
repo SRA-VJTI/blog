@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Adversarial Attacks
-tags: computer_vision 
+tags: [computer-vision]
 description: An introduction to adversarial attacks on ML systems 
 ---
 

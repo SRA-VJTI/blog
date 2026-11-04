@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using PythonAPI in CoppeliaSim
-tags: simulation Python API
+tags: [simulation, python, api]
 description: Basic functions and Usage of PythonAPI in CoppeliaSim
 ---
 -- [Saad Hashmi](https://github.com/hashmis79)

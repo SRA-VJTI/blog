@@ -5,8 +5,8 @@ tags:
   - electronics
   - microprocessor
   - fpga
-  - embedded_systems
-  - computer_architecture
+  - embedded-systems
+  - computer-architecture
 description: Implementing a RISC-V CPU on FPGA
 ---
 

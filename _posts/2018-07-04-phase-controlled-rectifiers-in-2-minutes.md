@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Phase Control Rectifiers Explained in 2 Minutes
-tags: electronics rectifiers electrical
+tags: [electronics, rectifiers, electrical]
 description: Working of Phase Controlled Rectifiers
 ---
 

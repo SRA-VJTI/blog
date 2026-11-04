@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How Does A Relay Work?!!
-tags: electronics relays electrical
+tags: [electronics, relays, electrical]
 description: Working of a Relay
 ---
 

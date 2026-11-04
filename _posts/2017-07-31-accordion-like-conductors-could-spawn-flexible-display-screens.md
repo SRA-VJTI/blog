@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Accordion-Like Conductors Could Spawn Flexible Display Screens
-tags: electronics semiconductors
+tags: [electronics, semiconductors]
 description: Stretchy conductors for flexible plasma-screen displays
 ---
 

@@ -2,10 +2,10 @@
 layout: post
 title: Building a Video Card on FPGA!
 tags: 
-    - Electronics
-    - FPGA
-    - Verilog
-    - Video_Card
+    - electronics
+    - fpga
+    - verilog
+    - video-card
 description: Harnessing the power of the FPGA to create a video card from scratch.
 ---
 

@@ -12,8 +12,8 @@ layout: default
     {% if page.description %}<p class="article-deck">{{ page.description | escape }}</p>{% endif %}
     {% if page.tags.size > 0 %}
     <div class="article-tags" aria-label="Article topics">
-      {% for tag in page.tags %}{% assign tag_slug = tag | downcase | replace: ' ', '-' | url_encode %}<a href="{{ '/tag/' | relative_url }}{{ tag_slug }}/">{{ tag | escape }}</a>{% endfor %}
-    </div>
+            {% for tag in page.tags %}{% capture tag_path %}/tag/{{ tag | slugify }}/{% endcapture %}<a href="{{ tag_path | relative_url }}">{{ tag | replace: '-', ' ' | escape }}</a>{% endfor %}
+          </div>
     {% endif %}
   </header>
 
@@ -38,17 +38,51 @@ layout: default
   {% if site.dash.disqus.shortname %}
     <div class="comments">{% include disqus.html %}</div>
   {% endif %}
-
-  {% assign related_count = site.related_posts | size %}
-  {% if related_count != 0 %}
-  <aside class="related-section" aria-labelledby="related-title">
-    <h2 id="related-title">More articles</h2>
-    <ul>
-      {% for post in site.related_posts limit:3 %}
-      <li><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></li>
+  <!-- Native Jekyll, no extra plugins: related = actual shared front matter tags. -->
+  <section class="post-discovery" data-post-discovery aria-label="More to read">
+    <div class="discovery-tabs" role="tablist" aria-label="Choose article recommendations">
+      <button type="button" class="discovery-tab" role="tab" id="tab-recent" aria-controls="panel-recent" aria-selected="true" tabindex="0">Recent Articles</button>
+      <button type="button" class="discovery-tab" role="tab" id="tab-related" aria-controls="panel-related" aria-selected="false" tabindex="-1">Related Articles</button>
+    </div>
+    <div id="panel-recent" class="discovery-panel" role="tabpanel" aria-labelledby="tab-recent">
+      {% assign recent_shown = 0 %}
+      {% for candidate in site.posts %}
+        {% if candidate.url != page.url and recent_shown < 4 %}
+        <article class="discovery-article">
+          <span class="discovery-date">{{ candidate.date | date: '%d %b %Y' }}</span>
+          <a class="discovery-title" href="{{ candidate.url | relative_url }}">{{ candidate.title | escape }}</a>
+          {% if candidate.description %}<p>{{ candidate.description | strip_html | escape }}</p>{% endif %}
+        </article>
+        {% assign recent_shown = recent_shown | plus: 1 %}
+        {% endif %}
       {% endfor %}
-    </ul>
-  </aside>
-  {% endif %}
+    </div>
+    <div id="panel-related" class="discovery-panel" role="tabpanel" aria-labelledby="tab-related" hidden>
+      {% assign related_shown = 0 %}
+      {% comment %}Highest shared-tag count first, newest post breaks ties.{% endcomment %}
+      {% for shared_tier in (1..12) reversed %}
+        {% for candidate in site.posts %}
+          {% if candidate.url != page.url and related_shown < 4 %}
+            {% assign shared = 0 %}
+            {% for topic in page.tags %}
+              {% if candidate.tags contains topic %}{% assign shared = shared | plus: 1 %}{% endif %}
+            {% endfor %}
+            {% if shared == shared_tier %}
+            <article class="discovery-article">
+              <span class="discovery-date">{{ candidate.date | date: '%d %b %Y' }} · {{ shared }} shared {% if shared == 1 %}topic{% else %}topics{% endif %}</span>
+              <a class="discovery-title" href="{{ candidate.url | relative_url }}">{{ candidate.title | escape }}</a>
+              {% if candidate.description %}<p>{{ candidate.description | strip_html | escape }}</p>{% endif %}
+            </article>
+            {% assign related_shown = related_shown | plus: 1 %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      {% if related_shown == 0 %}
+        <p class="discovery-empty">No other articles share tags with this post yet.</p>
+      {% endif %}
+    </div>
+  </section>
 </div>
 <script src="{{ '/assets/js/toc.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/recommendations.js' | relative_url }}" defer></script>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Beyond Vision: Giving Robots a Sense of Touch"
-tags: tactile-sensing robot-learning imitation-learning FlexiTac
+tags: [tactile-sensing, robot-learning, imitation-learning, flexitac]
 description: "Exploring visuo-tactile manipulation with tactile sensors and robot learning policies."
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: TinyGPU - custom RVV GPU
-tags : processor accelerator fpga computer_architecture
+tags: [processor, accelerator, fpga, computer-architecture]
 description : Custom RVV compliant accelerator
 ---
 

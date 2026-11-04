@@ -4,8 +4,8 @@ title: Implementing Convolutions on FPGA
 tags:
  - electronics
  - fpga
- - image processing
- - computer vision
+ - image-processing
+ - computer-vision
 description: Implementing convolution on FPGA
 ---
 

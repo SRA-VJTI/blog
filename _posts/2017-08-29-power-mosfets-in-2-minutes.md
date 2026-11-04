@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Power MOSFETS Explained In 2 Minutes!!
-tags: electronics mosfet electrical transistors
+tags: [electronics, mosfet, electrical, transistors]
 description: Working of Power MOSFETS
 ---
 

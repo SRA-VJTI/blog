@@ -21,7 +21,7 @@ layout: default
           {% endif %}
           {% if post.tags.size > 0 %}
           <div class="row-tags" aria-label="Article topics">
-            {% for tag in post.tags limit:3 %}<a href="{{ post.url | relative_url }}" title="Read {{ post.title | escape }}">{{ tag | escape }}</a>{% endfor %}
+            {% for tag in post.tags limit:3 %}{% capture tag_path %}/tag/{{ tag | slugify }}/{% endcapture %}<a href="{{ tag_path | relative_url }}" title="See posts tagged {{ tag | escape }}">{{ tag | replace: '-', ' ' | escape }}</a>{% endfor %}
           </div>
           {% endif %}
         </div>
@@ -32,5 +32,5 @@ layout: default
     </div>
     {% include pagination.html %}
   </section>
-  {% include tagcloud.html posts=display_posts %}
+
 </div>

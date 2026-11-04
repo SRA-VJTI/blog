@@ -1,7 +1,7 @@
 ---
 layout: post
 title: EMG Armband, The Conclusion
-tags: ML Systems IoT PCB Designing Embedded
+tags: [machine-learning, systems, iot, pcb-design, embedded-systems]
 description: Developing an EMG system that can understand human hand motions.
 ---
 

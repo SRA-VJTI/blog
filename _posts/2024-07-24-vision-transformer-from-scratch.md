@@ -2,12 +2,12 @@
 layout: post
 title: The Magic of Neural Networks- How Machines Learn and Make Decisions
 tags: 
-    - Deep Learning 
-    - Transformers 
-    - CNNs 
-    - LSTMs 
-    - Python 
-    - Pytorch
+    - deep-learning
+    - transformers
+    - cnns
+    - lstms
+    - python
+    - pytorch
 description: implementing a model that generates a descriptive caption for an image provided
 ---
 

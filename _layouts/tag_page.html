@@ -2,7 +2,7 @@
 layout: default
 ---
 <div class="site-shell tag-page">
-  <a class="back-link" href="{{ '/' | relative_url }}#topics">← All topics</a>
+  <a class="back-link" href="{{ '/' | relative_url }}">← All articles</a>
   <header class="tag-intro">
     <p class="eyebrow">Topic</p>
     <h1>{{ page.tag | escape }}</h1>
@@ -23,5 +23,5 @@ layout: default
       {% endfor %}
     </div>
   </section>
-  {% include tagcloud.html %}
+
 </div>

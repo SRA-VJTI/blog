@@ -2,9 +2,9 @@
 layout: post
 title: Spiking Neural Networks
 tags: 
-    - Neuromorphic Hardware 
-    - Machine Learning
-    - Computer Architecture
+    - neuromorphic-hardware
+    - machine-learning
+    - computer-architecture
     - fpga
 description: Brain-inspired Neural Networks
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Difference Between Interpreting Codes And Compiling Them
-tags: compilers interpreters
+tags: [compilers, interpreters]
 description: Gain insights into how programming languages treat the code you write.
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: How Does A Capacitive Touch-Screen Work??
-tags: electronics mobile-technology semiconductors 
+tags: [electronics, mobile-technology, semiconductors]
 description: Working of a Capacitive Touch Screen
 ---
 

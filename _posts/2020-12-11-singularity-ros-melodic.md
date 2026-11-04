@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Guide to using singularity to run ROS Melodic
-tags: ros_singularity
+tags: [ros-singularity]
 description: A guide to install singularity and use ROS melodic and all GUI components with it
 ---
 

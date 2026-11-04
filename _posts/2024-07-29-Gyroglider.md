@@ -2,11 +2,11 @@
 layout: post
 title: GyroGlider 
 tags: 
-    - Robotics
-    - Dshot protocol
-    - Fusion360
-    - Ansys
-    - PID 
+    - robotics
+    - dshot-protocol
+    - fusion360
+    - ansys
+    - pid
 description: Developing a Semi Drone mode for Evoborne.
 ---
 

@@ -3,9 +3,9 @@
 layout : post
 title :  Computer Architects From 1996 Look At The Future - Review
 tags :
-     - Computer Architecture
-     - Memory Systems
-     - Hardware
+     - computer-architecture
+     - memory-systems
+     - hardware
 description :
    Five architects predict the future - what did they predict and were they right?
 ---

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: ApexCore A RISC-V based CPU
-tags : electronics microprocessor fpga embedded_systems computer_architecture
+tags: [electronics, microprocessor, fpga, embedded-systems, computer-architecture]
 description : Designing RISC-V Single Core with IMAF extensions
 ---
 

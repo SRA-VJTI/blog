@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using Jekyll to generate static sites and hosting them on Github Pages [Part 1]
-tags: jekyll
+tags: [jekyll]
 description: This is a tutorial for using jekyll to generate static sites
 ---
 

@@ -2,7 +2,7 @@
 
 layout : post
 title : GestureSense
-tags : ComputerVision Python ML C++
+tags: [computer-vision, python, machine-learning, cpp]
 description : Overview of Project GestureSense
 
 ---

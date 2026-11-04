@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rotating Image By Any Angle (Shear Transformation) Using Only NumPy
-tags: image_processing
+tags: [image-processing]
 description: Rotate a image by x degrees using only numpy and PIL
 ---
 

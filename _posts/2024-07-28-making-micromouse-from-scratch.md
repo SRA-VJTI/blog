@@ -1,6 +1,6 @@
 ---
 title: Making Micromouse from scratch
-tags: [Electronics, Firmware, Control systems, Mechanics, Embedded C]
+tags: [electronics, firmware, control-systems, mechanics, embedded-c]
 
 ---
 
