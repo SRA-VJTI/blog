@@ -1,7 +1,7 @@
 ---
 layour: post
 title: "Rotary Inverted Pendulum"
-tags: Control-Theory Embedded-systems
+tags: [control-systems, embedded-systems]
 description: Implement MPC using LQR on rotary inverted pendulum in simulation and hardware
 ---
 

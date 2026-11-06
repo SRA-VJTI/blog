@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What Is The Difference Between A Compiler And A Interpreter?
-tags: compilers interpreters
+tags: [compilers, interpreters]
 description: The difference between a compiler and an interpreter.
 ---
 

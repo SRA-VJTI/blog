@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Introduction to Soft Quad 
-tags: mechanical-design, PCB-design, embedded-system, soft-robotics
+tags: [mechanical-design, pcb-design, embedded-systems, soft-robotics]
 description: Overview of Project Soft Quad and Tasks throughout the First Week
 ---
 [Soft Quad](https://github.com/pavit15/softquad)

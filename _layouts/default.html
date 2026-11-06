@@ -1,33 +1,38 @@
-<!DOCTYPE html>
-<html lang="{{ page.lang | default: site.lang | default: "en" }}">
-
+<!doctype html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
   {%- include head.html -%}
-
   <body>
-
+    <a class="skip-link" href="#main-content">Skip to content</a>
     {%- include header.html -%}
-
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
+    <main id="main-content" class="main-content">
+      {{ content }}
     </main>
-
     {%- include footer.html -%}
-    <script>
-      window.FontAwesomeConfig = {
-        searchPseudoElements: true
-      }
+    <!-- SRA MathJax font v11: STIX-Web, with the original LaTeX syntax preserved. -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        showProcessingMessages: false,
+        messageStyle: "none",
+        tex2jax: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']],
+          processEscapes: true,
+          processEnvironments: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        },
+        "HTML-CSS": {
+          availableFonts: [],
+          preferredFont: null,
+          webFont: "STIX-Web",
+          scale: 100,
+          linebreaks: { automatic: true, width: 'container' }
+        },
+        TeX: {
+          extensions: ['AMSmath.js', 'AMSsymbols.js', 'noErrors.js', 'noUndefined.js']
+        }
+      });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS_HTML" type="text/javascript" onerror="this.onerror=null;this.src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-AMS_HTML';"></script>
+    <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
   </body>
-
 </html>
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  tex2jax: {
-    inlineMath: [['$','$'], ['\\(','\\)']],
-    processEscapes: true
-  }
-});
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MazeBlaze"
-tags: [Embedded System, Control Systems, Embedded C, PCB Designing, Graph Algorithms, Electronics]
+tags: [embedded-systems, control-systems, embedded-c, pcb-design, graph-algorithms, electronics]
 description: "Develop a Line following and Maze Solving bot based on the PID controller which can find the shortest path in a given maze."
 ---
 

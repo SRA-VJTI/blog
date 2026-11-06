@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Static and Dynamic Memory Allocation…?
-tags: compilers interpreters memory
+tags: [compilers, interpreters, memory]
 description: What memory allocation is, static and dynamic memory allocation & why is it imp?
 ---
 

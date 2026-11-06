@@ -1,7 +1,7 @@
 ---
 layout: post
 title: What Is Machine Language (Or Machine Code)?
-tags: compilers assembly
+tags: [compilers, assembly]
 description: What memory allocation is, static and dynamic memory allocation & why is it imp?
 ---
 

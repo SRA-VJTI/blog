@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Break Through Technology in Memory Storage!!
-tags: electronics memory 
+tags: [electronics, memory]
 description: An unveiled 3D XPoint™ technology in Memory Storage
 ---
 

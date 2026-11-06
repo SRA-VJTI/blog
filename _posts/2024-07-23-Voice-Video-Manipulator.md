@@ -2,11 +2,11 @@
 layout: post
 title: Voice_Video_Manipulator
 tags: 
-    - Robotics
-    - ROS2
-    - Inverse kinematics
-    - Machine Learning
-    - Image Processing
+    - robotics
+    - ros2
+    - inverse-kinematics
+    - machine-learning
+    - image-processing
 description: Developing a robotic manipulator system equipped with both video input capabilities and speech recognition.
 ---
 

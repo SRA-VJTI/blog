@@ -2,11 +2,11 @@
 layout: post
 title: Exploring the magic of RL,making machines learn!!!!!
 tags: 
-    - RL
-    - OpenAI-Gym 
+    - reinforcement-learning
+    - openai-gym
     - python
-    - AI
-    - Machine learning
+    - ai
+    - machine-learning
 description: Learning the concepts of RL and solving various OpenAI-Gym environments.
 ---
 

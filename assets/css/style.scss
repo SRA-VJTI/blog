@@ -1,11 +1,660 @@
 ---
-# Only the main Sass file needs front matter (the dashes are enough)
 ---
+/* SRA Journal — clean editorial theme. Purely visual; existing posts and URLs are preserved. */
+:root {
+  color-scheme: light;
+  --bg: #fbfaf8;
+  --paper: #f3f2ef;
+  --text: #232725;
+  --secondary: #545b57;
+  --muted: #7b817d;
+  --border: #e0e1dd;
+  --accent: #c7383d;
+  --accent-soft: #f9e5e5;
+  --link: #b82f35;
+  --code: #f2f3f0;
+  --selection: #f6dfe0;
+  --sans: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --serif: 'Newsreader', Georgia, serif;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+html[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #191d1b;
+  --paper: #242926;
+  --text: #eeefeb;
+  --secondary: #bec4be;
+  --muted: #9ba49c;
+  --border: #383f3b;
+  --accent: #ee6066;
+  --accent-soft: #3f2729;
+  --link: #f37b80;
+  --code: #252b28;
+  --selection: #642f33;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body { margin: 0; color: var(--text); background: var(--bg); font: 400 16px/1.65 var(--sans); -webkit-font-smoothing: antialiased; }
+::selection { background: var(--selection); }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+img, svg, video { max-width: 100%; }
+:focus-visible { outline: 2px solid var(--link); outline-offset: 4px; }
+.site-shell { width: min(calc(100% - 64px), 960px); margin-inline: auto; }
+.skip-link { position: fixed; top: -100px; left: 20px; z-index: 100; padding: 10px 14px; background: var(--text); color: var(--bg); }
+.skip-link:focus { top: 12px; }
 
-@import "dash";
+/* Quiet navigation: just the publication name and a few links. */
+.site-header { position: sticky; top: 0; z-index: 30; background: var(--bg); border-bottom: 1px solid var(--border); }
+.header-inner { min-height: 72px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { display: inline-flex; align-items: baseline; gap: 8px; white-space: nowrap; font-size: 18px; font-weight: 700; letter-spacing: -.04em; }
+.brand > span:first-child { color: var(--accent); font-weight: 500; }
+.brand-subname { font: 400 19px/1 var(--serif); letter-spacing: -.02em; }
+.primary-nav { display: flex; align-items: center; gap: clamp(15px, 3vw, 32px); }
+.primary-nav a { font-size: 13px; font-weight: 500; color: var(--secondary); }
+.primary-nav a:hover, .footer-links a:hover { color: var(--accent); }
+.theme-toggle { width: 32px; height: 32px; border: 1px solid var(--border); border-radius: 50%; background: transparent; color: var(--secondary); display: grid; place-items: center; font-size: 16px; line-height: 1; cursor: pointer; }
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.theme-icon-dark, html[data-theme='dark'] .theme-icon-light { display: none; }
+html[data-theme='dark'] .theme-icon-dark { display: inline; }
 
-.post-excerpt {
-    @include themed() {
-        color: t('foreground-color');
-    }
+/* Article index. */
+.home-page { padding-bottom: 90px; }
+.home-intro { padding: 92px 0 78px; max-width: 760px; }
+.eyebrow { font: 500 11px/1.5 var(--sans); color: var(--muted); letter-spacing: .07em; text-transform: uppercase; }
+.home-intro .eyebrow { margin: 0 0 22px; color: var(--accent); }
+.home-intro h1 { font: 400 clamp(46px, 6vw, 68px)/1.08 var(--serif); letter-spacing: -.045em; margin: 0; }
+.home-intro > p:last-child { color: var(--secondary); font-size: 20px; line-height: 1.7; margin: 22px 0 0; max-width: 48rem; }
+.archive-section { scroll-margin-top: 95px; }
+.section-heading { border-bottom: 1px solid var(--border); padding-bottom: 15px; }
+.section-heading h2 { font: 600 14px/1.3 var(--sans); margin: 0; letter-spacing: -.01em; color: var(--accent); }
+.article-row { display: grid; grid-template-columns: 124px minmax(0,1fr); column-gap: 26px; padding: 31px 0 34px; border-bottom: 1px solid var(--border); }
+.row-date { padding-top: 7px; color: var(--muted); font: 400 12px/1.6 var(--sans); white-space: nowrap; }
+.row-main h3 { font: 400 clamp(26px, 3.1vw, 35px)/1.2 var(--serif); letter-spacing: -.025em; margin: 0; }
+.row-main h3 a:hover { color: var(--accent); }
+.row-main p { margin: 12px 0 0; max-width: 660px; color: var(--secondary); font-size: 16px; line-height: 1.72; }
+.row-tags { margin-top: 15px; display: flex; flex-wrap: wrap; gap: 8px 16px; color: var(--accent); font: 600 13px/1.45 var(--sans); }
+.row-tags span { white-space: nowrap; }
+.empty-state { padding: 20px 0; color: var(--muted); }
+.pagination { margin: 25px 0 60px; display: flex; justify-content: space-between; align-items: center; gap: 16px; color: var(--muted); font-size: 13px; }
+.pagination a { color: var(--text); }
+.pagination a:hover { color: var(--accent); }
+.topics-section { padding-top: 67px; scroll-margin-top: 95px; }
+.tag-cloud { display: flex; gap: 9px; flex-wrap: wrap; padding-top: 22px; }
+.tag-cloud a { font: 500 14px/1.45 var(--sans) !important; padding: 8px 12px; border: 1px solid var(--border); color: var(--accent); }
+.tag-cloud a:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-soft); }
+
+/* Essays and long-form technical posts. */
+.article-page { padding-top: 45px; padding-bottom: 95px; }
+.back-link { font-size: 12px; color: var(--muted); }
+.back-link:hover { color: var(--accent); }
+.article-header { max-width: 760px; margin: 68px auto 58px; }
+.article-header-meta { display: flex; gap: 10px; flex-wrap: wrap; font-size: 12px; color: var(--muted); margin: 0 0 22px; }
+.article-header h1 { font: 400 clamp(44px, 6vw, 66px)/1.09 var(--serif); letter-spacing: -.047em; overflow-wrap: break-word; margin: 0; }
+.article-deck { color: var(--secondary); font-size: 20px; line-height: 1.68; margin: 23px 0 0; }
+.article-tags { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 25px; }
+.article-tags a { font-size: 14px; color: var(--accent); font-weight: 600; }
+.article-tags a:hover { color: var(--text); }
+.article-body { max-width: 760px; margin-inline: auto; }
+.prose { font-size: 18px; line-height: 1.9; overflow-wrap: break-word; }
+.prose > :first-child { margin-top: 0; }
+.prose p { margin: 0 0 1.45em; }
+.prose h1, .prose h2, .prose h3, .prose h4 { color: var(--accent); scroll-margin-top: 94px; }
+.prose h1 { font: 400 38px/1.25 var(--serif); letter-spacing: -.025em; margin: 1.9em 0 .6em; }
+.prose h2 { font: 400 clamp(29px, 3vw, 37px)/1.2 var(--serif); letter-spacing: -.028em; margin: 1.8em 0 .6em; }
+.prose h3 { font: 600 22px/1.3 var(--sans); letter-spacing: -.02em; margin: 1.7em 0 .6em; }
+.prose h4 { font: 600 17px/1.35 var(--sans); margin: 1.6em 0 .5em; }
+.prose a { color: var(--link); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.prose a:hover { text-decoration-thickness: 2px; }
+.prose strong { font-weight: 700; }
+.prose blockquote { margin: 2em 0; padding: 2px 0 2px 20px; border-left: 2px solid var(--border); color: var(--secondary); }
+.prose blockquote p:last-child { margin: 0; }
+.prose ul, .prose ol { padding-left: 1.5em; margin: 0 0 1.5em; }
+.prose li { padding-left: .12em; margin-bottom: .45em; }
+.prose hr { border: 0; border-top: 1px solid var(--border); margin: 3em 0; }
+.prose img { display: block; max-width: 100%; height: auto; margin: 1.9em auto; }
+.prose figure { margin: 2em 0; }
+.prose figure img { margin: 0 auto; }
+.prose figcaption, .prose small { color: var(--muted); font-size: 12px; line-height: 1.6; }
+.prose figcaption { text-align: center; margin-top: 10px; }
+.prose video, .prose iframe { max-width: 100%; margin: 1em auto; }
+.prose iframe { display: block; border: 0; }
+.prose code, .prose pre, .prose kbd { font-family: var(--mono); }
+.prose :not(pre) > code { font-size: .84em; padding: 2px 5px; border-radius: 3px; background: var(--code); }
+.prose pre, .prose .highlight { max-width: 100%; }
+.prose pre { background: var(--code); border: 1px solid var(--border); padding: 19px 21px; overflow-x: auto; white-space: pre; font-size: 12px; line-height: 1.72; tab-size: 2; }
+.prose pre code { font-size: inherit; color: var(--text); background: transparent; padding: 0; border: 0; }
+.prose .highlighter-rouge { margin: 1.9em 0; }
+.prose .highlighter-rouge .highlight, .prose .highlight pre { margin: 0; }
+.prose table { display: block; width: max-content; max-width: 100%; border-collapse: collapse; overflow-x: auto; margin: 1.8em 0; font-size: 14px; line-height: 1.5; }
+.prose th, .prose td { text-align: left; padding: 10px 18px 10px 0; border-bottom: 1px solid var(--border); min-width: 60px; }
+.prose th { font-weight: 600; }
+/* MathJax 2 is still loaded from default.html. Avoid clipping display equations. */
+.prose .MathJax_Display, .prose mjx-container[display='true'] { max-width: 100%; overflow-x: auto; overflow-y: hidden; padding: 10px 0; }
+.article-afterword { max-width: 760px; margin: 70px auto 0; padding-top: 25px; border-top: 1px solid var(--border); font-size: 13px; }
+.article-afterword a:hover { color: var(--accent); }
+.related-section { max-width: 760px; margin: 75px auto 0; }
+.related-section h2 { font-size: 14px; margin: 0 0 10px; }
+.related-section ul { list-style: none; padding: 0; margin: 0; }
+.related-section li { padding: 13px 0; border-bottom: 1px solid var(--border); font: 400 23px/1.3 var(--serif); }
+.related-section a:hover { color: var(--accent); }
+.comments { max-width: 760px; margin: 55px auto 0; }
+
+/* Topic pages and footer. */
+.tag-page { padding-top: 46px; padding-bottom: 90px; }
+.tag-intro { margin: 70px 0 65px; }
+.tag-intro h1 { margin: 9px 0 0; font: 400 clamp(45px, 6vw, 67px)/1.12 var(--serif); letter-spacing: -.04em; overflow-wrap: anywhere; }
+.tag-intro .eyebrow { color: var(--accent); }
+.site-footer { border-top: 1px solid var(--border); }
+.footer-inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 25px 35px; flex-wrap: wrap; padding: 31px 0 40px; }
+.footer-identity { display: flex; flex-direction: column; gap: 3px; font-size: 12px; }
+.footer-identity strong { font-weight: 600; color: var(--accent); }
+.footer-identity span { color: var(--muted); }
+.footer-links { display: flex; flex-wrap: wrap; gap: 9px 20px; font-size: 12px; color: var(--secondary); }
+
+@media (max-width: 680px) {
+  .site-shell { width: min(calc(100% - 38px), 960px); }
+  .header-inner { min-height: 65px; }
+  .primary-nav { gap: 14px; }
+  .primary-nav a { font-size: 12px; }
+  .brand { font-size: 16px; gap: 6px; }
+  .brand-subname { font-size: 17px; }
+  .theme-toggle { width: 30px; height: 30px; }
+  .home-intro { padding: 67px 0 60px; }
+  .home-intro h1 { font-size: clamp(42px, 10vw, 57px); }
+  .home-intro > p:last-child { font-size: 17px; }
+  .article-row { display: block; padding: 25px 0 27px; }
+  .row-date { display: block; padding: 0 0 8px; }
+  .row-main h3 { font-size: 28px; }
+  .topics-section { padding-top: 52px; }
+  .article-page, .tag-page { padding-top: 30px; padding-bottom: 65px; }
+  .article-header { margin: 56px 0 42px; }
+  .article-header h1 { font-size: clamp(41px, 10.5vw, 58px); }
+  .article-deck { font-size: 16px; }
+  .prose { font-size: 17px; line-height: 1.85; }
+  .prose h2 { font-size: 30px; }
+  .prose h3 { font-size: 20px; }
+  .prose pre { padding: 14px; font-size: 11px; }
+  .tag-intro { margin: 53px 0; }
+  .footer-inner { flex-direction: column; padding: 30px 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+/* BEGIN SRA ARTICLE TOC — links generated from the post's existing headings. */
+.article-content-wrap { position: relative; }
+.article-toc[hidden] { display: none !important; }
+.article-toc { max-width: 760px; margin: 0 auto 28px; }
+.toc-details { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.toc-details summary { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px 0; font: 600 14px/1.45 var(--sans); color: var(--text); cursor: pointer; list-style: none; }
+.toc-details summary::-webkit-details-marker { display: none; }
+.toc-details summary::after { content: '+'; color: var(--accent); font: 400 20px/1 var(--sans); }
+.toc-details[open] summary::after { content: '−'; }
+.toc-nav { padding: 1px 0 18px; }
+.toc-list { padding: 0; margin: 0; list-style: none; }
+.toc-item { margin: 0; padding: 0; }
+.toc-link { display: block; padding: 6px 10px 6px 13px; border-left: 2px solid transparent; color: var(--secondary); font: 400 13px/1.52 var(--sans); text-decoration: none; overflow-wrap: anywhere; transition: color 150ms ease, border-color 150ms ease; }
+.toc-level-h3 .toc-link { padding-left: 24px; font-size: 12px; }
+.toc-link:hover, .toc-link:focus-visible { color: var(--accent); }
+.toc-link.is-active, .toc-link[aria-current='location'] { border-left-color: var(--accent); color: var(--accent); font-weight: 600; }
+
+/* 1200px+ screens: a true left sidebar, without shifting the reading column. */
+@media (min-width: 1200px) {
+  .article-toc { position: absolute; top: 0; bottom: 0; left: calc(50% - 380px - 28px - 184px); width: 184px; max-width: none; margin: 0; }
+  .toc-details { position: sticky; top: 98px; max-height: calc(100vh - 120px); overflow-y: auto; overscroll-behavior: contain; border: 0; }
+  .toc-details summary { padding: 5px 0 12px 13px; color: var(--muted); font-size: 12px; font-weight: 600; letter-spacing: .035em; cursor: pointer; }
+  .toc-details summary::after,
+  .toc-details[open] summary::after { content: 'Hide'; color: var(--accent); font: 500 12px/1.3 var(--sans); }
+  .toc-details:not([open]) summary::after { content: 'Show'; }
+  .toc-details summary:hover { color: var(--accent); }
+  .toc-details:not([open]) { overflow: visible; }
+  .toc-details:not([open]) summary { display: inline-flex; padding: 9px 11px; gap: 12px; background: var(--bg); border: 1px solid var(--border); border-radius: 5px; }
+  .toc-details:not([open]) summary:hover { border-color: var(--accent); }
+  .toc-nav { padding: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .toc-link { transition: none; }
+}
+/* END SRA ARTICLE TOC */
+
+/* BEGIN SRA SITE-ALIGNED POLISH
+   Visual-only adjustments inspired by the official SRA site's palette and type.
+   Leaves post content, Jekyll, MathJax and the TOC behavior unchanged.
+*/
+:root {
+  /* Daytime companion palette to SRA's charcoal / red brand. */
+  --bg: #faf9f7;
+  --paper: #f3f1ee;
+  --text: #252323;
+  --secondary: #585354;
+  --muted: #7f7779;
+  --border: #dedbd8;
+  --accent: #c7383d;
+  --accent-soft: #f8e8e7;
+  --link: #ad292f;
+  --code: #f1efec;
+  --selection: #f3dadd;
+  --sans: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono: 'Fira Code', ui-monospace, SFMono-Regular, Consolas, monospace;
+}
+html[data-theme='dark'] {
+  /* SRA's actual matte charcoal palette, not pure black. */
+  --bg: #232222;
+  --paper: #2b2a2a;
+  --text: #f2f1ef;
+  --secondary: #c6c1c1;
+  --muted: #a3a0a0;
+  --border: #3a3838;
+  --accent: #df565b; /* brighter for small-text accessibility */
+  --accent-soft: #322425;
+  --link: #f07c80;
+  --code: #2b2a2a;
+  --selection: #542d30;
+}
+
+/* Typography and nav: measured, confident, and consistent with the parent site. */
+body { line-height: 1.7; }
+.site-shell { width: min(calc(100% - 64px), 1000px); }
+.header-inner { min-height: 68px; }
+.brand { font-size: 18px; letter-spacing: -.025em; }
+.brand-subname { font-size: 20px; }
+.primary-nav a { font-size: 14px; font-weight: 600; }
+.primary-nav a, .brand, .row-main h3 a, .footer-links a { transition: color 150ms ease; }
+.theme-toggle { width: 34px; height: 34px; border-radius: 3px; }
+.theme-toggle:hover { background: var(--accent-soft); }
+
+/* Homepage: the existing text and list, with one restrained use of SRA's display face. */
+.home-intro { padding: 80px 0 65px; }
+.eyebrow { font: 500 12px/1.6 var(--mono); letter-spacing: .1em; }
+.home-intro .eyebrow { margin-bottom: 21px; }
+.home-intro h1 {
+  font: 400 clamp(35px, 4.4vw, 52px)/1.18 'Ultra', Georgia, serif;
+  letter-spacing: -.025em;
+}
+.home-intro > p:last-child { max-width: 610px; font-size: 19px; line-height: 1.75; margin-top: 22px; }
+.section-heading { padding-bottom: 17px; }
+.section-heading h2 { font: 600 12px/1.5 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+.article-row { padding: 35px 0 37px; column-gap: 32px; }
+.row-date { font: 400 12px/1.7 var(--mono); color: var(--muted); }
+.row-main h3 { font-size: clamp(26px, 3vw, 34px); line-height: 1.22; }
+.row-main p { font-size: 16px; line-height: 1.8; margin-top: 11px; }
+.row-tags { font-size: 13px; gap: 9px 17px; margin-top: 16px; }
+.topics-section { padding-top: 62px; }
+.tag-cloud a { border-radius: 3px; font-size: 13px !important; }
+
+/* Long-form articles: keep editorial serif headings and comfortable text sizes. */
+.article-page { padding-top: 38px; }
+.back-link { font-size: 13px; }
+.article-header { margin-top: 64px; margin-bottom: 52px; }
+.article-header-meta { font: 400 12px/1.6 var(--mono); margin-bottom: 24px; }
+.article-header h1 { font-size: clamp(43px, 5.5vw, 63px); line-height: 1.13; letter-spacing: -.037em; }
+.article-deck { font-size: 20px; line-height: 1.72; }
+.prose { font-size: 18px; line-height: 1.88; }
+.prose h1, .prose h2, .prose h3, .prose h4 { color: var(--accent); }
+.prose h2 { margin-top: 1.9em; }
+.prose h3 { font-size: 21px; }
+.prose blockquote { border-left: 2px solid var(--accent); padding-left: 22px; }
+.prose pre { border-radius: 3px; font-size: 13px; line-height: 1.7; }
+.prose :not(pre) > code { border-radius: 3px; }
+.prose figcaption { font-size: 13px; }
+.prose img { border-radius: 3px; }
+.prose table { font-size: 15px; }
+.article-tags a { font-size: 14px; }
+
+/* Sidebar: a quiet navigation rail, not a second visual focal point. */
+.toc-details summary { font-size: 13px; }
+.toc-link { font-size: 13px; line-height: 1.6; }
+.toc-level-h3 .toc-link { font-size: 12px; }
+.toc-link.is-active, .toc-link[aria-current='location'] { border-left-color: var(--accent); }
+
+@media (min-width: 1200px) {
+  .toc-details summary { font-size: 12px; }
+}
+@media (max-width: 680px) {
+  .site-shell { width: min(calc(100% - 38px), 1000px); }
+  .header-inner { min-height: 64px; }
+  .brand { font-size: 16px; }
+  .brand-subname { font-size: 17px; }
+  .primary-nav a { font-size: 12px; }
+  .home-intro { padding: 66px 0 52px; }
+  .home-intro h1 { font-size: clamp(32px, 8vw, 43px); line-height: 1.2; }
+  .home-intro > p:last-child { font-size: 17px; }
+  .article-row { padding: 27px 0 30px; }
+  .row-date { padding-bottom: 10px; }
+  .row-main h3 { font-size: 28px; }
+  .row-main p { font-size: 15.5px; }
+  .article-header { margin: 55px 0 41px; }
+  .article-header h1 { font-size: clamp(40px, 9.5vw, 55px); }
+  .article-deck { font-size: 17px; }
+  .prose { font-size: 17px; line-height: 1.85; }
+  .prose h3 { font-size: 20px; }
+  .prose pre { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .primary-nav a, .brand, .row-main h3 a, .footer-links a { transition: none; }
+}
+/* END SRA SITE-ALIGNED POLISH */
+
+/* BEGIN SRA REVIEW FIXES V8
+   Follow-up for PR review: simpler homepage, header/social links, math legibility.
+   All changes are theme-only; posts and technical content remain unmodified.
+*/
+
+/* Main identity: keep the page intentionally quiet. */
+.site-header .header-inner { min-height: 74px; }
+.site-header .brand { display: inline-flex; align-items: center; flex: none; gap: 0; }
+.site-header .brand-logo {
+  display: block; width: 54px; height: 46px; object-fit: contain;
+  filter: brightness(0); /* Official SRA logo appears black on light backgrounds. */
+}
+html[data-theme='dark'] .site-header .brand-logo { filter: brightness(0) invert(1); }
+.site-header .primary-nav { display: flex; align-items: center; gap: clamp(12px, 1.6vw, 23px); }
+.site-header .primary-nav a { font: 600 12px/1.5 var(--sans); color: var(--secondary); white-space: nowrap; letter-spacing: -.012em; }
+.site-header .primary-nav a:hover,
+.site-header .primary-nav a:focus-visible { color: var(--accent); }
+.site-header .theme-toggle { flex: none; margin-left: 3px; }
+
+/* No more oversized display font, slogans or redundant page furniture. */
+.home-intro { max-width: 760px; padding: 56px 0 41px; }
+.home-intro h1 {
+  margin: 0;
+  font: 600 clamp(36px, 4.2vw, 49px)/1.17 var(--sans);
+  letter-spacing: -.048em;
+  color: var(--text);
+}
+
+/* Inline media in acknowledgements: preserve the left-aligned RunPod logo. */
+.prose img[src*='runpod' i],
+.prose img[alt*='runpod' i] {
+  margin: 1.25em auto 1.25em 0;
+  object-position: left center;
+}
+
+@media (max-width: 900px) {
+  .site-header .header-inner { gap: 12px 20px; padding-block: 13px; flex-wrap: wrap; }
+  .site-header .primary-nav { flex: 1 1 auto; justify-content: flex-end; gap: clamp(10px, 2.5vw, 19px); }
+}
+@media (max-width: 680px) {
+  .site-header .header-inner { align-items: center; padding-block: 11px 13px; }
+  .site-header .brand-logo { width: 46px; height: 42px; }
+  .site-header .primary-nav { flex: 1 1 100%; justify-content: space-between; gap: 7px; }
+  .site-header .primary-nav a { font-size: 11px; }
+  .site-header .theme-toggle { margin-left: 0; }
+  .home-intro { padding: 43px 0 36px; }
+  .home-intro h1 { font-size: clamp(34px, 9vw, 42px); }
+  .prose .MathJax_Display, .prose .MathJax_SVG_Display { text-align: left; }
+}
+@media (max-width: 360px) {
+  .site-header .primary-nav { flex-wrap: wrap; justify-content: flex-start; gap: 9px 14px; }
+  .site-header .theme-toggle { margin-left: auto; }
+}
+/* END SRA REVIEW FIXES V8 */
+
+/* BEGIN SRA TOPICS AND MATH FIX V9 */
+/* Each article gets one compact row; tags only link to that article. */
+.topics-section { padding-top: 48px; }
+.topic-post-row {
+  display: grid;
+  grid-template-columns: minmax(160px, 265px) minmax(0, 1fr);
+  align-items: start;
+  gap: 16px 28px;
+  padding: 19px 0;
+  border-bottom: 1px solid var(--border);
+}
+.topic-post-title {
+  color: var(--secondary);
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 600;
+  text-decoration: none;
+}
+.topic-post-title:hover { color: var(--accent); }
+.topic-post-row .tag-cloud { padding-top: 0; gap: 8px; }
+.topic-post-row .tag-cloud a {
+  color: var(--accent);
+  border-radius: 3px;
+  font-size: 13px !important;
+  text-decoration: none;
+}
+.topic-post-row .tag-cloud a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+/* Tags in the article index are navigable too, without relying on tag-archive URLs. */
+.row-tags a { color: var(--accent); text-decoration: none; white-space: nowrap; }
+/* Keep topics within individual posts red, but do not send readers to dead archives. */
+.article-tags span { color: var(--accent); font-size: 14px; }
+.row-tags a:hover { text-decoration: underline; text-underline-offset: 3px; }
+/* Use MathJax's native CommonHTML font metrics; don't resize inline Greek glyphs. */
+.prose .MathJax_CHTML { vertical-align: baseline; }
+.prose .MJXc-display { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
+@media (max-width: 680px) {
+  .topic-post-row { grid-template-columns: minmax(0, 1fr); gap: 10px; padding: 18px 0; }
+  .topic-post-title { font-size: 13.5px; }
+}
+/* END SRA TOPICS AND MATH FIX V9 */
+
+/* BEGIN SRA SERIF TITLE RESTORE V13 */
+/* Use the same editorial face as the original article titles. */
+.home-intro h1 {
+  font-family: var(--serif);
+  font-weight: 400;
+  letter-spacing: -.035em;
+}
+/* END SRA SERIF TITLE RESTORE V13 */
+
+/* Homepage without a separate hero title */
+.home-page .archive-section {
+  padding-top: 64px;
+}
+
+@media (max-width: 680px) {
+  .home-page .archive-section {
+    padding-top: 42px;
+  }
+}
+
+/* BEGIN SRA HEADER SOCIALS V14 */
+/* Keep the article index immediately below the site header. */
+.home-page .archive-section { padding-top: 60px; }
+/* Show all official links at the right without overflowing on tablets/phones. */
+.site-header .primary-nav { gap: 10px 15px; }
+.site-header .primary-nav a { font-size: 11px; }
+.site-footer .footer-links { gap: 10px 17px; }
+@media (max-width: 980px) {
+  .site-header .header-inner { flex-wrap: wrap; padding-block: 12px; }
+  .site-header .primary-nav { flex: 1 1 100%; flex-wrap: wrap; justify-content: flex-start; }
+}
+@media (max-width: 680px) {
+  .home-page .archive-section { padding-top: 38px; }
+  .site-header .primary-nav { gap: 8px 13px; }
+}
+/* END SRA HEADER SOCIALS V14 */
+
+/* BEGIN SRA POST DISCOVERY V15 */
+.post-discovery { max-width: 760px; margin: 70px auto 0; }
+.discovery-tabs { display: flex; gap: 28px; align-items: flex-end; border-bottom: 1px solid var(--border); }
+.discovery-tab { appearance: none; background: transparent; border: 0; border-bottom: 2px solid transparent; border-radius: 0; color: var(--muted); cursor: pointer; font: 600 15px/1.5 var(--sans); padding: 0 0 13px; margin: 0 0 -1px; }
+.discovery-tab:hover { color: var(--text); }
+.discovery-tab[aria-selected='true'] { color: var(--accent); border-bottom-color: var(--accent); }
+.discovery-panel[hidden] { display: none !important; }
+.discovery-article { padding: 21px 0 23px; border-bottom: 1px solid var(--border); }
+.discovery-date { display: block; margin-bottom: 7px; font: 400 11px/1.5 var(--mono); color: var(--muted); }
+.discovery-title { display: block; font: 400 clamp(21px, 2.5vw, 26px)/1.3 var(--serif); color: var(--text); text-decoration: none; }
+.discovery-title:hover { color: var(--accent); }
+.discovery-article p { margin: 7px 0 0; font: 400 14px/1.65 var(--sans); color: var(--secondary); }
+.discovery-empty { font-size: 14px; color: var(--muted); padding: 24px 0; }
+@media (max-width: 680px) {
+  .post-discovery { margin-top: 52px; }
+  .discovery-tabs { gap: 22px; }
+  .discovery-tab { font-size: 14px; }
+}
+/* END SRA POST DISCOVERY V15 */
+
+/* BEGIN SRA EDITORIAL FINISH V18 */
+/* Homepage design restored. Only the section-label font differs from v16:
+   Ultra is the display font used for section titles on the official SRA site.
+   Preserve the existing font-size, spacing, border, and red accent. */
+.home-page .section-heading h2 {
+  font-family: 'Ultra', Georgia, serif;
+  font-weight: 400;
+}
+
+/* The article-switch labels use SRA's Fira Code UI font. Retain original
+   size, selection accent, and layout. Article headline fonts remain Newsreader. */
+.discovery-tab {
+  font-family: var(--mono);
+}
+
+/* ONLY inline hyperlinks in post content change color. The homepage, tags,
+   navigation, headings, red hover accents, and footer retain their original
+   styling. Dark amber is the readable light-mode counterpart. */
+html[data-theme='dark'] .prose a,
+html[data-theme='dark'] .prose a:visited {
+  color: #E0B880;
+}
+html[data-theme='light'] .prose a,
+html[data-theme='light'] .prose a:visited,
+html:not([data-theme]) .prose a,
+html:not([data-theme]) .prose a:visited {
+  color: #83571E;
+}
+/* END SRA EDITORIAL FINISH V18 */
+
+/* Article hyperlinks — muted terracotta */
+html[data-theme='dark'] .prose a {
+  color: #D9A18B;
+}
+
+/* Keep visited and unvisited article links consistent */
+html[data-theme='dark'] .prose a:visited {
+  color: #D9A18B;
+}
+
+/* Match the official SRA section heading size */
+.home-page .section-heading h2 {
+  font-size: 20px;
+  line-height: 1.3;
+}
+
+/* Tangerine article hyperlinks */
+html[data-theme='dark'] .prose a,
+html[data-theme='dark'] .prose a:visited {
+  color: #FFAD66;
+}
+
+/* Light-mode article hyperlinks: Berry */
+html[data-theme='light'] .prose a,
+html[data-theme='light'] .prose a:visited {
+  color: #A63862;
+}
+
+/* Keep mobile navigation beside the SRA logo */
+@media (max-width: 980px) {
+  .site-header .header-inner {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .site-header .primary-nav {
+    flex: 0 1 auto;
+    width: auto;
+    min-width: 0;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    gap: clamp(6px, 2vw, 14px);
+  }
+
+  .site-header .brand {
+    flex: 0 0 auto;
+  }
+}
+
+/* BEGIN SRA MOBILE NAV + FOOTER REFINEMENT V19 */
+/* SVGs inherit the current theme color, unlike platform-dependent emoji. */
+.site-header .theme-toggle {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  line-height: 1;
+  font-size: 0;
+}
+.site-header .theme-toggle > span { grid-area: 1 / 1; line-height: 0; }
+.site-header .theme-toggle svg { display: block; width: 18px; height: 18px; }
+
+/* All footer socials in a single row on normal phone widths. */
+@media (max-width: 680px) {
+  .site-footer .footer-links {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    font-size: clamp(9px, 2.6vw, 11px);
+    line-height: 1.5;
+  }
+  .site-footer .footer-links a {
+    flex: 0 0 auto;
+    font-size: inherit;
+  }
+}
+/* On exceptionally narrow displays, retain legible text without wrapping. */
+@media (max-width: 359px) {
+  .site-footer .footer-links {
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+/* END SRA MOBILE NAV + FOOTER REFINEMENT V19 */
+
+/* Unified hyperlink color — Muted Violet */
+html[data-theme='dark'] .prose a,
+html[data-theme='dark'] .prose a:visited,
+html[data-theme='light'] .prose a,
+html[data-theme='light'] .prose a:visited,
+html:not([data-theme]) .prose a,
+html:not([data-theme]) .prose a:visited {
+  color: #A767AB;
+}
+
+/* Raspberry hyperlinks — same color in both themes */
+html[data-theme='dark'] .prose a,
+html[data-theme='dark'] .prose a:visited,
+html[data-theme='light'] .prose a,
+html[data-theme='light'] .prose a:visited,
+html:not([data-theme]) .prose a,
+html:not([data-theme]) .prose a:visited {
+  color: #C65B7C;
+}
+
+/* Editorial hyperlinks — SRA red underline */
+html[data-theme='dark'] .prose a,
+html[data-theme='dark'] .prose a:visited,
+html[data-theme='light'] .prose a,
+html[data-theme='light'] .prose a:visited,
+html:not([data-theme]) .prose a,
+html:not([data-theme]) .prose a:visited {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* Red text on hover or keyboard focus */
+html[data-theme='dark'] .prose a:hover,
+html[data-theme='dark'] .prose a:focus-visible,
+html[data-theme='light'] .prose a:hover,
+html[data-theme='light'] .prose a:focus-visible,
+html:not([data-theme]) .prose a:hover,
+html:not([data-theme]) .prose a:focus-visible {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
 }

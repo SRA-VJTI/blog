@@ -2,11 +2,11 @@
 layout: post
 title: Titan_Quadruped
 tags: 
-    - Robotics
-    - ROS2
-    - CAD Modeling
-    - Mechanics
-    - Design
+    - robotics
+    - ros2
+    - cad-modeling
+    - mechanics
+    - design
 description: Creating a fully autonomous quadruped robot , currently focusing on the leg design and manufacture. 
 ---
 

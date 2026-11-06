@@ -2,7 +2,7 @@
 layout: post
 title: "Locomotion Policy by FlashSAC & PPO Algorithm"
 date: 2026-09-30
-tags: [locomotion,FlashSAC,PPO,Reinforcement learning]
+tags: [locomotion, flashsac, ppo, reinforcement-learning]
 description: " Deploying locomotion policies using PPO and FlashSAC "
 ---
 

@@ -1,43 +1,36 @@
 ---
 layout: default
 ---
-{% unless site.dash.show_author == false %}
-  {% include author.html %}
-{% endunless %}
-{% assign posts_count = paginator.posts | size %}
-{% if posts_count > 0 %}
-<h1>recent articles</h1>
-    <div class="post-links">
-      {% for post in paginator.posts %}
-        <div class="post-link-wrapper">
-          <a href="{{ post.url | relative_url }}" class="post-link">{{ post.title }}</a>
-          <div class="post-meta">
-
-            {% if site.plugins contains "jekyll/tagging" %}
-            <div class="post-tags">
-                {% for tag in post.tags %}
-                <a class="tag" href="/tag/{{ tag }}/">{{ tag }}</a>
-                {% endfor %}
-            </div>
-            {% endif %}
-            {% if site.date_format %}
-              {{ post.date | date: site.date_format }}
-            {% else %}
-              {{ post.date | date: "%b %-d, %Y" }}
-            {% endif %}
-            {% if site.show_excerpts == true %}
-              <div class="post-excerpt">
-                {{ post.content | strip_html | truncatewords: 50 }}
-              </div>
-            {% endif %}
+{% assign display_posts = paginator.posts | default: site.posts %}
+<div class="site-shell home-page">
+  
+<section class="archive-section" id="archive" aria-labelledby="archive-heading">
+    <div class="section-heading">
+      <h2 id="archive-heading">{% if paginator and paginator.page != 1 %}Writing{% else %}Latest articles{% endif %}</h2>
+    </div>
+    <div class="article-list">
+      {% for post in display_posts %}
+      <article class="article-row">
+        <time class="row-date" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%d %b %Y' }}</time>
+        <div class="row-main">
+          <h3><a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></h3>
+          {% if post.description %}
+            <p>{{ post.description | strip_html | escape }}</p>
+          {% elsif post.excerpt %}
+            <p>{{ post.excerpt | strip_html | normalize_whitespace | truncate: 160 }}</p>
+          {% endif %}
+          {% if post.tags.size > 0 %}
+          <div class="row-tags" aria-label="Article topics">
+            {% for tag in post.tags limit:3 %}{% capture tag_path %}/tag/{{ tag | slugify }}/{% endcapture %}<a href="{{ tag_path | relative_url }}" title="See posts tagged {{ tag | escape }}">{{ tag | replace: '-', ' ' | escape }}</a>{% endfor %}
           </div>
+          {% endif %}
         </div>
+      </article>
+      {% else %}
+      <p class="empty-state">No articles have been published yet.</p>
       {% endfor %}
     </div>
-
     {% include pagination.html %}
+  </section>
 
-    {% include tagcloud.html %}
-{% else %}
-<h2>no posts yet.</h2>
-{% endif %}
+</div>

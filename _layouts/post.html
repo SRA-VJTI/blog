@@ -1,46 +1,88 @@
 ---
 layout: default
 ---
-{% unless site.dash.show_author == false %}
-  {% include author.html %}
-{% endunless %}
-<div class="post">
-  <h1 class="post-title">{{ page.title }}</h1>
-  {% if site.plugins contains "jekyll/tagging" %}
-  <div class="post-tags">
-      {% for tag in page.tags %}
-      <a class="tag" href="/tag/{{ tag }}/">{{ tag }}</a>
-      {% endfor %}
+<div class="site-shell article-page">
+  <a class="back-link" href="{{ '/' | relative_url }}">← All articles</a>
+  <header class="article-header">
+    <p class="article-header-meta">
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: '%d %B %Y' }}</time>
+      {% if page.author %}<span class="meta-separator" aria-hidden="true">·</span><span>{{ page.author | escape }}</span>{% endif %}
+    </p>
+    <h1>{{ page.title | escape }}</h1>
+    {% if page.description %}<p class="article-deck">{{ page.description | escape }}</p>{% endif %}
+    {% if page.tags.size > 0 %}
+    <div class="article-tags" aria-label="Article topics">
+            {% for tag in page.tags %}{% capture tag_path %}/tag/{{ tag | slugify }}/{% endcapture %}<a href="{{ tag_path | relative_url }}">{{ tag | replace: '-', ' ' | escape }}</a>{% endfor %}
+          </div>
+    {% endif %}
+  </header>
+
+  <div class="article-content-wrap">
+    <aside class="article-toc" data-article-toc hidden aria-label="On this page">
+      <details class="toc-details" data-toc-details>
+        <summary>On this page</summary>
+        <nav class="toc-nav" aria-label="Article sections">
+          <ol class="toc-list" data-toc-list></ol>
+        </nav>
+      </details>
+    </aside>
+    <article class="article-body prose">
+      {{ content }}
+    </article>
   </div>
-  {% endif %}
-  <div class="post-date">Published on {{ page.date | date_to_string }}</div>
-  {% if page.description != null %}
-  <div class="post-description">{{ page.description }}</div>
-  {% endif %}
-  {{ content }}
-</div>
 
-{% if site.dash.disqus.shortname %}
-<div class="comments">
-{% include disqus.html %}
-</div>
-{% endif %}
+  <nav class="article-afterword" aria-label="Back to writing">
+    <a href="{{ '/' | relative_url }}">← All articles</a>
+  </nav>
 
-{% assign size = site.related_posts | size %}
-{% if size != 0 %}
-<div class="related">
-  <h2>related posts</h2>
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:3 %}
-      <li>
-        <h3>
-          <a href="{{ post.url }}">
-            {{ post.title }}
-          </a>
-        </h3>
-      </li>
-    {% endfor %}
-  </ul>
+  {% if site.dash.disqus.shortname %}
+    <div class="comments">{% include disqus.html %}</div>
+  {% endif %}
+  <!-- Native Jekyll, no extra plugins: related = actual shared front matter tags. -->
+  <section class="post-discovery" data-post-discovery aria-label="More to read">
+    <div class="discovery-tabs" role="tablist" aria-label="Choose article recommendations">
+      <button type="button" class="discovery-tab" role="tab" id="tab-recent" aria-controls="panel-recent" aria-selected="true" tabindex="0">Recent Articles</button>
+      <button type="button" class="discovery-tab" role="tab" id="tab-related" aria-controls="panel-related" aria-selected="false" tabindex="-1">Related Articles</button>
+    </div>
+    <div id="panel-recent" class="discovery-panel" role="tabpanel" aria-labelledby="tab-recent">
+      {% assign recent_shown = 0 %}
+      {% for candidate in site.posts %}
+        {% if candidate.url != page.url and recent_shown < 4 %}
+        <article class="discovery-article">
+          <span class="discovery-date">{{ candidate.date | date: '%d %b %Y' }}</span>
+          <a class="discovery-title" href="{{ candidate.url | relative_url }}">{{ candidate.title | escape }}</a>
+          {% if candidate.description %}<p>{{ candidate.description | strip_html | escape }}</p>{% endif %}
+        </article>
+        {% assign recent_shown = recent_shown | plus: 1 %}
+        {% endif %}
+      {% endfor %}
+    </div>
+    <div id="panel-related" class="discovery-panel" role="tabpanel" aria-labelledby="tab-related" hidden>
+      {% assign related_shown = 0 %}
+      {% comment %}Highest shared-tag count first, newest post breaks ties.{% endcomment %}
+      {% for shared_tier in (1..12) reversed %}
+        {% for candidate in site.posts %}
+          {% if candidate.url != page.url and related_shown < 4 %}
+            {% assign shared = 0 %}
+            {% for topic in page.tags %}
+              {% if candidate.tags contains topic %}{% assign shared = shared | plus: 1 %}{% endif %}
+            {% endfor %}
+            {% if shared == shared_tier %}
+            <article class="discovery-article">
+              <span class="discovery-date">{{ candidate.date | date: '%d %b %Y' }} · {{ shared }} shared {% if shared == 1 %}topic{% else %}topics{% endif %}</span>
+              <a class="discovery-title" href="{{ candidate.url | relative_url }}">{{ candidate.title | escape }}</a>
+              {% if candidate.description %}<p>{{ candidate.description | strip_html | escape }}</p>{% endif %}
+            </article>
+            {% assign related_shown = related_shown | plus: 1 %}
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      {% if related_shown == 0 %}
+        <p class="discovery-empty">No other articles share tags with this post yet.</p>
+      {% endif %}
+    </div>
+  </section>
 </div>
-{% endif %}
-{% include tagcloud.html %}
+<script src="{{ '/assets/js/toc.js' | relative_url }}" defer></script>
+<script src="{{ '/assets/js/recommendations.js' | relative_url }}" defer></script>

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Unlocking the Future: The EMG ArmBand Project"
-tags: Embedded Systems IoT PCB Designing ML
+tags: [embedded-systems, iot, pcb-design, machine-learning]
 description: "To create an EMG (Electromyography) Arm Band, which may be worn as a bracelet, to detect hand movements and orientation via muscle impulses transmitted through your forearm."
 ---
 

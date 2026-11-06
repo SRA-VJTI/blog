@@ -1,7 +1,7 @@
 ---
 layout: post
 title: LangCraft
-tags: software compiler compsci 
+tags: [software, compilers, compsci]
 description: Creating a custom Programming Language from scratch. 
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Through Feature Matchers
-tags: opencv robotics slam
+tags: [opencv, robotics, slam]
 description: how do computers understand images
 ---
 -- [Prajwal Avhad](https://github.com/crisiumnih)

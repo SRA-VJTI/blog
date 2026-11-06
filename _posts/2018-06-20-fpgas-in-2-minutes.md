@@ -1,7 +1,7 @@
 ---
 layout: post
 title: FPGAs Explained - In 2 Minutes!
-tags: electronics fpga embedded-system 
+tags: [electronics, fpga, embedded-systems]
 description: A brief explanation on FPGAs
 ---
 

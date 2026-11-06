@@ -1,7 +1,7 @@
 ---
 layout: post
 title: GDB For Noobs
-tags: gdb
+tags: [gdb]
 description: Introduction to debugging C/C++ programs using the GNU Debugger
 ---
 

@@ -6,7 +6,7 @@ tags:
     - opengl
     - opencl
     - gpu-programming
-    - C++
+    - cpp
 description: Tracing some Rays!!
 ---
 # Mentees
