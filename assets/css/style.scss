@@ -572,3 +572,44 @@ html[data-theme='light'] .prose a:visited {
     flex: 0 0 auto;
   }
 }
+
+/* BEGIN SRA MOBILE NAV + FOOTER REFINEMENT V19 */
+/* SVGs inherit the current theme color, unlike platform-dependent emoji. */
+.site-header .theme-toggle {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  line-height: 1;
+  font-size: 0;
+}
+.site-header .theme-toggle > span { grid-area: 1 / 1; line-height: 0; }
+.site-header .theme-toggle svg { display: block; width: 18px; height: 18px; }
+
+/* All footer socials in a single row on normal phone widths. */
+@media (max-width: 680px) {
+  .site-footer .footer-links {
+    display: flex;
+    width: 100%;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    font-size: clamp(9px, 2.6vw, 11px);
+    line-height: 1.5;
+  }
+  .site-footer .footer-links a {
+    flex: 0 0 auto;
+    font-size: inherit;
+  }
+}
+/* On exceptionally narrow displays, retain legible text without wrapping. */
+@media (max-width: 359px) {
+  .site-footer .footer-links {
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: 10px;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+/* END SRA MOBILE NAV + FOOTER REFINEMENT V19 */
