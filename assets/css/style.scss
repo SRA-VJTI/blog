@@ -613,3 +613,48 @@ html[data-theme='light'] .prose a:visited {
   }
 }
 /* END SRA MOBILE NAV + FOOTER REFINEMENT V19 */
+
+/* Unified hyperlink color — Muted Violet */
+html[data-theme='dark'] .prose a,
+html[data-theme='dark'] .prose a:visited,
+html[data-theme='light'] .prose a,
+html[data-theme='light'] .prose a:visited,
+html:not([data-theme]) .prose a,
+html:not([data-theme]) .prose a:visited {
+  color: #A767AB;
+}
+
+/* Raspberry hyperlinks — same color in both themes */
+html[data-theme='dark'] .prose a,
+html[data-theme='dark'] .prose a:visited,
+html[data-theme='light'] .prose a,
+html[data-theme='light'] .prose a:visited,
+html:not([data-theme]) .prose a,
+html:not([data-theme]) .prose a:visited {
+  color: #C65B7C;
+}
+
+/* Editorial hyperlinks — SRA red underline */
+html[data-theme='dark'] .prose a,
+html[data-theme='dark'] .prose a:visited,
+html[data-theme='light'] .prose a,
+html[data-theme='light'] .prose a:visited,
+html:not([data-theme]) .prose a,
+html:not([data-theme]) .prose a:visited {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* Red text on hover or keyboard focus */
+html[data-theme='dark'] .prose a:hover,
+html[data-theme='dark'] .prose a:focus-visible,
+html[data-theme='light'] .prose a:hover,
+html[data-theme='light'] .prose a:focus-visible,
+html:not([data-theme]) .prose a:hover,
+html:not([data-theme]) .prose a:focus-visible {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
