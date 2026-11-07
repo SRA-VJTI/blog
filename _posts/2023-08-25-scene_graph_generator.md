@@ -5,8 +5,8 @@ Title : Scene Graph Generator
 Tags : Python, Neural Networks, Deep Learning, CNN, NLP
 description: Detecting objects and their relations in images in the form of a graph data structure and generating graphs to represent relations between objects in a given image
 ---
---[kamakshi Ramamurthy] (https://github.com/Kamakshi8104)
---[Sarvesh Badgujar](https://github.com/LittleSani)
+**Authors:** [Kamakshi Ramamurthy](https://github.com/Kamakshi8104) · [Sarvesh Badgujar](https://github.com/LittleSani)
+
 # Project Info
 
 1. The ability of computers to do jobs with what we refer to as artificial intelligence has advanced significantly in the age in which we live. The ability to build software that allows a machine to learn for itself from massive data sets and enhance its usefulness over time is known as machine learning.
