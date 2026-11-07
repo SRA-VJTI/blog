@@ -15,6 +15,8 @@
   button.addEventListener('click', function () {
     var next = getTheme() === 'dark' ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', next);
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute('content', next === 'dark' ? '#232222' : '#faf9f7');
     try { localStorage.setItem('sra-color-theme', next); } catch (e) { /* Optional preference */ }
     syncButton();
   });

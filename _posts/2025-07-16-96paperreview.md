@@ -9,7 +9,7 @@ tags :
 description :
    Five architects predict the future - what did they predict and were they right?
 ---
--- [Mayuresh Surve](https://github.com/amimayo), [Shasvat Prabhu](https://github.com/shashvatprabhu)
+-- [Mayuresh Surve](https://github.com/amimayo), [Shashvat Prabhu](https://spr4bhu.github.io/)
 
 
 # Computer Architects From 1996 Look At The Future : Review
